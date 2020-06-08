@@ -8,9 +8,12 @@ Rails.application.routes.draw do
 
   resources :spots, only: [:show, :index ] do
     resources :favourites, only: :create
+    resources :stories, only: [:new, :show, :create]
   end
 
-  resources :favourites, only: :destroy
+  resources :favourites, only: :destroy do
+
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
