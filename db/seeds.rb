@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "cleaning database"
+User.destroy_all
+Spot.destroy_all
+
+
 puts 'Creating Users'
 user_set = []
 
@@ -19,4 +24,5 @@ spots << Spot.create!(name: "Finns Beach Club", location: "Bali", category: "res
 spots << Spot.create!(name: "Casa Maria", location: "Tulum-Mexico", category: "seafood-restaurant", place_id: "3")
 spots << Spot.create!(name: "Roof Mezza 360", location: "Istanbul", category: "restaurant", place_id: "4")
 spots << Spot.create!(name: "Red Square", location: "Moskow", category: "Plaza", place_id: "5")
+
 

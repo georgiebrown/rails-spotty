@@ -2,6 +2,7 @@ class FavouritesController < ApplicationController
   def create
     @spot = Spot.find(params[:spot_id])
     @favourite = Favourite.new(:favourite_params)
+    @favourite.user = current_user
   end
 
   def destroy
@@ -10,6 +11,6 @@ class FavouritesController < ApplicationController
 
   private
   def favourite_params
-    params.require(:spot).permit(:user_id, :spot_id)
+    params.require(:favourite).permit(:user_id, :spot_id)
   end
 end
