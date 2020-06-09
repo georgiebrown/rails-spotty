@@ -9,7 +9,7 @@
 puts "cleaning database"
 User.destroy_all
 Spot.destroy_all
-Stories.destroy_all
+Story.destroy_all
 
 puts 'Creating Users'
 user_set = []
@@ -80,7 +80,7 @@ nesil = User.create!(
 
 user_set << nesil
 nesil.save!
-<<<<<<< HEAD
+
 puts "added nesil"
 
 
