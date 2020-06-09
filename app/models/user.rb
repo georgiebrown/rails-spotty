@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Associations
-  has_many :stories
-  has_many :favourites
-  has_many :photos
+  has_many :stories, dependent: :destroy
+  has_many :favourites, dependent: :destroy
+  has_one :photo, dependent: :destroy
   has_many :spots, through: :favourites
   has_many :follows
 
@@ -15,6 +15,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :username, format: { with: /\A[a-zA-Z0-9\.\-\_]{3,24}\z/, message: "Username must be between 3 and 24 letters long and can contain the letters A-Z, 0-9 , or the characters '.' , '/' and '_' . " }
   validates :bio, presence: true, length: { maximum: 500 }
+  validates :photo, presence: true
 
   def followers
     follows.where("leader_id = #{id}").map { |f| f.follower }

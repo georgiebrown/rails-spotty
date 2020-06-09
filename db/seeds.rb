@@ -9,7 +9,9 @@
 puts "cleaning database"
 User.destroy_all
 Spot.destroy_all
-Stories.destroy_all
+Story.destroy_all
+Category.destroy_all
+
 
 puts 'Creating Users'
 user_set = []
@@ -72,7 +74,7 @@ nesil = User.create!(
   username: 'nesilO',
   email: 'nesil@gmail.com',
   password: 'password',
-  bio: ''
+  bio: 'Developer'
   )
 
 # file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
@@ -80,42 +82,58 @@ nesil = User.create!(
 
 user_set << nesil
 nesil.save!
-<<<<<<< HEAD
+
 puts "added nesil"
 
 
-puts "Creating spots"
-spots = []
-spots <<  Spot.create!(name: "Asian Beer Cafe", location: "Melbourne Central", category: "pub")
-spots << Spot.create!(name: "Finns Beach Club", location: "Bali", category: "restaurant")
-spots << Spot.create!(name: "Casa Maria", location: "Tulum-Mexico", category: "seafood-restaurant")
-spots << Spot.create!(name: "Roof Mezza 360", location: "Istanbul", category: "restaurant")
-spots << Spot.create!(name: "Red Square", location: "Moskow", category: "Plaza")
-spots << Spot.create!(name: "Fairfield Park Boathouse & Tea Gardens", location: "Fairfield", category: "Outdoor Activity")
-spots << Spot.create!(name: "Marquis Of Lorne", location: "North Fitzroy", category: "Pub")
-spots << Spot.create!(name: "RYDER", location: "Cremorne", category: "Shopping")
-spots << Spot.create!(name: "Wilsons Prom Lighthouse", location: "Wilsons Prom", category: "Hike")
-spots << Spot.create!(name: "Sheepyard Flats", location: "Howqua River", category: "Camping")
+puts "creating category"
 
-puts "Creating stories"
-stories = []
-stories << Story.create!(user: user_set.sample, content: "Best pub in the North. Had my 25th birthday here. Had the chicken. I spent about $200 because it was my birthday. Yolo. It was sunny", spot: spots.sample)
-stories << Story.create!(user: user_set.sample, content: "You have to go shopping here, great Australian label with awesome clothes. I bought a G'day jumper", spot: spots.sample)
-stories << Story.create!(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spots.sample)
-stories << Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spots.sample)
-stories << Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spots.sample)
+pubCategory = Category.create!(name: "Pub", question: "What did you have to eat?")
+hikeCategory = Category.create!(name: "Hike", question: "How far did you walk?")
+restaurantCategory = Category.create!(name: "Restaurant", question: "What was the strangest thing your waiter said?")
+shoppingCategory = Category.create!(name: "Shopping", question: "What did you buy")
+campingCategory = Category.create!(name: "Camping", question: "What animals did you see")
+outdoorCategory = Category.create!(name: "Outdoor Activity", question: "What was the best part?")
+cafeCategory = Category.create!(name: "Cafe", question: "What was the strangest thing on the menu?")
 
 
+puts "Creating spot 1"
+spot1 = Spot.create!(name: "Sheepyard Flats", location: "Howqua River", category: campingCategory )
+spot1Story1 = Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
 
-=======
-puts "added #{nesil.name} with photo"
+puts "Creating spot 2"
 
-puts "Creating spots"
-spots = []
-spots <<  Spot.create!(name: "Asian Beer Cafe", location: "Melbourne Central", category: "pub", place_id: "1")
-spots << Spot.create!(name: "Finns Beach Club", location: "Bali", category: "restaurant", place_id: "2")
-spots << Spot.create!(name: "Casa Maria", location: "Tulum-Mexico", category: "seafood-restaurant", place_id: "3")
-spots << Spot.create!(name: "Roof Mezza 360", location: "Istanbul", category: "restaurant", place_id: "4")
-spots << Spot.create!(name: "Red Square", location: "Moskow", category: "Plaza", place_id: "5")
->>>>>>> fa6729b998c6e7bb57b66b61f422f16db601de1e
+spot2 = Spot.create!(name: "Wilsons Prom Lighthouse", location: "Wilsons Prom", category: hikeCategory)
+spot2Story2 = Story.create!(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
+
+
+puts "Creating spot 3"
+
+spot3 = Spot.create!(name: "RYDER", location: "Cremorne", category: shoppingCategory)
+spot3Story3 = Story.create!(user: user_set.sample, content: "You have to go shopping here, great Australian label with awesome clothes. I bought a G'day jumper", spot: spot3)
+
+puts "Creating spot 4"
+spot4 = Spot.create!(name: "Marquis Of Lorne", location: "North Fitzroy", category: pubCategory)
+spot4Story4 = Story.create!(user: user_set.sample, content: "Best pub in the North. Had my 25th birthday here. Had the chicken. I spent about $200 because it was my birthday. Yolo. It was sunny", spot: spot4)
+
+
+# puts ""
+# spots << Spot.create!(name: "Finns Beach Club", location: "Bali", category: "restaurant")
+# spots << Spot.create!(name: "Casa Maria", location: "Tulum-Mexico", category: "seafood-restaurant")
+# spots << Spot.create!(name: "Roof Mezza 360", location: "Istanbul", category: "restaurant")
+# spots << Spot.create!(name: "Red Square", location: "Moskow", category: "Plaza")
+# spots << Spot.create!(name: "Fairfield Park Boathouse & Tea Gardens", location: "Fairfield", category: "Outdoor Activity")
+# spots << Spot.create!(name: "Marquis Of Lorne", location: "North Fitzroy", category: "Pub")
+# spots << Spot.create!(name: "RYDER", location: "Cremorne", category: "Shopping")
+# spots << Spot.create!(name: "Wilsons Prom Lighthouse", location: "Wilsons Prom", category: "Hike")
+# spots << Spot.create!(name: "Sheepyard Flats", location: "Howqua River", category: "Camping" )
+
+# puts "Creating stories"
+# stories = []
+# stories << Story.create!(user: user_set.sample, content: "Best pub in the North. Had my 25th birthday here. Had the chicken. I spent about $200 because it was my birthday. Yolo. It was sunny", spot: spots.sample)
+# stories << Story.create!(user: user_set.sample, content: "You have to go shopping here, great Australian label with awesome clothes. I bought a G'day jumper", spot: spots.sample)
+# stories << Story.create!(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spots.sample)
+# stories << Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spots.sample)
+# stories << Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spots.sample)
+
 

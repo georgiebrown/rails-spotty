@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_09_034140) do
+
+ActiveRecord::Schema.define(version: 2020_06_09_053626) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +36,14 @@ ActiveRecord::Schema.define(version: 2020_06_09_034140) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "question"
+    t.string "place_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -65,17 +75,17 @@ ActiveRecord::Schema.define(version: 2020_06_09_034140) do
   create_table "spots", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.string "category"
     t.integer "place_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_spots_on_category_id"
   end
 
   create_table "stories", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "content"
     t.bigint "spot_id", null: false
-    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["spot_id"], name: "index_stories_on_spot_id"
@@ -103,6 +113,7 @@ ActiveRecord::Schema.define(version: 2020_06_09_034140) do
   add_foreign_key "favourites", "users"
   add_foreign_key "follows", "users", column: "follower_id"
   add_foreign_key "follows", "users", column: "leader_id"
+  add_foreign_key "spots", "categories"
   add_foreign_key "stories", "spots"
   add_foreign_key "stories", "users"
 end
