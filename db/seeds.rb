@@ -9,72 +9,105 @@
 puts "cleaning database"
 User.destroy_all
 Spot.destroy_all
+Stories.destroy_all
 
 puts 'Creating Users'
 user_set = []
 
 puts "Creating Georgie"
 georgie = User.create!(
+  username: 'georgiebrown',
   first_name: 'Georgie',
   last_name: 'Brown',
   email: 'georgie@gmail.com',
   password: 'password',
   bio: '28 years old, Software developer'
   )
-file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
-georgie.photo.attach(io: file, filename: "#{georgie.name}.jpg", content_type: 'image/jpg')
+# file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
+# georgie.photo.attach(io: file, filename: "#{georgie.name}.jpg", content_type: 'image/jpg')
 
 user_set << georgie
 georgie.save!
-puts "added #{georgie.name} with photo"
+puts "added georgie"
 
 
 puts "Creating Rob"
 rob = User.create!(
   first_name: 'Rob',
   last_name: 'Chapman',
+  username: 'robchap',
   email: 'rob@gmail.com',
   password: 'password',
-  bio: ''
+  bio: '28 years old, Software developer'
   )
-file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
-rob.photo.attach(io: file, filename: "#{rob.name}.jpg", content_type: 'image/jpg')
+# file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
+# rob.photo.attach(io: file, filename: "#{rob.name}.jpg", content_type: 'image/jpg')
 
 user_set << rob
 rob.save!
-puts "added #{rob.name} with photo"
+puts "added rob"
 
 
 puts "Creating Keiichi"
 keiichi = User.create!(
   first_name: 'Keiichi',
   last_name: 'Katsuno',
+  username: 'KeiichiKatsuno',
   email: 'keiichi@gmail.com',
   password: 'password',
   bio: 'Loves coffee'
   )
 
-file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
-keiichi.photo.attach(io: file, filename: "#{keiichi.name}.jpg", content_type: 'image/jpg')
+# file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
+# keiichi.photo.attach(io: file, filename: "#{keiichi.name}.jpg", content_type: 'image/jpg')
 
 user_set << keiichi
 keiichi.save!
-puts "added #{keiichi.name} with photo"
+puts "added keiichi"
 
 puts "Creating Nesil"
 nesil = User.create!(
   first_name: 'Nesil',
   last_name: 'Ozer',
+  username: 'nesilO',
   email: 'nesil@gmail.com',
   password: 'password',
   bio: ''
   )
 
-file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
-nesil.photo.attach(io: file, filename: "#{nesil.name}.jpg", content_type: 'image/jpg')
+# file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
+# nesil.photo.attach(io: file, filename: "#{nesil.name}.jpg", content_type: 'image/jpg')
 
 user_set << nesil
 nesil.save!
+<<<<<<< HEAD
+puts "added nesil"
+
+
+puts "Creating spots"
+spots = []
+spots <<  Spot.create!(name: "Asian Beer Cafe", location: "Melbourne Central", category: "pub")
+spots << Spot.create!(name: "Finns Beach Club", location: "Bali", category: "restaurant")
+spots << Spot.create!(name: "Casa Maria", location: "Tulum-Mexico", category: "seafood-restaurant")
+spots << Spot.create!(name: "Roof Mezza 360", location: "Istanbul", category: "restaurant")
+spots << Spot.create!(name: "Red Square", location: "Moskow", category: "Plaza")
+spots << Spot.create!(name: "Fairfield Park Boathouse & Tea Gardens", location: "Fairfield", category: "Outdoor Activity")
+spots << Spot.create!(name: "Marquis Of Lorne", location: "North Fitzroy", category: "Pub")
+spots << Spot.create!(name: "RYDER", location: "Cremorne", category: "Shopping")
+spots << Spot.create!(name: "Wilsons Prom Lighthouse", location: "Wilsons Prom", category: "Hike")
+spots << Spot.create!(name: "Sheepyard Flats", location: "Howqua River", category: "Camping")
+
+puts "Creating stories"
+stories = []
+stories << Story.create!(user: user_set.sample, content: "Best pub in the North. Had my 25th birthday here. Had the chicken. I spent about $200 because it was my birthday. Yolo. It was sunny", spot: spots.sample)
+stories << Story.create!(user: user_set.sample, content: "You have to go shopping here, great Australian label with awesome clothes. I bought a G'day jumper", spot: spots.sample)
+stories << Story.create!(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spots.sample)
+stories << Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spots.sample)
+stories << Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spots.sample)
+
+
+
+=======
 puts "added #{nesil.name} with photo"
 
 puts "Creating spots"
@@ -84,4 +117,5 @@ spots << Spot.create!(name: "Finns Beach Club", location: "Bali", category: "res
 spots << Spot.create!(name: "Casa Maria", location: "Tulum-Mexico", category: "seafood-restaurant", place_id: "3")
 spots << Spot.create!(name: "Roof Mezza 360", location: "Istanbul", category: "restaurant", place_id: "4")
 spots << Spot.create!(name: "Red Square", location: "Moskow", category: "Plaza", place_id: "5")
+>>>>>>> fa6729b998c6e7bb57b66b61f422f16db601de1e
 
