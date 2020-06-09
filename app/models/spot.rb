@@ -1,8 +1,9 @@
 class Spot < ApplicationRecord
   # Associations
   has_many :stories, dependent: :destroy
-  belongs_to :user
+  belongs_to :category
   has_many :photos, dependent: :destroy
+
 
   # Validations
   validates :name, presence: true
