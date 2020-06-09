@@ -1,9 +1,9 @@
 <div class="container mt-3">
   <div class="row justify-content-center">
-    <div class="col-sm-12 col-md-6">
-       <div class="card">
-          <ul>
-            <li><p> Name: <%= @spot.name %></li>
+    <div class="col-12 col-lg-4">
+       <div class="cards d-flex">
+          <div class="card">
+            <li><p> Name: <%= @spot.name %></p> <p><%= link_to "Add to your favourite", favourite_path(@spot, @favourite), { :class=>"btn btn-primary btn-sm btn-block" }  %></p></li>
             <li><p>Location: <%= @spot.location %></li>
             <li><p>Category: <%= @spot.category %></p></li>
       </div>

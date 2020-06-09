@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :stories, only: [:new, :show, :create]
   end
 
-  resources :favourites, only: :destroy do
+  resources :favourites, only: [:new, :show, :destroy ] do
 
   end
 
