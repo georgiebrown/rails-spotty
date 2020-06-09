@@ -1,15 +1,15 @@
 <div class="container justify-content-center">
-  <div class="text-center">Bucket List</div>
-  <div class="row justify-content-center">
+  <div class="text-center mt-3">Bucket List</div>
+  <div class="row d-flex justify-content-center mt-3 mb-3">
     <% @favourites.each do |favourite| %>
-      <div class="col-12 col-md-6 col-lg-6">
+      <div class="col-12 col-md-6 col-lg-4">
         <div class="card mt-3" style="width: 22rem;">
           <div class="card-description">
             <p><%= favourite.spot.name %></p>
             <p><%= favourite.spot.location  %><p>
-               <td><%= link_to "Delete", method: :delete, data:{ confirm: "Are you sure"} do %>
-                <i class="fa fa-trash destroy_dose"></i>
-                <% end %>
+               <%= link_to "<i class='fa fa-trash'></i>".html_safe, favourite_path(favourite),  method: :delete, data:{ confirm: "Are you sure"}  %>
+
+
           </div>
         </div>
       </div>
