@@ -106,16 +106,3 @@ stories << Story.create!(user: user_set.sample, content: "Camped at the hut on t
 stories << Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spots.sample)
 
 
-
-=======
-puts "added #{nesil.name} with photo"
-
-puts "Creating spots"
-spots = []
-spots <<  Spot.create!(name: "Asian Beer Cafe", location: "Melbourne Central", category: "pub", place_id: "1")
-spots << Spot.create!(name: "Finns Beach Club", location: "Bali", category: "restaurant", place_id: "2")
-spots << Spot.create!(name: "Casa Maria", location: "Tulum-Mexico", category: "seafood-restaurant", place_id: "3")
-spots << Spot.create!(name: "Roof Mezza 360", location: "Istanbul", category: "restaurant", place_id: "4")
-spots << Spot.create!(name: "Red Square", location: "Moskow", category: "Plaza", place_id: "5")
->>>>>>> fa6729b998c6e7bb57b66b61f422f16db601de1e
-
