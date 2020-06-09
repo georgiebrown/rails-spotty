@@ -10,6 +10,13 @@
            <a href="#" class="card-link"><%= link_to "Add to your favourite", favourite_path(@spot, @favourite), method: patch  %></p></a>
          </div>
       </div>
+      <% @stories.each do |story| %>
+        <div class="card">
+        <%= "#{story.user.username} left a story:" %>
+        <em><%= story.content %></em>
+        </div>
+      <% end %>
+    </div>
     </div>
 </div>
 
