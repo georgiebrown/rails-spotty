@@ -1,10 +1,11 @@
 <div class="container mt-3">
   <div class="row justify-content-center">
     <div class="col-sm-12 col-md-6">
+      <div class="card mt-3" style="width: 22rem;">
       <p>Bucket List</p>
-      <li><p>Location: <%= @spot.location %></li>
-       <%= link_to favourite_path(@spot,@favourite), method: :delete, data:{ confirm: "Are you sure"} do %>
-
+      <li><p>Location: <%= @favourite.spot.location %></li>
+       <%= link_to favourite_path(@favourite), method: :delete, data:{ confirm: "Are you sure"}  %>
+      </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <% @favourites.each do |favourite| %>
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="card mt-3" style="width: 22rem;">
+          <div class="card-description">
+            <p><%= favourite.spot.name %></p>
+            <p><%= favourite.spot.location  %><p>
+               <td><%= link_to "Delete", method: :delete, data:{ confirm: "Are you sure"} do %>
+                <i class="fa fa-trash destroy_dose"></i>
+                <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
