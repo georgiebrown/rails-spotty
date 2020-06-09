@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "cleaning database"
+User.destroy_all
+Spot.destroy_all
+
 puts 'Creating Users'
 user_set = []
 
@@ -72,3 +76,12 @@ nesil.photo.attach(io: file, filename: "#{nesil.name}.jpg", content_type: 'image
 user_set << nesil
 nesil.save!
 puts "added #{nesil.name} with photo"
+
+puts "Creating spots"
+spots = []
+spots <<  Spot.create!(name: "Asian Beer Cafe", location: "Melbourne Central", category: "pub", place_id: "1")
+spots << Spot.create!(name: "Finns Beach Club", location: "Bali", category: "restaurant", place_id: "2")
+spots << Spot.create!(name: "Casa Maria", location: "Tulum-Mexico", category: "seafood-restaurant", place_id: "3")
+spots << Spot.create!(name: "Roof Mezza 360", location: "Istanbul", category: "restaurant", place_id: "4")
+spots << Spot.create!(name: "Red Square", location: "Moskow", category: "Plaza", place_id: "5")
+
