@@ -3,7 +3,7 @@
     <div class="col-sm-12 col-md-6">
       <p>Bucket List</p>
       <li><p>Location: <%= @spot.location %></li>
-
+       <%= link_to favourite_path(@spot,@favourite), method: :delete, data:{ confirm: "Are you sure"} do %>
 
       </div>
     </div>
