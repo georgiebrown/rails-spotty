@@ -12,6 +12,7 @@ Spot.destroy_all
 Story.destroy_all
 Category.destroy_all
 
+
 puts 'Creating Users'
 user_set = []
 

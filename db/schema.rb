@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_06_09_053626) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,7 +86,6 @@ ActiveRecord::Schema.define(version: 2020_06_09_053626) do
     t.bigint "user_id", null: false
     t.text "content"
     t.bigint "spot_id", null: false
-    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["spot_id"], name: "index_stories_on_spot_id"
