@@ -18,10 +18,10 @@ class User < ApplicationRecord
   validates :bio, presence: true, length: { maximum: 500 }
 
   def followers
-    follows.where("leader_id = #{id}").map { |f| f.follower }
+    Follow.where("leader_id = #{id}").map { |f| f.follower }
   end
 
   def following
-    follows.where("follower_id = #{id}").map { |f| f.follower }
+    Follow.where("follower_id = #{id}").map { |f| f.leader }
   end
 end

@@ -1,6 +1,7 @@
 require 'open-uri'
 
 puts "Cleaning database..."
+Follow.destroy_all
 Photo.destroy_all
 User.destroy_all
 Spot.destroy_all
@@ -82,8 +83,11 @@ user_set << nesil
 puts "Added Nesil!"
 
 puts "Getting Users to follow each other..."
-
-
+user_set.each do |follower|
+  user_set.sample(rand(2..4)).each do |leader|
+    Follow.create!(leader: leader, follower: follower) unless follower == leader
+  end
+end
 
 puts "Creating Categories..."
 pubCategory = Category.create!(name: "Pub", question: "What did you have to eat?")
@@ -123,7 +127,7 @@ puts "Adding Stories to Spot 1..."
 
 spot1Story1 = Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
 spot1_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1046/1000")
+file = URI.open("https://picsum.photos/id/1056/1000")
 spot1_photo3.photo.attach(io: file, filename: "spot1_photo3.jpg", content_type: 'image/jpg')
 spot1_photo3.photoable = spot1
 spot1_photo3.save!
