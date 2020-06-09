@@ -5,8 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 puts "cleaning database"
+Photo.destroy_all
 User.destroy_all
 Spot.destroy_all
 Story.destroy_all
@@ -17,6 +19,10 @@ puts 'Creating Users'
 user_set = []
 
 puts "Creating Georgie"
+photo1 = Photo.new
+file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
+photo1.photo.attach(io: file, filename: "georgie.jpg", content_type: 'image/jpg')
+
 georgie = User.create!(
   username: 'georgiebrown',
   first_name: 'Georgie',
@@ -25,8 +31,9 @@ georgie = User.create!(
   password: 'password',
   bio: '28 years old, Software developer'
   )
-# file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
-# georgie.photo.attach(io: file, filename: "#{georgie.name}.jpg", content_type: 'image/jpg')
+georgie.save!
+photo1.photoable = georgie
+photo1.save!
 
 user_set << georgie
 georgie.save!
