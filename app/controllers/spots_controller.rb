@@ -6,7 +6,10 @@ class SpotsController < ApplicationController
   def show
     @story = Story.new
     @spot = Spot.find(params[:id])
-
+    user = current_user
+    if user
+      @stories = @spot.stories.where("user_id = ")
+    end
       #   @markers =
       # [{
       #   lat: @spot.latitude,
