@@ -1,26 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
-puts "cleaning database"
+puts "Cleaning database..."
 Photo.destroy_all
 User.destroy_all
 Spot.destroy_all
 Story.destroy_all
 Category.destroy_all
+puts "Clean!"
 
-
-puts 'Creating Users'
+puts 'Creating Users...'
 user_set = []
 
-puts "Creating Georgie"
+puts "Creating Georgie..."
 photo1 = Photo.new
-file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
+file = URI.open("https://picsum.photos/id/1025/500/500")
 photo1.photo.attach(io: file, filename: "georgie.jpg", content_type: 'image/jpg')
 
 georgie = User.create!(
@@ -31,16 +24,16 @@ georgie = User.create!(
   password: 'password',
   bio: '28 years old, Software developer'
   )
-georgie.save!
 photo1.photoable = georgie
 photo1.save!
-
 user_set << georgie
-georgie.save!
-puts "added georgie"
+puts "Added Georgie!"
 
+puts "Creating Rob..."
+photo2 = Photo.new
+file = URI.open("https://picsum.photos/id/1025/500/500")
+photo2.photo.attach(io: file, filename: "rob.jpg", content_type: 'image/jpg')
 
-puts "Creating Rob"
 rob = User.create!(
   first_name: 'Rob',
   last_name: 'Chapman',
@@ -49,15 +42,15 @@ rob = User.create!(
   password: 'password',
   bio: '28 years old, Software developer'
   )
-# file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
-# rob.photo.attach(io: file, filename: "#{rob.name}.jpg", content_type: 'image/jpg')
-
+photo2.photoable = rob
+photo2.save!
 user_set << rob
-rob.save!
-puts "added rob"
+puts "Added Rob!"
 
-
-puts "Creating Keiichi"
+puts "Creating Keiichi..."
+photo3 = Photo.new
+file = URI.open("https://picsum.photos/id/1025/500/500")
+photo3.photo.attach(io: file, filename: "keiichi.jpg", content_type: 'image/jpg')
 keiichi = User.create!(
   first_name: 'Keiichi',
   last_name: 'Katsuno',
@@ -66,15 +59,15 @@ keiichi = User.create!(
   password: 'password',
   bio: 'Loves coffee'
   )
-
-# file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
-# keiichi.photo.attach(io: file, filename: "#{keiichi.name}.jpg", content_type: 'image/jpg')
-
+photo3.photoable = keiichi
+photo3.save!
 user_set << keiichi
-keiichi.save!
-puts "added keiichi"
+puts "Added Keiichi!"
 
-puts "Creating Nesil"
+puts "Creating Nesil..."
+photo4 = Photo.new
+file = URI.open("https://picsum.photos/id/1025/500/500")
+photo4.photo.attach(io: file, filename: "nesil.jpg", content_type: 'image/jpg')
 nesil = User.create!(
   first_name: 'Nesil',
   last_name: 'Ozer',
@@ -83,18 +76,16 @@ nesil = User.create!(
   password: 'password',
   bio: 'Developer'
   )
-
-# file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
-# nesil.photo.attach(io: file, filename: "#{nesil.name}.jpg", content_type: 'image/jpg')
-
+photo4.photoable = nesil
+photo4.save!
 user_set << nesil
-nesil.save!
+puts "Added Nesil!"
 
-puts "added nesil"
+puts "Getting Users to follow each other..."
 
 
-puts "creating category"
 
+puts "Creating Categories..."
 pubCategory = Category.create!(name: "Pub", question: "What did you have to eat?")
 hikeCategory = Category.create!(name: "Hike", question: "How far did you walk?")
 restaurantCategory = Category.create!(name: "Restaurant", question: "What was the strangest thing your waiter said?")
@@ -102,26 +93,170 @@ shoppingCategory = Category.create!(name: "Shopping", question: "What did you bu
 campingCategory = Category.create!(name: "Camping", question: "What animals did you see")
 outdoorCategory = Category.create!(name: "Outdoor Activity", question: "What was the best part?")
 cafeCategory = Category.create!(name: "Cafe", question: "What was the strangest thing on the menu?")
+puts "Added Categories!"
 
+puts "Creating Spots..."
+################################################################################
+################################################################################
+puts "Creating Spot 1..."
+spot1 = Spot.create!(name: "Sheepyard Flats", location: "Howqua River", category: campingCategory)
+puts "Adding Photos to Spot 1..."
+spot1_photo1 = Photo.new
+file = URI.open("https://picsum.photos/id/1043/1000")
+spot1_photo1.photo.attach(io: file, filename: "spot1_photo1.jpg", content_type: 'image/jpg')
+spot1_photo1.photoable = spot1
+spot1_photo1.save!
 
-puts "Creating spot 1"
-spot1 = Spot.create!(name: "Sheepyard Flats", location: "Howqua River", category: campingCategory )
+spot1_photo2 = Photo.new
+file = URI.open("https://picsum.photos/id/1044/1000")
+spot1_photo2.photo.attach(io: file, filename: "spot1_photo2.jpg", content_type: 'image/jpg')
+spot1_photo2.photoable = spot1
+spot1_photo2.save!
+
+spot1_photo3 = Photo.new
+file = URI.open("https://picsum.photos/id/1045/1000")
+spot1_photo3.photo.attach(io: file, filename: "spot1_photo3.jpg", content_type: 'image/jpg')
+spot1_photo3.photoable = spot1
+spot1_photo3.save!
+############################################
+puts "Adding Stories to Spot 1..."
+
 spot1Story1 = Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
+spot1_story1_photo = Photo.new
+file = URI.open("https://picsum.photos/id/1046/1000")
+spot1_photo3.photo.attach(io: file, filename: "spot1_photo3.jpg", content_type: 'image/jpg')
+spot1_photo3.photoable = spot1
+spot1_photo3.save!
 
-puts "Creating spot 2"
+spot1Story2 = Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
+spot1_story2_photo = Photo.new
+file = URI.open("https://picsum.photos/id/1047/1000")
+spot1_photo3.photo.attach(io: file, filename: "spot1_photo3.jpg", content_type: 'image/jpg')
+spot1_photo3.photoable = spot1
+spot1_photo3.save!
 
+spot1Story3 = Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
+spot1_story3_photo = Photo.new
+file = URI.open("https://picsum.photos/id/1048/1000")
+spot1_photo3.photo.attach(io: file, filename: "spot1_photo3.jpg", content_type: 'image/jpg')
+spot1_photo3.photoable = spot1
+spot1_photo3.save!
+
+puts "Finished Spot 1!"
+################################################################################
+################################################################################
+puts "Creating spot 2..."
 spot2 = Spot.create!(name: "Wilsons Prom Lighthouse", location: "Wilsons Prom", category: hikeCategory)
+puts "Adding Photos to Spot 2..."
+spot2_photo1 = Photo.new
+file = URI.open("https://picsum.photos/id/1055/1000")
+spot2_photo1.photo.attach(io: file, filename: "spot2_photo1.jpg", content_type: 'image/jpg')
+spot2_photo1.photoable = spot2
+spot2_photo1.save!
+
+spot2_photo2 = Photo.new
+file = URI.open("https://picsum.photos/id/1047/1000")
+spot2_photo2.photo.attach(io: file, filename: "spot2_photo2.jpg", content_type: 'image/jpg')
+spot2_photo2.photoable = spot2
+spot2_photo2.save!
+
+spot2_photo3 = Photo.new
+file = URI.open("https://picsum.photos/id/1048/1000")
+spot2_photo3.photo.attach(io: file, filename: "spot2_photo3.jpg", content_type: 'image/jpg')
+spot2_photo3.photoable = spot2
+spot2_photo3.save!
+############################################
+puts "Adding Stories to Spot 2..."
+
+spot2Story1 = Story.create!(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 spot2Story2 = Story.create!(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
+spot2Story3 = Story.create!(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 
-
-puts "Creating spot 3"
-
+puts "Finished Spot 2!"
+################################################################################
+################################################################################
+puts "Creating spot 3..."
 spot3 = Spot.create!(name: "RYDER", location: "Cremorne", category: shoppingCategory)
+puts "Adding Photos to Spot 3..."
+spot3_photo1 = Photo.new
+file = URI.open("https://picsum.photos/id/1049/1000")
+spot3_photo1.photo.attach(io: file, filename: "spot3_photo1.jpg", content_type: 'image/jpg')
+spot3_photo1.photoable = spot3
+spot3_photo1.save!
+
+spot3_photo2 = Photo.new
+file = URI.open("https://picsum.photos/id/1050/1000")
+spot3_photo2.photo.attach(io: file, filename: "spot3_photo2.jpg", content_type: 'image/jpg')
+spot3_photo2.photoable = spot3
+spot3_photo2.save!
+
+spot3_photo3 = Photo.new
+file = URI.open("https://picsum.photos/id/1051/1000")
+spot3_photo3.photo.attach(io: file, filename: "spot3_photo3.jpg", content_type: 'image/jpg')
+spot3_photo3.photoable = spot3
+spot3_photo3.save!
+############################################
+puts "Adding Stories to Spot 3..."
+
+spot3Story1 = Story.create!(user: user_set.sample, content: "You have to go shopping here, great Australian label with awesome clothes. I bought a G'day jumper", spot: spot3)
+spot3Story2 = Story.create!(user: user_set.sample, content: "You have to go shopping here, great Australian label with awesome clothes. I bought a G'day jumper", spot: spot3)
 spot3Story3 = Story.create!(user: user_set.sample, content: "You have to go shopping here, great Australian label with awesome clothes. I bought a G'day jumper", spot: spot3)
 
-puts "Creating spot 4"
+puts "Finished Spot 3!"
+################################################################################
+################################################################################
+puts "Creating spot 4..."
 spot4 = Spot.create!(name: "Marquis Of Lorne", location: "North Fitzroy", category: pubCategory)
-spot4Story4 = Story.create!(user: user_set.sample, content: "Best pub in the North. Had my 25th birthday here. Had the chicken. I spent about $200 because it was my birthday. Yolo. It was sunny", spot: spot4)
+puts "Adding Photos to Spot 4..."
+spot4_photo1 = Photo.new
+file = URI.open("https://picsum.photos/id/1052/1000")
+spot4_photo1.photo.attach(io: file, filename: "spot4_photo1.jpg", content_type: 'image/jpg')
+spot4_photo1.photoable = spot4
+spot4_photo1.save!
+
+spot4_photo2 = Photo.new
+file = URI.open("https://picsum.photos/id/1053/1000")
+spot4_photo2.photo.attach(io: file, filename: "spot4_photo2.jpg", content_type: 'image/jpg')
+spot4_photo2.photoable = spot4
+spot4_photo2.save!
+
+spot4_photo3 = Photo.new
+file = URI.open("https://picsum.photos/id/1054/1000")
+spot4_photo3.photo.attach(io: file, filename: "spot4_photo3.jpg", content_type: 'image/jpg')
+spot4_photo3.photoable = spot4
+spot4_photo3.save!
+############################################
+puts "Adding Stories to Spot 4..."
+
+spot4Story1 = Story.create!(user: user_set.sample, content: "Best pub in the North. Had my 25th birthday here. Had the chicken. I spent about $200 because it was my birthday. Yolo. It was sunny", spot: spot4)
+spot4Story2 = Story.create!(user: user_set.sample, content: "Great pub, not welcome after my friends 25th though.", spot: spot4)
+spot4Story3 = Story.create!(user: user_set.sample, content: "Love this place, used to work here when I was in uni. Owners are lovely", spot: spot4)
+
+puts "Finished Spot 4!"
+################################################################################
+################################################################################
+
+puts "Adding some favourites"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # puts ""
