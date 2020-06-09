@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_tag spots_path, method: :get, :class => 'd-flex' do%>
+  <%= form_tag spots_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
