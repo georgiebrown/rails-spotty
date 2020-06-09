@@ -7,6 +7,13 @@
             <li><p>Location: <%= @spot.location %></li>
             <li><p>Category: <%= @spot.category %></p></li>
       </div>
+      <% @stories.each do |story| %>
+        <div class="card">
+        <%= "#{story.user.username} left a story:" %>
+        <em><%= story.content %></em>
+        </div>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>
