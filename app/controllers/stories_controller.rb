@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   def show
-    @spot = Spot.find(params[:spot_id])
+    # @spot = Spot.find(params[:spot_id])
     @story = Story.find(params[:id])
   end
 
