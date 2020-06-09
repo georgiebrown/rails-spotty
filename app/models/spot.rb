@@ -12,4 +12,13 @@ class Spot < ApplicationRecord
   validates :photo, presence: true
   # geocoded_by :location
   # after_validation :geocode, if: :will_save_change_to_location?
+    include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name, :location],
+   associated_against: {
+      categories: [ :name, :question ]
+    },
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end

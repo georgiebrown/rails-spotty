@@ -1,4 +1,13 @@
 <div class="container">
+  <%= form_tag spots_path, method: :get, :class => 'd-flex' do%>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a spot"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
   <div class="row">
     <% @spots.each do |spot| %>
       <div class="col-12 col-md-6 col-lg-6">

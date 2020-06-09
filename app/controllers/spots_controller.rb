@@ -1,6 +1,10 @@
 class SpotsController < ApplicationController
   def index
-    @spots = Spot.all
+     if params[:query].present?
+      @spots = Spot.search(params[:search])
+    else
+      @spots = Spot.all
+    end
   end
 
   def show
@@ -18,6 +22,5 @@ class SpotsController < ApplicationController
       #   image_url: helpers.asset_url('map_icon.png')
       # }]
   end
-
 
 end
