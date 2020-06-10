@@ -22,12 +22,8 @@ class SpotsController < ApplicationController
   end
 
   def show
-    @story = Story.new
     @spot = Spot.find(params[:id])
-    user = current_user
-    if user
-      @stories = @spot.stories.where("user_id = ")
-    end
+    @stories = @spot.stories
   end
 
 end
