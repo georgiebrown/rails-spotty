@@ -1,7 +1,7 @@
 class SpotsController < ApplicationController
   def index
     if params[:query_attributes].present?
-      @spots = Spot.global_search(params[:query_attributes]).select { |spot| spot.geocoded? }
+      @spots = Spot.geocoded.global_search(params[:query_attributes])
     else
       @spots = Spot.geocoded
     end
@@ -11,7 +11,7 @@ class SpotsController < ApplicationController
     @markers = @spots.map do |spot| {
       lat: spot.latitude,
       lng: spot.longitude,
-      # infoWindow: render_to_string(partial: "info_window", locals: { spot: spot }),
+      infoWindow: { content: render_to_string(partial: "info_window", locals: { spot: spot }) }
       # image_url: helpers.asset_url('icon.png')
     }
     end
