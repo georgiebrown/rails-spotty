@@ -23,10 +23,12 @@ georgie = User.create!(
   last_name: 'Brown',
   email: 'georgie@gmail.com',
   password: 'password',
-  bio: '28 years old, Software developer'
+  bio: 'Vino quarantino'
   )
+
 photo1.photoable = georgie
 photo1.save!
+
 user_set << georgie
 puts "Added Georgie!"
 
