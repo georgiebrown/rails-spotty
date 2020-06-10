@@ -1,8 +1,22 @@
 <div class="container">
   <div class="row">
-   <div class="card">
-    <h1><%= @story.spot.title %></h1>
-    <h1><%= @story.spot.content %></h1>
-   </div>
+    <div class="text-center col-sm">
+     <div class="card mt-5" style="width: 18rem; margin: 0 auto;">
+      <div class="card-body">
+        <%= cl_image_tag @spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top" %>
+      </div>
+    </div>
+    <div class="card mt-5" style="width: 18rem; margin: 0 auto;">
+      <div><h2>
+        <%= @story.spot.name %>
+      </h2></div>
+      <div><p>
+        story: <%= @story.content %>
+      </p></div>
+    </div>
+    <%= link_to "Back", spot_path(@story), class: "btn btn-dark mb-5", style: "margin-top:200px;" %>
   </div>
 </div>
+</div>
+
+

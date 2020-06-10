@@ -293,10 +293,8 @@ spot4_story3_photo.photoable = spot4Story3
 spot4_story3_photo.save!
 
 puts "Finished Spot 4!"
-################################################################################
-################################################################################
-
 puts "Adding some favourites"
+
 
 user_set.each do |user|
   spot_set.sample(rand(2..4)).each do |spot|
