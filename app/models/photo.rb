@@ -1,14 +1,14 @@
 class Photo < ApplicationRecord
   # Associations
   belongs_to :photoable, polymorphic: true
-  has_one_attached :photo
+  has_one_attached :file
 
   # Validations
-  validate :photo_attached?
+  validate :file_attached?
 
   private
 
-  def photo_attached?
-    errors.add(:base, 'Please upload a photo.') unless photo.attached?
+  def file_attached?
+    errors.add(:base, 'Please upload a photo.') unless file.attached?
   end
 end
