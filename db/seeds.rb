@@ -23,10 +23,10 @@ georgie = User.create!(
   last_name: 'Brown',
   email: 'georgie@gmail.com',
   password: 'password',
-  bio: '28 years old, Software developer'
+  bio: 'Vino quarantino'
   )
-# file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
-# georgie.photo.attach(io: file, filename: "#{georgie.name}.jpg", content_type: 'image/jpg')
+file = URI.open("https://cdn.vox-cdn.com/thumbor/sK3gMTENF_LR1DhAUl9e3V_5jC4=/0x0:2592x2017/1200x800/filters:focal(1089x801:1503x1215)/cdn.vox-cdn.com/uploads/chorus_image/image/65282724/friendscast.0.0.1429818191.0.jpg")
+georgie.photo.attach(io: file, filename: "#{georgie.name}.jpg", content_type: 'image/jpg')
 
 user_set << georgie
 georgie.save!
