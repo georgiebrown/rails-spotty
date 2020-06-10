@@ -1,5 +1,4 @@
 class StoriesController < ApplicationController
-
   def show
     @spot = Spot.find(params[:spot_id])
     @story = Story.find(params[:id])
@@ -24,6 +23,6 @@ class StoriesController < ApplicationController
 
 
   def story_params
-    params.require(:story).permit(:content, :title)
+    params.require(:story).permit(:content, :photo)
   end
 end
