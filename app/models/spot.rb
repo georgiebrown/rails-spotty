@@ -14,6 +14,7 @@ class Spot < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
   # include PgSearch::Model
 
+
   # pg_search_scope :global_search,
   #   against: [ :name, :location ],
   #   associated_against: {
@@ -22,4 +23,5 @@ class Spot < ApplicationRecord
   #   using: {
   #     tsearch: { prefix: true }
   #   }
+
 end
