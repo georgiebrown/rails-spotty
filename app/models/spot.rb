@@ -9,9 +9,9 @@ class Spot < ApplicationRecord
   validates :name, presence: true
   validates :location, presence: true
   validates :category, presence: true
-  # geocoded_by :location
-  # after_validation :geocode, if: :will_save_change_to_location?
-
+  validates :photo, presence: true
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
   include PgSearch::Model
   pg_search_scope :global_search,
     against: [ :name, :location ],
@@ -22,8 +22,5 @@ class Spot < ApplicationRecord
       tsearch: { prefix: true }
     }
 
-  def main_photo
-    photos.first
-end
 
 end
