@@ -2,8 +2,8 @@ class SpotsController < ApplicationController
   def index
 
     if params[:query].present?
+      @spots = Spot.geocoded
       @spots = Spot.global_search(params[:query_attributes]).select { |spot| spot.geocoded? }
-      @spots = Spot.global_search(params[:query])
 
     else
       @spots = Spot.geocoded
