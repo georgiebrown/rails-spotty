@@ -9,16 +9,17 @@ class Spot < ApplicationRecord
   validates :name, presence: true
   validates :location, presence: true
   validates :category, presence: true
-  # geocoded_by :location
-  # after_validation :geocode, if: :will_save_change_to_location?
+  validates :photos, presence: true
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+  # include PgSearch::Model
 
-  include PgSearch::Model
-  pg_search_scope :global_search,
-    against: [ :name, :location ],
-    associated_against: {
-      category: [ :name, :place_type]
-    },
-    using: {
-      tsearch: { prefix: true }
-    }
+  # pg_search_scope :global_search,
+  #   against: [ :name, :location ],
+  #   associated_against: {
+  #     category: [ :name, :place_type]
+  #   },
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
 end
