@@ -28,13 +28,6 @@ class SpotsController < ApplicationController
     if user
       @stories = @spot.stories.where("user_id = ")
     end
-      #   @markers =
-      # [{
-      #   lat: @spot.latitude,
-      #   lng: @spot.longitude,
-      #   infoWindow: render_to_string(partial: "info_window", locals: { spot: @spot }),
-      #   image_url: helpers.asset_url('map_icon.png')
-      # }]
   end
 
 end
