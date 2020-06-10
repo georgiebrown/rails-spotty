@@ -21,4 +21,9 @@ class Spot < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  def main_photo
+    photos.first
+end
+
 end
