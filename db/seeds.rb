@@ -282,4 +282,3 @@ puts "Adding some favourites"
 # stories << Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spots.sample)
 # stories << Story.create!(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spots.sample)
 
-
