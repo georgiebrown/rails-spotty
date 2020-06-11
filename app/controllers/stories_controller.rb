@@ -18,12 +18,6 @@ class StoriesController < ApplicationController
     @story.spot = @spot
     @story.user = current_user
 
-    # if @photo.save
-    #   @story.photos = @photo
-    # else
-    #   render 'new'
-    # end
-
     if @story.save
       multiple_photos(story_params, @story)
       # @photo = Photo.new
