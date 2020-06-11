@@ -1,13 +1,10 @@
 class SpotsController < ApplicationController
   def index
-
     if params[:query_attributes].present?
       @spots = Spot.geocoded.global_search(params[:query_attributes])
-
     else
       @spots = Spot.geocoded
     end
-
 
     @spots = @spots.near(params[:query_location], 5) if params[:query_location].present? && !@spots.empty?
     # spots.near(location search)
@@ -25,5 +22,4 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     @stories = @spot.stories
   end
-
 end

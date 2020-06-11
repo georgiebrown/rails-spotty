@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users, :path => 'accounts'
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :index] do
     resources :follows, only: [:create]
   end
-  delete 'unfollow/:id', to: 'follows#destroy', as: 'unfollow'
-  root to: 'pages#home'
-  get 'map', to: 'maps#show'
 
+  delete 'unfollow/:id', to: 'follows#destroy', as: 'unfollow'
+
+  get 'followers', to: 'user#followers', as: 'user_followers'
+
+  get 'follows', to: 'user#follows', as: 'user_follows'
+
+  root to: 'pages#home'
+
+  get 'map', to: 'maps#show'
 
   resources :spots, only: [:show, :index ] do
     resources :favourites, only: :create
