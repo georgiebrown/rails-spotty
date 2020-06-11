@@ -1,6 +1,6 @@
 <div class="container">
 <div class="d-flex justify-content-between">
-<h2><%= spot.name %></h2><div><%= link_to '<i class="fas fa-heart"></i>'.html_safe, spot_favourites_path(spot), method: :post%></p>
+<%= link_to spot.name, spot_path(spot)%><div><%= link_to '<i class="fas fa-heart"></i>'.html_safe, spot_favourites_path(spot), method: :post%></p>
 </div>
 </div>
 <p><%= spot.location %></p>
