@@ -11,7 +11,7 @@
   </div>
   <div class="row">
     <% @spots.each do |spot| %>
-      <div class="col-12 col-md-6 col-lg-6">
+      <div class="col-6 col-md-3 col-lg-3">
 
         <div class="card mt-3">
           <div class="card-description">
@@ -20,7 +20,7 @@
             <% end %>
             <h5><%= link_to spot.name, spot_path(spot) %></h5>
             <p><%= spot.location  %><p>
-            <p><%= spot.category_id %></p>
+            <p><%= spot.category.name %></p>
             <%= render 'shared/favourite_button', spot: spot %>
           </div>
         </div>
