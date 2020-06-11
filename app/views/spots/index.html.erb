@@ -15,7 +15,7 @@
 
         <div class="card mt-3">
           <div class="card-description">
-            <p><%= cl_image_tag spot.photos, height: 350, width: 350, crop: :fill, class: "card-img-top" %></p>
+            <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top"%>
 
             <p><%= spot.location  %><p>
             <p><%= spot.category_id %></p>

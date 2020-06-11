@@ -92,13 +92,13 @@ user_set.each do |follower|
 end
 
 puts "Creating Categories..."
-pubCategory = Category.create!(name: "Pub", question: "What did you have to eat?")
-hikeCategory = Category.create!(name: "Hike", question: "How far did you walk?")
-restaurantCategory = Category.create!(name: "Restaurant", question: "What was the strangest thing your waiter said?")
-shoppingCategory = Category.create!(name: "Shopping", question: "What did you buy")
-campingCategory = Category.create!(name: "Camping", question: "What animals did you see")
-outdoorCategory = Category.create!(name: "Outdoor Activity", question: "What was the best part?")
-cafeCategory = Category.create!(name: "Cafe", question: "What was the strangest thing on the menu?")
+pubCategory = Category.create!(name: "Pub", question: "What did you have to eat?", icon: "https://cdn.mapmarker.io/api/v1/fa?size=50&icon=fa-beer&color=%23FB9E00&")
+hikeCategory = Category.create!(name: "Hike", question: "How far did you walk?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=50&background=%23194D33&text=H&color=%23FFFFFF&voffset=2&hoffset=1&")
+restaurantCategory = Category.create!(name: "Restaurant", question: "What was the strangest thing your waiter said?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=50&background=%23194D33&text=H&color=%23FFFFFF&voffset=2&hoffset=1&")
+shoppingCategory = Category.create!(name: "Shopping", question: "What did you buy", icon: "https://cdn.mapmarker.io/api/v1/pin?size=50&background=%23194D33&text=H&color=%23FFFFFF&voffset=2&hoffset=1&")
+campingCategory = Category.create!(name: "Camping", question: "What animals did you see", icon: "https://cdn.mapmarker.io/api/v1/fa?size=50&icon=fa-tree&color=%23808900&")
+outdoorCategory = Category.create!(name: "Outdoor Activity", question: "What was the best part?", icon: "https://cdn.mapmarker.io/api/v1/fa?size=50&icon=fa-tree&color=%23808900&")
+cafeCategory = Category.create!(name: "Cafe", question: "What was the strangest thing on the menu?", icon: "https://cdn.mapmarker.io/api/v1/fa?size=50&icon=fa-coffee&color=%23C45100&")
 puts "Added Categories!"
 
 puts "Creating Spots..."
@@ -197,7 +197,7 @@ puts "Finished Spot 2!"
 ################################################################################
 ################################################################################
 puts "Creating spot 3..."
-spot3 = Spot.new(name: "RYDER", location: "Cremorne", category: shoppingCategory)
+spot3 = Spot.new(name: "RYDER", location: "126 Cubitt St, Cremorne", category: shoppingCategory)
 spot_set << spot3
 puts "Adding Photos to Spot 3..."
 spot3_photo1 = Photo.new
