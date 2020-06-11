@@ -1,0 +1,33 @@
+.bar-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.bar-card .bar-card-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.bar-card p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.bar-card small {
+  color: #999999;
+  font-weight: bold;
+}
+.bar-card .bar-card-actions {
+  display: flex;
+}
+
+.bar-card .bar-card-actions a {
+  color: #555555;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
