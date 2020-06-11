@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'map', to: 'maps#show'
 
 
-  resources :spots, only: [:show, :index ] do
+  resources :spots, only: [:show, :index, :create, :destroy, :new ] do
     resources :favourites, only: :create
     resources :stories, only: [:index, :new, :show, :create]
   end
