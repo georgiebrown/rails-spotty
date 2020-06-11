@@ -1,17 +1,26 @@
 // app/javascript/components/autocomplete.js
 function autocomplete() {
   document.addEventListener("DOMContentLoaded", function() {
-    var spotLocation = document.getElementById('spot_location');
+    var spotLocationEl = document.querySelector('.js-auto-complete');
 
-    if (spotLocation) {
-      var autocomplete = new google.maps.places.Autocomplete(spotLocation, { types: [ 'geocode' ] });
-      google.maps.event.addDomListener(spotLocation, 'keydown', function(e) {
+    if (spotLocationEl) {
+      var autocomplete = new google.maps.places.Autocomplete(spotLocationEl, {  });
+      google.maps.event.addDomListener(spotLocationEl, 'keydown', function(e) {
         if (e.key === "Enter") {
           e.preventDefault(); // Do not submit the form on Enter.
         }
       });
+      autocomplete.addListener("place_changed", function(){
+        var selectedPlace = autocomplete.getPlace();
+        console.log(selectedPlace)
+        document.querySelector(".js-place-id").value = selectedPlace.place_id
+        document.querySelector(".js-place-name").value = selectedPlace.name
+        document.querySelector(".js-place-address").value = selectedPlace.formatted_address
+        document.querySelector(".js-place-category").value = selectedPlace.types[0]
+      })
     }
   });
+
 }
 
 export { autocomplete };

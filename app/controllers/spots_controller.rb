@@ -19,8 +19,34 @@ class SpotsController < ApplicationController
   end
 end
 
-def show
-  @spot = Spot.find(params[:id])
-  @stories = @spot.stories
-end
+  def show
+    @spot = Spot.find(params[:id])
+    @stories = @spot.stories
+  end
+
+  def new
+    @spot = Spot.new
+  end
+
+  def create
+    @spot = Spot.new(spot_params)
+    @user = current_user
+      if @spot.save
+        redirect_to spot_path(@spot)
+      else
+        render 'new'
+      end
+  end
+
+  def destroy
+    @spot.destroy
+    redirect_to spots_path
+  end
+
+  private
+
+  def spot_params
+    params.require(:spot).permit(:location, :name, :category_id)
+  end
+
 end
