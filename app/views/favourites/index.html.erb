@@ -1,25 +1,25 @@
 <div class="container">
-  </div>
-  <div class="text-center mt-3">
-    <h1>Bucket List</h1>
-  </div>
-  <div class="row mt-3 mb-3">
+  <h2 class="text-center mt-3">Bucket List</h2>
+  <div class="row">
     <% @favourites.each do |favourite| %>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card mt-3" style="width: 22rem;">
-          <div class="card-description mt-3">
-            <div class= "card-text text-center">
+      <div class="col-sm col-lg-4 col-lg-4">
+        <div class="card-blockcard-description mt-4 mb-3">
+          <div class="card">
+              <div class="center-block rounded">
+              <%=  cl_image_tag favourite.spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top"%>
+              </div>
+            <div class= "card-text text-center mt-3 mb-2">
             <p><%= favourite.spot.name %></p>
-            <p><%= favourite.spot.location  %><p>
-              <%= cl_image_tag favourite.spot.photos %>
+            <p> <i class='fa fa-map-pin'></i> <%= favourite.spot.location  %><p>
              <p>  <%= link_to "<i class='fa fa-trash'></i>".html_safe, favourite_path(favourite),  method: :delete, data:{ confirm: "Are you sure"}  %></p>
+             <p><%= link_to 'View to do list', "#", class:"btn btn-outline-dark dp-border-radius btn-sm" %></p>
              </div>
-
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
 
 

@@ -3,20 +3,52 @@
     <div class="text-center col-sm">
      <div class="card mt-5" style="width: 18rem; margin: 0 auto;">
       <div class="card-body">
-        <%= cl_image_tag @spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top" %>
+        <div>
+          <h3>
+            <%= @story.spot.name %>
+          </h3>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @story.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top" %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @story.photos.second.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top" %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @story.photos.last.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top" %>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
       </div>
     </div>
-    <div class="card mt-5" style="width: 18rem; margin: 0 auto;">
-      <div><h2>
-        <%= @story.spot.name %>
-      </h2></div>
+    <div class="card mt-5 p-3" style="width: 18rem; margin: 0 auto;">
       <div><p>
-        story: <%= @story.content %>
+        <%= "#{current_user.first_name} says: #{@story.content}" %>
       </p></div>
     </div>
-    <%= link_to "Back", spot_path(@story), class: "btn btn-dark mb-5", style: "margin-top:200px;" %>
+    <%= link_to "Back", spot_path(@story), class: "btn btn-dark mb-5", style: "margin-top:100px;" %>
   </div>
 </div>
 </div>
 
+
+<%# @story.photos.each do |photo| %>
+<%#= cl_image_tag photo.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top" %>
+<%# end %>
 
