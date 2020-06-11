@@ -18,6 +18,7 @@
             <% if spot.photos.first %>
             <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top"%>
             <% end %>
+            <h5><%= link_to spot.name, spot_path(spot) %></h5>
             <p><%= spot.location  %><p>
             <p><%= spot.category_id %></p>
             <%= render 'shared/favourite_button', spot: spot %>

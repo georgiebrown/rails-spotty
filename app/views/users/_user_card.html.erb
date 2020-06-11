@@ -1,0 +1,16 @@
+<div class="bar-card">
+  <%= cl_image_tag user.photo.file.key, height: 100, width: 100, crop: :fill, class: "avatar-large", alt: "avatar-large" %>
+  <div class="bar-card-content">
+    <%= link_to user_path(user) do %>
+      <p><small><%= user.username %></small></p>
+    <% end %>
+    <%= link_to user_path(user) do %>
+      <p><strong><%= "#{user.first_name} #{user.last_name}" %></strong></p>
+    <% end %>
+  </div>
+
+  <div class="bar-card-actions">
+    <%= render 'shared/follow_button', user: user %>
+  </div>
+</div>
+

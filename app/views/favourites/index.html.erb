@@ -1,25 +1,18 @@
-<div class="container">
-  <h2 class="text-center mt-3">Bucket List</h2>
-  <div class="row">
-    <% @favourites.each do |favourite| %>
-      <div class="col-sm col-lg-4 col-lg-4">
-        <div class="card-blockcard-description mt-4 mb-3">
-          <div class="card">
-              <div class="center-block rounded">
-              <%=  cl_image_tag favourite.spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top"%>
-              </div>
-            <div class= "card-text text-center mt-3 mb-2">
-            <p><%= favourite.spot.name %></p>
-            <p> <i class='fa fa-map-pin'></i> <%= favourite.spot.location  %><p>
-             <p>  <%= link_to "<i class='fa fa-trash'></i>".html_safe, favourite_path(favourite),  method: :delete, data:{ confirm: "Are you sure"}  %></p>
-             <p><%= link_to 'View to do list', "#", class:"btn btn-outline-dark dp-border-radius btn-sm" %></p>
-             </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
+<div class="container col-sm">
+  <div class="text-center mt-3">
+    <h3>Bucket List</h3>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="card">
+    <ul class="list-group">
+      <% @favourites.each do |favourite| %>
+      <li class="list-group-item"> <strong> <%= favourite.spot.category.name %> </strong> : <%= link_to favourite.spot.name, spot_path(favourite.spot) %>
+       - <%= favourite.spot.location  %>   <%= link_to "<i class='fa fa-heart'></i>".html_safe, favourite_path(favourite),  method: :delete, data:{ confirm: "Are you sure"}  %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
   </div>
 </div>
-
 
 

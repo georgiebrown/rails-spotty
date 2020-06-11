@@ -1,6 +1,6 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <% spot.photos.each_with_index do |photo, index| %>
+    <% photoable.photos.each_with_index do |photo, index| %>
       <% if index.zero? %>
         <div class="carousel-item active">
       <% else %>
@@ -19,4 +19,5 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
 
