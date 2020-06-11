@@ -3124,6 +3124,11 @@ gensync@^1.0.0-beta.1:
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.1.tgz#58f4361ff987e5ff6e1e7a210827aa371eaac269"
   integrity sha512-r8EC6NO1sngH/zdD9fiRDLdcgnbayXah+mLgManTaIZJqEC1MZstmnox8KpnI2/fxQwrp5OpCOYWLp4rBl4Jcg==
 
+geolocation-marker@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/geolocation-marker/-/geolocation-marker-2.0.5.tgz#ecdf001a9c043e5cf6f921f46a693d3338ce8e87"
+  integrity sha512-BF+DhAJmcd2ZyAI5TvTgZzToxUFovdtt+Lr7FPCv+uQnv0kAdwkAi2Jr/xW62+YrV5mL1ZR0tEpJfEJ9Piqkiw==
+
 get-caller-file@^2.0.1:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
