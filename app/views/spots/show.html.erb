@@ -9,7 +9,7 @@
         <% @stories.each do |story| %>
           <div class="card">
           <%= "#{story.user.username} left a story:" %>
-          <%= link_to "Follow", user_follows_path(story.user), method: :post %>
+            <%= render 'shared/follow_button', user: story.user %>
           <em><%= story.content %></em>
           </div>
         <% end %>

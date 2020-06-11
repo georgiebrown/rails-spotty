@@ -1,0 +1,12 @@
+<% favourite = spot.favourited(current_user) %>
+<% if favourite.empty? %>
+  <%= link_to spot_favourites_path(spot), method: :post do %>
+    <i class="far fa-heart"></i>
+  <% end %>
+<% else %>
+  <%= link_to favourite_path(favourite.first), method: :delete do %>
+    <i class="fas fa-heart"></i>
+  <% end %>
+<% end %>
+
+

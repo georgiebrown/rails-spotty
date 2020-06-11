@@ -6,9 +6,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
   const markers = JSON.parse(mapElement.dataset.markers);
 
-
-
-
   map.addMarkers(markers);
   if (markers.length === 0) {
     map.setZoom(2);
@@ -18,6 +15,25 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   } else {
     map.fitLatLngBounds(markers);
   }
+
+  if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+ infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
 
   const styles = [
     {
@@ -134,6 +150,8 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   mapTypeId: 'map_style'
   });
   map.setStyle('map_style');
+
+
 
 }
 

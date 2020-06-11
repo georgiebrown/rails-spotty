@@ -20,7 +20,7 @@ class User < ApplicationRecord
     Follow.where("leader_id = #{id}").map { |f| f.follower }
   end
 
-  def following
+  def leaders
     Follow.where("follower_id = #{id}").map { |f| f.leader }
   end
 
@@ -30,5 +30,9 @@ class User < ApplicationRecord
 
   def followed_by_current?
     Follow.exists?("leader_id = #{id} and follower_id = #{current_user.id}")
+  end
+
+  def following(leader)
+    Follow.where("leader_id = #{leader.id} and follower_id = #{id}")
   end
 end
