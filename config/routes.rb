@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   delete 'unfollow/:id', to: 'follows#destroy', as: 'unfollow'
 
-  get 'my_followers', to: 'user#followers', as: 'my_followers'
+  get 'my_followers', to: 'users#followers', as: 'my_followers'
 
-  get 'my_follows', to: 'user#follows', as: 'my_follows'
+  get 'my_follows', to: 'users#follows', as: 'my_follows'
 
   root to: 'pages#home'
 
