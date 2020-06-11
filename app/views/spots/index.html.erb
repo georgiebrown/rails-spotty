@@ -19,7 +19,7 @@
 
             <p><%= spot.location  %><p>
             <p><%= spot.category_id %></p>
-            <%= link_to "Add to your favourite", spot_favourites_path(spot), method: :post, class: "btn btn-primary btn-sm" %></p>
+            <%= render 'shared/favourite_button', spot: spot %>
           </div>
         </div>
       </div>
