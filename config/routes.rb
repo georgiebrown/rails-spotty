@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, :path => 'accounts'
   resources :users, only: [:show] do
-    resources :follows, only: [:create, :destroy]
+    resources :follows, only: [:create]
   end
+  delete 'unfollow/:id', to: 'follows#destroy', as: 'unfollow'
   root to: 'pages#home'
   get 'map', to: 'maps#show'
 
