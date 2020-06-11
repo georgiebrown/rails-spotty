@@ -1,20 +1,27 @@
 <div class="container mt-3">
   <%= render 'shared/carousel', photoable: @spot %>
-  <div class="row justify-content-center">
-     <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= @spot.name  %></h5>
-          <p class="card-text"> Great seafood and drinks</p>
-        </div>
-        <% @stories.each do |story| %>
-          <div class="card">
-          <%= "#{story.user.username} left a story:" %>
-            <%= render 'shared/follow_button', user: story.user %>
-          <em><%= story.content %></em>
-          </div>
-        <% end %>
-      </div>
+  <div class="row text-center flex-column">
+   <div class="card mt-2" style="width: 18rem; margin: 0 auto;">
+    <div class="card-body">
+      <h5 class="card-title"><%= @spot.name  %></h5>
+      <p class="card-text"> Great seafood and drinks</p>
+    </div>
+    <% @stories.each do |story| %>
+    <div class="card mt-2">
+      <%= "#{story.user.username} left a story:" %>
+      <%= render 'shared/follow_button', user: story.user %>
+      <em><%= story.content %></em>
+        <%= link_to "See more", spot_story_path(@spot, story), class: "btn btn-outline-dark btn-sm" %>
+    </div>
+    <% end %>
   </div>
+  <div>
+  <%= link_to "Add your story", new_spot_story_path(@spot), class: "btn btn-dark mt-3 mb-3" %>
+  </div>
+  <div>
+  <%= link_to "Back", spots_path, class: "btn btn-dark mb-5" %>
+  </div>
+</div>
 </div>
 
 
