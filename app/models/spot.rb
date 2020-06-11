@@ -15,4 +15,7 @@ class Spot < ApplicationRecord
 
 
 
+  def favourited(user)
+    Favourite.where("spot_id = #{id} and user_id = #{user.id}")
+  end
 end

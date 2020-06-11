@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm mt-5">
-      <%= simple_form_for @story do |f| %>
+      <%= simple_form_for [@spot, @story] do |f| %>
       <%= f.simple_fields_for :photos do |m| %>
-        <%= f.input :file, as: :file %>
+        <%= m.input :file, as: :file, multiple: true, name: "photo:[:file]" %>
       <% end %>
       <%= f.input :content %>
       <%= f.button :submit, class: "btn btn-dark" %>
