@@ -1,30 +1,72 @@
 <div class="container d-flex justify-content-center">
-  <div class="home-gif">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="img-gif">
+        <div class="rectangle">
+          <div class="text text-center">
+            <h2>WhatSpot?</h2>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <button type="button" class="btn btn-lg btn-primary" disabled><h1>WHAT SPOT ?</h1></button>
 </div>
 
 <div class="home-image">
   <div class="container">
     <div class="row justify-content-center">
-      <div class= "col-sm-12">
-        <h1 class="mt-5">
-          <span class="lfd" style="font-weight: bold; transition-delay: 0s;">S</span>
-          <span class="lfd" style="font-weight: bold; transition-delay: 0.2s;">P</span>
-          <span class="lfd" style="font-weight: bold; transition-delay: 0.4s;">O</span>
-          <span class="lfd" style="font-weight: bold; transition-delay: 0.6s;">T</span>
-          <span class="lfd" style="font-weight: bold; transition-delay: 0.8s;">T</span>
-          <span class="lfd" style="font-weight: bold; transition-delay: 1.0s;">Y</span>
-        </h1>
+      <div class= "col-12 col-md-12 col-lg-4 ">
         <br>
+        <h3 class="text-center">WhatSpot? keep track all your favourite places around the world.</h3>
         <br>
-        <h3 class="text-center">WhatSpot keep track all your favourite places around the world.</h3>
-        <br>
-        <div class="d-flex justify-content-center">
-        <p><%= image_tag "cappadocia.jpg", width: "600px", height:"400px"; %></p>
+        <div class="d-flex flex-wrap justify-content-center">
+        <p><%= image_tag "cappadocia.jpg", width: "500px", height:"300px"; %></p>
+        <p><%= image_tag "travel.jpg", width: "500px", height:"300px"; %></p>
+        </div>
       </div>
-     </div>
-     <%= link_to "ENTER", spots_path, class: "btn btn-dark mb-5" %>
     </div>
   </div>
+    <h1 class="text-center"> <%= link_to "ENTER", spots_path, class: "btn btn-dark mb-5" %></h1>
 </div>
+
+
+
+
+
+<!-- PREVIOUS CODE FOR LANDING PAGE BY KEIICHI
+  <div class="home-image">
+  <div class="container">
+    <div class="row">
+      <div class= "text-center col-sm">
+        <h1 class="mt-5">
+          <span class="lfd" style="transition-delay: 0s;">S</span>
+          <span class="lfd" style="transition-delay: 0.2s;">P</span>
+          <span class="lfd" style="transition-delay: 0.4s;">O</span>
+          <span class="lfd" style="transition-delay: 0.6s;">T</span>
+          <span class="lfd" style="transition-delay: 0.8s;">T</span>
+          <span class="lfd" style="transition-delay: 1.0s;">Y</span>
+        </h1>
+        <br>
+        <h3>
+          <span class="lfd" style="transition-delay: 1.1s;">S</span>
+          <span class="lfd" style="transition-delay: 1.2s;">O</span>
+          <span class="lfd" style="transition-delay: 1.3s;">M</span>
+          <span class="lfd" style="transition-delay: 1.4s;">E</span>
+          <br>
+          <span class="lfd" style="transition-delay: 1.5s;">T</span>
+          <span class="lfd" style="transition-delay: 1.6s;">E</span>
+          <span class="lfd" style="transition-delay: 1.7s;">X</span>
+          <span class="lfd" style="transition-delay: 1.8s;">T</span>
+          <br>
+          <span class="lfd" style="transition-delay: 1.9s;">H</span>
+          <span class="lfd" style="transition-delay: 2.0s;">E</span>
+          <span class="lfd" style="transition-delay: 2.1s;">R</span>
+          <span class="lfd" style="transition-delay: 2.2s;">E</span>
+        </h3>
+        <br>
+         Should be link to Map page -->
+  <!--    <%= link_to "ENTER", map_path, class: "btn btn-dark mb-5", style: "margin-top:200px;" %>
+     </div>
+    </div>
+  </div>
+</div>  -->
