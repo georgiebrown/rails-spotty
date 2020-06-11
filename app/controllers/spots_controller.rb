@@ -16,8 +16,8 @@ class SpotsController < ApplicationController
       infoWindow: { content: render_to_string(partial: "info_window", locals: { spot: spot }) }
       # image_url: helpers.asset_url('icon.png')
     }
+    end
   end
-end
 
   def show
     @spot = Spot.find(params[:id])
@@ -29,6 +29,7 @@ end
   end
 
   def create
+
     @spot = Spot.new(spot_params)
     @user = current_user
       if @spot.save
