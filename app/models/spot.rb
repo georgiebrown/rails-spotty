@@ -11,17 +11,20 @@ class Spot < ApplicationRecord
   validates :category, presence: true
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_location_and_category,
+  against: [ :name, :location ],
+  associated_against: {
+      category: [ :name ]
+    },
+  using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
   # include PgSearch::Model
 
 
-  # pg_search_scope :global_search,
-  #   against: [ :name, :location ],
-  #   associated_against: {
-  #     category: [ :name, :place_type]
-  #   },
-  #   using: {
-  #     tsearch: { prefix: true }
-  #   }
 
   def favourited(user)
     Favourite.where("spot_id = #{id} and user_id = #{user.id}")
