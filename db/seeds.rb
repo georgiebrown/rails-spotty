@@ -99,6 +99,8 @@ shoppingCategory = Category.create!(name: "Shopping", question: "What did you bu
 campingCategory = Category.create!(name: "Camping", question: "What animals did you see", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
 outdoorCategory = Category.create!(name: "Outdoor Activity", question: "What was the best part?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%230062B1&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
 cafeCategory = Category.create!(name: "Cafe", question: "What was the strangest thing on the menu?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+cafeCategory = Category.create!(name: "Other", question: "What is this?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+
 puts "Added Categories!"
 
 puts "Creating Spots..."
