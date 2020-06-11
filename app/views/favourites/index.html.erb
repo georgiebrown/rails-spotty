@@ -1,9 +1,9 @@
-<div class="container col-lg-4 mt-4 mb-3">
+<div class="container col-sm col-lg-4 mt-4 mb-3">
   <div class="text-center">
     <h3>Bucket List</h3>
   </div>
   <div class="row">
-    <div class="card mt-4" style="width: 30rem;">
+    <div class="card justify-content-between">
     <ul class="list-group">
       <% @favourites.each do |favourite| %>
       <li class="list-group-item"> <strong> <%= favourite.spot.category.name %> </strong> : <%=  favourite.spot.name %>
