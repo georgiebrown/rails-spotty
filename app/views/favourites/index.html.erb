@@ -1,13 +1,13 @@
-<div class="container col-lg-4 mt-4 mb-3">
-  <div class="text-center">
+<div class="container col-sm">
+  <div class="text-center mt-3">
     <h3>Bucket List</h3>
   </div>
-  <div class="row">
-    <div class="card mt-4" style="width: 30rem;">
+  <div class="row d-flex justify-content-center">
+    <div class="card">
     <ul class="list-group">
       <% @favourites.each do |favourite| %>
-      <li class="list-group-item"> <strong> <%= favourite.spot.category.name %> </strong> : <%=  favourite.spot.name %>
-       - <%= favourite.spot.location  %>
+      <li class="list-group-item"> <strong> <%= favourite.spot.category.name %> </strong> : <%= link_to favourite.spot.name, spot_path(favourite.spot) %>
+       - <%= favourite.spot.location  %>   <%= link_to "<i class='fa fa-heart'></i>".html_safe, favourite_path(favourite),  method: :delete, data:{ confirm: "Are you sure"}  %>
       </li>
       <% end %>
     </ul>
