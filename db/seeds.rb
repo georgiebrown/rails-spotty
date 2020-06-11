@@ -92,13 +92,13 @@ user_set.each do |follower|
 end
 
 puts "Creating Categories..."
-pubCategory = Category.create!(name: "Pub", question: "What did you have to eat?", icon: "https://cdn.mapmarker.io/api/v1/fa?size=50&icon=fa-beer&color=%23FB9E00&")
-hikeCategory = Category.create!(name: "Hike", question: "How far did you walk?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=50&background=%23194D33&text=H&color=%23FFFFFF&voffset=2&hoffset=1&")
-restaurantCategory = Category.create!(name: "Restaurant", question: "What was the strangest thing your waiter said?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=50&background=%23194D33&text=H&color=%23FFFFFF&voffset=2&hoffset=1&")
-shoppingCategory = Category.create!(name: "Shopping", question: "What did you buy", icon: "https://cdn.mapmarker.io/api/v1/pin?size=50&background=%23194D33&text=H&color=%23FFFFFF&voffset=2&hoffset=1&")
-campingCategory = Category.create!(name: "Camping", question: "What animals did you see", icon: "https://cdn.mapmarker.io/api/v1/fa?size=50&icon=fa-tree&color=%23808900&")
-outdoorCategory = Category.create!(name: "Outdoor Activity", question: "What was the best part?", icon: "https://cdn.mapmarker.io/api/v1/fa?size=50&icon=fa-tree&color=%23808900&")
-cafeCategory = Category.create!(name: "Cafe", question: "What was the strangest thing on the menu?", icon: "https://cdn.mapmarker.io/api/v1/fa?size=50&icon=fa-coffee&color=%23C45100&")
+pubCategory = Category.create!(name: "Pub", question: "What did you have to eat?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+hikeCategory = Category.create!(name: "Hike", question: "How far did you walk?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+restaurantCategory = Category.create!(name: "Restaurant", question: "What was the strangest thing your waiter said?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+shoppingCategory = Category.create!(name: "Shopping", question: "What did you buy", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%2373D8FF&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+campingCategory = Category.create!(name: "Camping", question: "What animals did you see", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+outdoorCategory = Category.create!(name: "Outdoor Activity", question: "What was the best part?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%230062B1&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+cafeCategory = Category.create!(name: "Cafe", question: "What was the strangest thing on the menu?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
 puts "Added Categories!"
 
 puts "Creating Spots..."
