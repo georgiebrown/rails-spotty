@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_020127) do
+ActiveRecord::Schema.define(version: 2020_06_11_071008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,12 +75,12 @@ ActiveRecord::Schema.define(version: 2020_06_11_020127) do
   create_table "spots", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.integer "place_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id"
     t.float "latitude"
     t.float "longitude"
+    t.string "place_id"
     t.index ["category_id"], name: "index_spots_on_category_id"
   end
 

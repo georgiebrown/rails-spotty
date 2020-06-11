@@ -22,11 +22,13 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+map.addMarker({
+  lat: position.coords.latitude,
+  lng: position.coords.longitude
+})
 
- infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
             map.setCenter(pos);
+
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
