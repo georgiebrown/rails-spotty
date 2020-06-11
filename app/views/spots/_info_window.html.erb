@@ -1,8 +1,11 @@
-<h2><%= spot.name %></h2>
+<div class="d-flex justify-content-between">
+<h2><%= spot.name %></h2><div><i class="fas fa-plus"></i><i class="fas fa-heart"></i></div>
+</div>
 <p><%= spot.location %></p>
 <p><%= spot.category.name %></p>
 <% spot.stories.each do |story| %>
-<p><%=story.content %></p>
+<p><%= spot.stories.first.user.first_name %> went here:
+<%=story.content %></p>
 <% end %>
 <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top"%>
 
