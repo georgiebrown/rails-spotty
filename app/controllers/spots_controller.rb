@@ -31,6 +31,12 @@ class SpotsController < ApplicationController
   def create
     @spot = Spot.new(spot_params)
     @user = current_user
+    @photo = Photo.new
+    file = Cloudinary::Uploader.upload(spot_params[:photos])
+    @photo.file.attach(io: file, filename: "#{spot.name}", content_type: 'image/jpg')
+    @photo.photoable = @spot
+    @photo.save!
+
       if @spot.save
         redirect_to spot_path(@spot)
       else
@@ -46,7 +52,7 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:location, :name, :category_id)
+    params.require(:spot).permit(:location, :name, :category_id, :photos)
   end
 
 end
