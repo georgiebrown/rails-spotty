@@ -1,9 +1,10 @@
 
  <%= form_tag spots_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query_attributes],
-    class: "form-control",
-    placeholder: "Find a spot, type a name, location or category"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+    <%= text_field_tag :query,
+      params[:query_attributes],
+      class: "form-control",
+      placeholder: "Find a spot, type a name, location or category"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+

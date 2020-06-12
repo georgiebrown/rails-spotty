@@ -1,14 +1,12 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm mt-5">
-      <%= simple_form_for [@spot, @story] do |f| %>
-      <%= f.simple_fields_for :photos do |m| %>
-        <%= m.input :file, as: :file, multiple: true, name: "photo:[:file]" %>
-      <% end %>
-      <%= f.input :content %>
-      <%= f.button :submit, class: "btn btn-dark" %>
-      <% end %>
-      <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-5 mb-5" %>
-    </div>
-  </div>
+<div class="container mt-5" style="height: 400px;">
+  <%= simple_form_for [@spot, @story] do |f| %>
+  <%= f.simple_fields_for :photos do |m| %>
+  <%= m.input :file, as: :file, :input_html => { multiple: true }, name: "file" %>
+  <% end %>
+  <%= f.input :content %>
+  <%= f.button :submit, class: "btn btn-dark" %>
+  <% end %>
+  <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-5 mb-5" %>
 </div>
+
+

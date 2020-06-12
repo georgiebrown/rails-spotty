@@ -2,11 +2,11 @@
   <% follow = current_user.following(user) %>
   <% if follow.empty? %>
     <%= link_to user_follows_path(user), method: :post, remote: true do %>
-        <i class="far fa-plus-square fa-2x"></i>
+        <i class="far fa-plus-square fa-2x m-1" data-followstate = "not following" data-user_id = <%= user.id.to_s %>  ></i>
     <% end %>
   <% else %>
     <%= link_to unfollow_path(follow.first), method: :delete, remote: true do %>
-        <i class="fas fa-minus-square fa-2x"></i>
+        <i class="fas fa-minus-square fa-2x m-1" data-followstate = "following" data-user_id=<%= user.id.to_s %>  ></i>
     <% end %>
   <% end %>
 <% end %>

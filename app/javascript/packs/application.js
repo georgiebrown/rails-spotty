@@ -2,6 +2,7 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
+import "../controllers"
 
 require("@rails/ujs").start()
 require("turbolinks").start()
@@ -25,6 +26,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { autocomplete } from '../components/autocomplete';
+import FollowButton from "../components/follow_button";
 autocomplete();
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -32,6 +34,16 @@ autocomplete();
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  const initPlugin = (querySelector, Component) => {
+    const els = document.querySelectorAll(querySelector);
+    if (els) {
+      els.forEach(el => {
+        Component(el);
+      });
+    }
+  };
+
+initPlugin(".js-follow-btn", FollowButton);
+
 });
 
-import "controllers"
