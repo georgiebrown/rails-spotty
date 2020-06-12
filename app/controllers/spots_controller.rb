@@ -1,4 +1,6 @@
 class SpotsController < ApplicationController
+  require "open-uri"
+
   def index
     if params[:query].present?
       @spots = Spot.geocoded
@@ -28,6 +30,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
 
+
   def create
     @spot = Spot.new(spot_params)
     @user = current_user
@@ -37,6 +40,16 @@ class SpotsController < ApplicationController
         render 'new'
       end
   end
+    # @spot = Spot.new(spot_params)
+    # @user = current_user
+    # file = URI.open(spot_params[:photos])
+    # @spot.photo.attach(io: file, filename: "#{spot.name}", content_type: 'image/png')
+    #   if @spot.save
+    #     redirect_to spot_path(@spot)
+    #   else
+    #     render 'new'
+    #   end
+
 
   def destroy
     @spot.destroy
@@ -46,7 +59,7 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:location, :name, :category_id)
+    params.require(:spot).permit(:location, :name, :category_id, :photos)
   end
 
 end

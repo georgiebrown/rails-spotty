@@ -6,10 +6,8 @@
       <%= f.input :place_id, input_html: { class: "js-place-id" }  %>
       <%= f.input :name, :label => "Name of spot", input_html: { class: "js-place-name" } %>
       <%= f.input :location, :label => "Location of spot", input_html: { class: "js-place-address" } %>
+      <%= f.input :photos, :label => "Photo of spot", input_html: { class: "js-place-photo" } %>
       <%= f.association :category, :label => "Category" %>
-      <%= f.simple_fields_for :photos do |m| %>
-        <%= m.input :file, as: :file, multiple: true, name: "photo:[:file]" %>
-      <% end %>
       <%= f.button :submit, class: "btn btn-primary" %>
       <% end %>
     </div>
