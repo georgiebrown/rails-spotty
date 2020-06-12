@@ -7,19 +7,19 @@ class StoriesController < ApplicationController
   def new
     @spot = Spot.find(params[:spot_id])
     @story = Story.new
-    3.times do
-      @photo = @story.photos.build
-    end
+    # 3.times do
+    @photo = @story.photos.build
+    # end
   end
 
   def create
     @spot = Spot.find(params[:spot_id])
-    @story = Story.new(story_params.except(:photo))
+    @story = Story.new(story_params.except(:photos_attributes))
     @story.spot = @spot
     @story.user = current_user
 
     if @story.save
-      multiple_photos(story_params, @story)
+      multiple_photos(params[:story][:photos], @story)
       # @photo = Photo.new
       # @photo.file.attach(story_params[:photo][:file])
       # @photo.photoable = @story
@@ -29,11 +29,11 @@ class StoriesController < ApplicationController
       render 'new'
     end
   end
-
+  # params[:story][:photos_attributes]["0"][:file]
   def multiple_photos(story_params, story)
-    story_params[:photos_attributes].keys do |key|
+    story_params[:file].each do |image|
       @photo = Photo.new
-      @photo.file.attach(story_params[:photos_attributes][key][:file])
+      @photo.file.attach(image)
       @photo.photoable = story
       @photo.save!
     end
