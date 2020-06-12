@@ -29,7 +29,6 @@ class SpotsController < ApplicationController
   end
 
   def create
-
     @spot = Spot.new(spot_params)
     @user = current_user
       if @spot.save

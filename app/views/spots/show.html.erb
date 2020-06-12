@@ -4,13 +4,15 @@
    <div class="card mt-2" style="width: 18rem; margin: 0 auto;">
     <div class="card-body">
       <h5 class="card-title"><%= @spot.name  %></h5>
-      <p class="card-text"> Great seafood and drinks</p>
+      <p class="card-text"><%= @spot.location  %> </p>
     </div>
     <% @stories.each do |story| %>
-    <div class="card mt-2">
+    <div class="card mt-2 p-5">
       <%= "#{story.user.username} left a story:" %>
+      <br><br>
       <%= render 'shared/follow_button', user: story.user %>
       <em><%= story.content %></em>
+      <br>
         <%= link_to "See more", spot_story_path(@spot, story), class: "btn btn-outline-dark btn-sm" %>
     </div>
     <% end %>

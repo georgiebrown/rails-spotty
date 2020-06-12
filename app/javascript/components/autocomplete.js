@@ -16,11 +16,9 @@ function autocomplete() {
         document.querySelector(".js-place-id").value = selectedPlace.place_id
         document.querySelector(".js-place-name").value = selectedPlace.name
         document.querySelector(".js-place-address").value = selectedPlace.formatted_address
-
       })
     }
   });
-
 }
 
 export { autocomplete };
