@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { autocomplete } from '../components/autocomplete';
+import FollowButton from "../components/follow_button";
 autocomplete();
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -32,6 +33,17 @@ autocomplete();
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  const initPlugin = (querySelector, Component) => {
+    const els = document.querySelectorAll(querySelector);
+    if (els) {
+      els.forEach(el => {
+        Component(el);
+      });
+    }
+  };
+
+initPlugin(".js-follow-btn", FollowButton);
+
 });
 
 import "controllers"
