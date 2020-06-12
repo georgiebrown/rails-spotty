@@ -11,11 +11,25 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+
+  end
+
+  def update
+
+  end
+
   def followers
     @users = current_user.followers
   end
 
   def follows
     @users = current_user.leaders
+  end
+
+  private
+
+  def user_params
+
   end
 end
