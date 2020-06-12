@@ -35,4 +35,11 @@ class User < ApplicationRecord
   def following(leader)
     Follow.where("leader_id = #{leader.id} and follower_id = #{id}")
   end
+
+  include PgSearch::Model
+  pg_search_scope :user_search,
+    against: [[:username, 'A'], [:first_name, 'B'], [:last_name, 'C']],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
