@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     if params[:query].present?
-      @users = User.where(username: params[:query])
+      @users = User.user_search(params[:query])
     else
       @users = User.all
     end

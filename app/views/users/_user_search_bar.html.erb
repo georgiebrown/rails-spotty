@@ -1,0 +1,12 @@
+<%= form_tag users_path, method: :get do %>
+  <div class="search-form-control form-group">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control string required",
+      placeholder: "Find other users"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" do %>
+      <i class="fas fa-search">
+    <% end %>
+  </div>
+<% end %>
