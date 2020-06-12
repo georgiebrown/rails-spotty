@@ -30,17 +30,26 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
 
+
   def create
     @spot = Spot.new(spot_params)
     @user = current_user
-    file = URI.open(spot_params[:photos])
-    @spot.photo.attach(io: file, filename: "#{spot.name}", content_type: 'image/png')
       if @spot.save
         redirect_to spot_path(@spot)
       else
         render 'new'
       end
   end
+    # @spot = Spot.new(spot_params)
+    # @user = current_user
+    # file = URI.open(spot_params[:photos])
+    # @spot.photo.attach(io: file, filename: "#{spot.name}", content_type: 'image/png')
+    #   if @spot.save
+    #     redirect_to spot_path(@spot)
+    #   else
+    #     render 'new'
+    #   end
+
 
   def destroy
     @spot.destroy
