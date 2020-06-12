@@ -1,12 +1,11 @@
-<div class="card d-flex flex-column align-items-center">
+<div class="card d-flex flex-column align-items-center justify-content-center">
   <%= cl_image_tag user.photo.file.key, height: 200, width: 200, crop: :fill, class: "avatar-large-square", alt: "avatar-large-square" %>
   <div class="card-body">
-    <h5 class="div card-title"></h5>
+    <%= render 'shared/follow_button', user: user %>
     <p class="card-text"><small><%= @user.username %></small></p>
     <p class="card-text"><strong><%= "#{user.first_name} #{user.last_name}" %></strong></p>
     <p class="card-text"><%= user.bio %></p>
-    <%= render 'shared/follow_button', user: user %>
-    <%= link_to "%>
+    <%= link_to "Back", users_path, class: "btn btn-primary" %>
     </div>
   </div>
 </div>
