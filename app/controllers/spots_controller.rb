@@ -1,4 +1,6 @@
 class SpotsController < ApplicationController
+  require "open-uri"
+
   def index
     if params[:query].present?
       @spots = Spot.geocoded
@@ -31,12 +33,8 @@ class SpotsController < ApplicationController
   def create
     @spot = Spot.new(spot_params)
     @user = current_user
-    @photo = Photo.new
-    file = Cloudinary::Uploader.upload(spot_params[:photos])
-    @photo.file.attach(io: file, filename: "#{spot.name}", content_type: 'image/jpg')
-    @photo.photoable = @spot
-    @photo.save!
-
+    file = URI.open(spot_params[:photos])
+    @spot.photo.attach(io: file, filename: "#{spot.name}", content_type: 'image/png')
       if @spot.save
         redirect_to spot_path(@spot)
       else
