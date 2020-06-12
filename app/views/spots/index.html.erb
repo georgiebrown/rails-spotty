@@ -9,9 +9,10 @@
     <div class="mt-5 mb-3">
       <%= render 'search_bar' %>
     </div>
-    <div class="row">
+    <div class="row d-flex justify-content-center">
+      <div class="col-12 col-lg-6">
       <% @spots.each do |spot| %>
-        <div class="col-6 col-md-3 col-lg-3">
+        <!-- <div class="col-6 col-md-3 col-lg-3"> -->
 
           <div class="card mt-3">
             <div class="card-description">
@@ -30,8 +31,9 @@
 
             </div>
           </div>
-        </div>
+        <!-- </div> -->
       <% end %>
+      </div>
     </div>
   </div>
 </div>
