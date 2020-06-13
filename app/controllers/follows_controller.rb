@@ -1,14 +1,19 @@
 class FollowsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def create
     leader = User.find(params[:user_id])
     follow = Follow.new(leader: leader, follower: current_user)
     follow.save
-    redirect_back(fallback_location: spots_path)
+    respond_to do |format|
+      format.html
+      format.json { render json: { follow: follow } }
+    end
   end
 
   def destroy
     follow = Follow.find(params[:id])
     follow.destroy
-    redirect_back(fallback_location: spots_path)
+    # redirect_back(fallback_location: spots_path)
   end
 end
