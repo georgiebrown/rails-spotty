@@ -1,5 +1,4 @@
 class FollowsController < ApplicationController
-  skip_before_action :verify_authenticity_token
 
   def create
     leader = User.find(params[:user_id])
@@ -14,6 +13,5 @@ class FollowsController < ApplicationController
   def destroy
     follow = Follow.find(params[:id])
     follow.destroy
-    # redirect_back(fallback_location: spots_path)
   end
 end

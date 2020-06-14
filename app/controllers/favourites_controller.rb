@@ -16,13 +16,15 @@ class FavouritesController < ApplicationController
     spot = Spot.find(params[:spot_id])
     favourite = Favourite.new(user: current_user, spot: spot)
     favourite.save
-    redirect_back(fallback_location: spots_path)
+    respond_to do |format|
+      format.html
+      format.json { render json: { favourite: favourite } }
+    end
   end
 
   def destroy
     @favourite = Favourite.find(params[:id])
     @favourite.destroy
-    redirect_back(fallback_location: spots_path)
   end
 
   # private
