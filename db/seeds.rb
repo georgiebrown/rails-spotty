@@ -92,16 +92,139 @@ user_set.each do |follower|
 end
 
 puts "Creating Categories..."
-pubCategory = Category.create!(name: "Pub", question: "What did you have to eat?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-hikeCategory = Category.create!(name: "Hike", question: "How far did you walk?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-restaurantCategory = Category.create!(name: "Restaurant", question: "What was the strangest thing your waiter said?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-shoppingCategory = Category.create!(name: "Shopping", question: "What did you buy", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%2373D8FF&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-campingCategory = Category.create!(name: "Camping", question: "What animals did you see", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-outdoorCategory = Category.create!(name: "Outdoor Activity", question: "What was the best part?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%230062B1&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-cafeCategory = Category.create!(name: "Cafe", question: "What was the strangest thing on the menu?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-cafeCategory = Category.create!(name: "Other", question: "What is this?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+pubCategory = Category.create!(name: "Pub", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+hikeCategory = Category.create!(name: "Hike", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+restaurantCategory = Category.create!(name: "Restaurant", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+shoppingCategory = Category.create!(name: "Shopping", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%2373D8FF&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+campingCategory = Category.create!(name: "Camping", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+outdoorCategory = Category.create!(name: "Outdoor Activity", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%230062B1&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+cafeCategory = Category.create!(name: "Cafe", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+otherCategory = Category.create!(name: "Other", question: "What is this?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
 
 puts "Added Categories!"
+pub_questions = []
+
+puts "Creating pub question 1..."
+pubQuestion1 = Question.new(content: "Who did you go with?", category: pubCategory)
+pub_questions << pubQuestion1
+pubQuestion1.save!
+
+puts "Creating pub question 2..."
+pubQuestion2 = Question.new(content: "What did you eat?", category: pubCategory)
+pub_questions << pubQuestion2
+pubQuestion2.save!
+
+puts "Creating pub question 3..."
+pubQuestion3 = Question.new(content: "Best/Worst or wierdest thing that happened?", category: pubCategory)
+pub_questions << pubQuestion3
+pubQuestion3.save!
+
+################################################################################
+################################################################################
+
+hike_questions = []
+puts "Creating hike question 1..."
+hikeQuestion1 = Question.new(content: "Who did you go with?", category: hikeCategory)
+hike_questions << hikeQuestion1
+hikeQuestion1.save!
+
+puts "Creating hike question 2..."
+hikeQuestion2 = Question.new(content: "How far did you walk?", category: hikeCategory)
+hike_questions << hikeQuestion2
+hikeQuestion2.save!
+
+puts "Creating hike question 3..."
+hikeQuestion3 = Question.new(content: "What animals did you see?", category: hikeCategory)
+hike_questions << hikeQuestion3
+hikeQuestion3.save!
+
+################################################################################
+################################################################################
+
+restaurant_questions = []
+
+puts "Creating restaurant question 1..."
+restaurantQuestion1 = Question.new(content: "Who did you go with?", category: restaurantCategory)
+restaurant_questions << restaurantQuestion1
+restaurantQuestion1.save!
+
+puts "Creating restaurant question 2..."
+restaurantQuestion2 = Question.new(content: "What did you eat?", category: restaurantCategory)
+restaurant_questions << restaurantQuestion2
+restaurantQuestion2.save!
+
+puts "Creating restaurant question 3..."
+restaurantQuestion3 = Question.new(content: "Best/Worst or wierdest thing that happened?", category: restaurantCategory)
+restaurant_questions << restaurantQuestion3
+restaurantQuestion3.save!
+
+################################################################################
+################################################################################
+
+shopping_questions = []
+
+puts "Creating restaurant question 1..."
+shoppingQuestion1 = Question.new(content: "What did you buy?", category: shoppingCategory)
+shopping_questions << shoppingQuestion1
+shoppingQuestion1.save!
+
+puts "Creating restaurant question 2..."
+shoppingQuestion2 = Question.new(content: "What was the occasion", category: shoppingCategory)
+shopping_questions << shoppingQuestion2
+shoppingQuestion2.save!
+
+################################################################################
+################################################################################
+
+camping_questions = []
+puts "Creating camping question 1..."
+campingQuestion1 = Question.new(content: "Who did you go with?", category: campingCategory)
+camping_questions << campingQuestion1
+campingQuestion1.save!
+
+puts "Creating camping question 2..."
+campingQuestion2 = Question.new(content: "Where did you sleep?", category: campingCategory)
+camping_questions << campingQuestion2
+campingQuestion2.save!
+
+
+puts "Creating camping question 3..."
+campingQuestion3 = Question.new(content: "What did you do?", category: campingCategory)
+camping_questions << campingQuestion3
+campingQuestion3.save!
+
+################################################################################
+################################################################################
+
+outdoor_questions = []
+
+puts "Creating outdoor question 1..."
+outdoorQuestion1 = Question.new(content: "What did you do?", category: outdoorCategory)
+outdoor_questions << outdoorQuestion1
+outdoorQuestion1.save!
+
+outdoorQuestion2 = Question.new(content: "What was the best thing you did?", category: outdoorCategory)
+outdoor_questions << outdoorQuestion2
+outdoorQuestion2.save!
+
+outdoorQuestion3 = Question.new(content: "Any hot tips?", category: outdoorCategory)
+outdoor_questions << outdoorQuestion3
+outdoorQuestion3.save!
+
+################################################################################
+################################################################################
+
+cafe_questions = []
+
+puts "Creating cafe question 1..."
+cafeQuestion1 = Question.new(content: "How do you take your coffee?", category: cafeCategory)
+cafe_questions << cafeQuestion1
+cafeQuestion1.save!
+
+cafeQuestion3 = Question.new(content: "Did you rate the barrista?", category: cafeCategory)
+cafe_questions << cafeQuestion3
+cafeQuestion3.save!
+
 
 puts "Creating Spots..."
 spot_set = []
