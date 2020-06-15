@@ -6,8 +6,8 @@
     <div class="card">
     <ul class="list-group">
       <% @favourites.each do |favourite| %>
-      <li class="list-group-item"> <strong> <%= favourite.spot.category.name %> </strong> : <%= link_to favourite.spot.name, spot_path(favourite.spot) %>
-       - <%= favourite.spot.location  %>   <%= link_to "<i class='fa fa-heart'></i>".html_safe, favourite_path(favourite),  method: :delete, data:{ confirm: "Are you sure"}  %>
+      <li class="list-group-item js-fav-collapse"> <strong> <%= favourite.spot.category.name %> </strong> : <%= link_to favourite.spot.name, spot_path(favourite.spot) %>
+       - <%= favourite.spot.location  %>   <%= render 'shared/favourite_button', spot: favourite.spot %>
       </li>
       <% end %>
     </ul>
