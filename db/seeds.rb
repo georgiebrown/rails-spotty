@@ -92,14 +92,14 @@ user_set.each do |follower|
 end
 
 puts "Creating Categories..."
-pubCategory = Category.create!(name: "Pub", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-hikeCategory = Category.create!(name: "Hike", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-restaurantCategory = Category.create!(name: "Restaurant", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-shoppingCategory = Category.create!(name: "Shopping", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%2373D8FF&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-campingCategory = Category.create!(name: "Camping", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-outdoorCategory = Category.create!(name: "Outdoor Activity", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%230062B1&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-cafeCategory = Category.create!(name: "Cafe", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-otherCategory = Category.create!(name: "Other", question: "What is this?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+pubCategory = Category.create!(name: "Pub")
+hikeCategory = Category.create!(name: "Hike")
+restaurantCategory = Category.create!(name: "Restaurant")
+shoppingCategory = Category.create!(name: "Shopping")
+campingCategory = Category.create!(name: "Camping")
+outdoorCategory = Category.create!(name: "Outdoor Activity")
+cafeCategory = Category.create!(name: "Cafe")
+otherCategory = Category.create!(name: "Other")
 
 puts "Added Categories!"
 pub_questions = []
