@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_071008) do
+ActiveRecord::Schema.define(version: 2020_06_15_022038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,14 @@ ActiveRecord::Schema.define(version: 2020_06_11_071008) do
     t.index ["photoable_type", "photoable_id"], name: "index_photos_on_photoable_type_and_photoable_id"
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id", null: false
+    t.string "content"
+    t.index ["category_id"], name: "index_questions_on_category_id"
+  end
+
   create_table "spots", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -115,6 +123,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_071008) do
   add_foreign_key "favourites", "users"
   add_foreign_key "follows", "users", column: "follower_id"
   add_foreign_key "follows", "users", column: "leader_id"
+  add_foreign_key "questions", "categories"
   add_foreign_key "spots", "categories"
   add_foreign_key "stories", "spots"
   add_foreign_key "stories", "users"
