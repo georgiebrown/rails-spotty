@@ -236,8 +236,8 @@ spot_set << spot1
 
 puts "Adding Photos to Spot 1..."
 spot1_photo1 = Photo.new
-file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180282/IMG_3116_ixaz21.heic")
-spot1_photo1.file.attach(io: file, filename: "spot1_photo1.jpg", content_type: 'image/jpg')
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592200069/08mhajgd48studt6ypeksexhayme.heic")
+spot1_photo1.file.attach(io: file, filename: "spot1_photo1.jpg", content_type: 'image/heic')
 
 spot1_photo2 = Photo.new
 file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180282/IMG_3116_ixaz21.heic")
@@ -254,8 +254,8 @@ puts "Adding Stories to Spot 1..."
 
 spot1Story1 = Story.new(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
 spot1_story1_photo = Photo.new
-file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180008/IMG_2260_l6oc8l.heic")
-spot1_story1_photo.file.attach(io: file, filename: "spot1_story1_photo.jpg", content_type: 'image/jpg')
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592200069/08mhajgd48studt6ypeksexhayme.heic")
+spot1_story1_photo.file.attach(io: file, filename: "spot1_story1_photo.jpg", content_type: 'image/heic')
 spot1_story1_photo.photoable = spot1Story1
 spot1_story1_photo.save!
 
@@ -281,7 +281,7 @@ spot2 = Spot.new(name: "Wilsons Prom Lighthouse", location: "Wilsons Prom", cate
 spot_set << spot2
 puts "Adding Photos to Spot 2..."
 spot2_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1055/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207623/wilsonsprom_p1g2tx.jpg")
 spot2_photo1.file.attach(io: file, filename: "spot2_photo1.jpg", content_type: 'image/jpg')
 
 spot2_photo2 = Photo.new
@@ -299,21 +299,21 @@ puts "Adding Stories to Spot 2..."
 
 spot2Story1 = Story.new(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 spot2_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1059/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207623/wilsonsprom_p1g2tx.jpg")
 spot2_story1_photo.file.attach(io: file, filename: "spot2_story1_photo.jpg", content_type: 'image/jpg')
 spot2_story1_photo.photoable = spot2Story1
 spot2_story1_photo.save!
 
 spot2Story2 = Story.new(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 spot2_story2_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1060/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207719/466c9021b812de931ff99d7e8cf9f7fc_2048X1152_icundo.jpg")
 spot2_story2_photo.file.attach(io: file, filename: "spot2_story2_photo.jpg", content_type: 'image/jpg')
 spot2_story2_photo.photoable = spot2Story2
 spot2_story2_photo.save!
 
 spot2Story3 = Story.new(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 spot2_story3_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1061/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207720/GettyImages-160518799-800x584_xudtsm.jpg")
 spot2_story3_photo.file.attach(io: file, filename: "spot2_story3_photo.jpg", content_type: 'image/jpg')
 spot2_story3_photo.photoable = spot2Story3
 spot2_story3_photo.save!
@@ -326,7 +326,7 @@ spot3 = Spot.new(name: "RYDER", location: "126 Cubitt St, Cremorne", category: s
 spot_set << spot3
 puts "Adding Photos to Spot 3..."
 spot3_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1049/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207851/c4197b60b1396f6054a0d5f1e88653c5_cuzvov.jpg")
 spot3_photo1.file.attach(io: file, filename: "spot3_photo1.jpg", content_type: 'image/jpg')
 
 spot3_photo2 = Photo.new
@@ -344,7 +344,7 @@ puts "Adding Stories to Spot 3..."
 
 spot3Story1 = Story.new(user: user_set.sample, content: "You have to go shopping here, great Australian label with awesome clothes. I bought a G'day jumper", spot: spot3)
 spot3_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1062/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207851/c4197b60b1396f6054a0d5f1e88653c5_cuzvov.jpg")
 spot3_story1_photo.file.attach(io: file, filename: "spot3_story1_photo.jpg", content_type: 'image/jpg')
 spot3_story1_photo.photoable = spot3Story1
 spot3_story1_photo.save!
