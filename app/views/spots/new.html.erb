@@ -6,7 +6,9 @@
       <%= f.input :place_id, input_html: { class: "js-place-id" }  %>
       <%= f.input :name, :label => "Name of spot", input_html: { class: "js-place-name" } %>
       <%= f.input :location, :label => "Location of spot", input_html: { class: "js-place-address" } %>
-      <%= f.input :photos, :label => "Photo of spot", input_html: { class: "js-place-photo" } %>
+      <%= simple_fields_for :no_model_fields do |n| %>
+      <%= n.input :photo_url, :label => "Photo of spot", input_html: { class: "js-place-photo" } %>
+      <% end %>
       <%= f.association :category, :label => "Category" %>
       <%= f.button :submit, class: "btn btn-primary" %>
       <% end %>
