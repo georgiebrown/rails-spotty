@@ -1,4 +1,5 @@
 const FollowButton = followBtn => {
+  const btnParent = followBtn.closest('.js-follow-collapse')
   const csrfToken = document.querySelector('meta[name=csrf-token]').content
     followBtn.addEventListener("click", () => {
     if (followBtn.dataset.followstate == "following") {
@@ -6,7 +7,7 @@ const FollowButton = followBtn => {
       followBtn.dataset.followstate = "not following";
       followBtn.classList.remove("fas", "fa-minus-square")
       followBtn.classList.add("far", "fa-plus-square")
-
+      if (btnParent) btnParent.style.display = "none";
     } else if (followBtn.dataset.followstate == "not following") {
       fetch (`/users/${followBtn.dataset.user_id}/follows/`, { headers: { "X-CSRF-Token": csrfToken, accept: "application/json" } , method: 'POST' })
       .then(response => response.json())
