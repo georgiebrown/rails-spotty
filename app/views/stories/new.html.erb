@@ -3,8 +3,44 @@
   <%= f.simple_fields_for :photos do |m| %>
   <%= m.input :file, as: :file, :input_html => { multiple: true }, name: "file" %>
   <% end %>
+
+
   <%= f.input :content, label: "#{@spot.category.question}?" %>
+
   <%= f.button :submit, class: "btn btn-dark" %>
   <% end %>
   <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-5 mb-5" %>
 </div>
+
+
+
+    <div class="js-collapsible">
+      <button class="js-collapsible-btn">Collapse!</button>
+      <div class="js-collapsible-content">Some content</div>
+    </div>
+    <hr />
+    <form class="js-account-wizard">
+      <div class="js-account-wizard-step">
+        <label>Who did you go with?</label>
+        <input type="text" />
+      </div>
+      <div class="js-account-wizard-step">
+        <label>What did you see?</label>
+        <textarea></textarea>
+      </div>
+      <div class="js-account-wizard-step">
+        <label>I am human</label>
+        <div class="js-collapsible">
+          <button class="js-collapsible-btn" type="button">
+            Terms and conditions
+          </button>
+          <div class="js-collapsible-content">Some content</div>
+        </div>
+        <input type="checkbox" />
+        <input type="submit" value="Create my account" />
+      </div>
+      <button class="js-account-wizard-prev-btn" type="button">Previous</button>
+
+      <button class="js-account-wizard-next-btn" type="button">Next</button>
+    </form>
+
