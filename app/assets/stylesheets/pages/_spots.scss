@@ -1,0 +1,13 @@
+.horizontal-scrollable > .horizontal-row {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.horizontal-scrollable > .horizontal-row > .col-xs-4 {
+  display: inline-block;
+  float: none;
+}
+
+.horizontal-row{
+  display: flex;
+}
