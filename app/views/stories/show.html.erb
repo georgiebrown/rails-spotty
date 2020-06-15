@@ -13,8 +13,12 @@
     </div>
     <div class="card mt-5 p-3" style="width: 18rem; margin: 0 auto;">
       <div><p>
-        <%= "#{current_user.first_name} says: #{@story.content}" %>
+        <%= "#{@spot.category.question}? #{@story.content}" %>
       </p></div>
+      <div><p>
+        <%= "#{current_user.first_name}" %>
+      </p></div>
+
     </div>
   </div>
     <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-5 mb-5" %>
