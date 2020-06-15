@@ -1,0 +1,39 @@
+.horizontal-scrollable > .horizontal-row {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.horizontal-scrollable > .horizontal-row > .col-xs-4 {
+  display: inline-block;
+  float: none;
+}
+
+.horizontal-row{
+  display: flex;
+}
+
+.horizontal-row > .card{
+  margin-right: 10px;
+  padding: 0;
+}
+
+.card-description p{
+  margin-bottom: 5px;
+}
+
+.index-image > .card-img-top{
+    width: 100%;
+    height: auto;
+}
+
+.card-description .fa-2x{
+  font-size: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .card-description p {
+  font-size: 8px;
+  }
+}
+
+

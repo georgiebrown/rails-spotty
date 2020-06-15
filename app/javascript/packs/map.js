@@ -22,10 +22,10 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-map.addMarker({
-  lat: position.coords.latitude,
-  lng: position.coords.longitude
-})
+        map.addMarker({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      })
 
             map.setCenter(pos);
 
