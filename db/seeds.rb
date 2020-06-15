@@ -113,15 +113,15 @@ spot_set << spot1
 
 puts "Adding Photos to Spot 1..."
 spot1_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1043/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180282/IMG_3116_ixaz21.heic")
 spot1_photo1.file.attach(io: file, filename: "spot1_photo1.jpg", content_type: 'image/jpg')
 
 spot1_photo2 = Photo.new
-file = URI.open("https://picsum.photos/id/1044/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180282/IMG_3116_ixaz21.heic")
 spot1_photo2.file.attach(io: file, filename: "spot1_photo2.jpg", content_type: 'image/jpg')
 
 spot1_photo3 = Photo.new
-file = URI.open("https://picsum.photos/id/1045/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180008/IMG_2260_l6oc8l.heic")
 spot1_photo3.file.attach(io: file, filename: "spot1_photo3.jpg", content_type: 'image/jpg')
 spot1.photos = [spot1_photo1, spot1_photo2, spot1_photo3]
 spot1.save!
@@ -138,14 +138,14 @@ spot1_story1_photo.save!
 
 spot1Story2 = Story.new(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
 spot1_story2_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1057/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180008/IMG_2260_l6oc8l.heic")
 spot1_story2_photo.file.attach(io: file, filename: "spot1_story2_photo.jpg", content_type: 'image/jpg')
 spot1_story2_photo.photoable = spot1Story2
 spot1_story2_photo.save!
 
 spot1Story3 = Story.new(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
 spot1_story3_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1058/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180275/IMG_1660_kkoban.heic")
 spot1_story3_photo.file.attach(io: file, filename: "spot1_story3_photo.jpg", content_type: 'image/jpg')
 spot1_story3_photo.photoable = spot1Story3
 spot1_story3_photo.save!
@@ -252,11 +252,11 @@ file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/6
 spot4_photo1.file.attach(io: file, filename: "spot4_photo1.jpg", content_type: 'image/jpg')
 
 spot4_photo2 = Photo.new
-file = URI.open("https://picsum.photos/id/1053/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_photo2.file.attach(io: file, filename: "spot4_photo2.jpg", content_type: 'image/jpg')
 
 spot4_photo3 = Photo.new
-file = URI.open("https://picsum.photos/id/1054/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_photo3.file.attach(io: file, filename: "spot4_photo3.jpg", content_type: 'image/jpg')
 spot4.photos = [spot4_photo1, spot4_photo2, spot4_photo3]
 spot4.save!
@@ -266,21 +266,21 @@ puts "Adding Stories to Spot 4..."
 
 spot4Story1 = Story.new(user: user_set.sample, content: "Best pub in the North. Had my 25th birthday here. Had the chicken. I spent about $200 because it was my birthday. Yolo. It was sunny", spot: spot4)
 spot4_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1065/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_story1_photo.file.attach(io: file, filename: "spot4_story1_photo.jpg", content_type: 'image/jpg')
 spot4_story1_photo.photoable = spot4Story1
 spot4_story1_photo.save!
 
 spot4Story2 = Story.new(user: user_set.sample, content: "Great pub, not welcome after my friends 25th though.", spot: spot4)
 spot4_story2_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1066/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_story2_photo.file.attach(io: file, filename: "spot4_story2_photo.jpg", content_type: 'image/jpg')
 spot4_story2_photo.photoable = spot4Story2
 spot4_story2_photo.save!
 
 spot4Story3 = Story.new(user: user_set.sample, content: "Love this place, used to work here when I was in uni. Owners are lovely", spot: spot4)
 spot4_story3_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1067/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_story3_photo.file.attach(io: file, filename: "spot4_story3_photo.jpg", content_type: 'image/jpg')
 spot4_story3_photo.photoable = spot4Story3
 spot4_story3_photo.save!
@@ -295,15 +295,15 @@ spot5 = Spot.new(name: "Tipo", location: "Melbourne", category: restaurantCatego
 spot_set << spot5
 puts "Adding Photos to Spot 5..."
 spot5_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1052/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/384c17e06290418805406ff40142422a_z5rqjv.jpg")
 spot5_photo1.file.attach(io: file, filename: "spot5_photo1.jpg", content_type: 'image/jpg')
 
 spot5_photo2 = Photo.new
-file = URI.open("https://picsum.photos/id/1053/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/d8c2eca0a9d251713ed3aedb410628f3_xh7q1n.jpg")
 spot5_photo2.file.attach(io: file, filename: "spot5_photo2.jpg", content_type: 'image/jpg')
 
 spot5_photo3 = Photo.new
-file = URI.open("https://picsum.photos/id/1054/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/d8c2eca0a9d251713ed3aedb410628f3_xh7q1n.jpg")
 spot5_photo3.file.attach(io: file, filename: "spot5_photo3.jpg", content_type: 'image/jpg')
 spot5.photos = [spot5_photo1, spot5_photo2, spot5_photo3]
 spot5.save!
@@ -313,21 +313,21 @@ puts "Adding Stories to Spot 5..."
 
 spot5Story1 = Story.new(user: user_set.sample, content: "I went here with Bella for our birthdays. Best pasta in Melbourne. $$$", spot: spot5)
 spot5_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1065/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/d8c2eca0a9d251713ed3aedb410628f3_xh7q1n.jpg")
 spot5_story1_photo.file.attach(io: file, filename: "spot5_story1_photo.jpg", content_type: 'image/jpg')
 spot5_story1_photo.photoable = spot5Story1
 spot5_story1_photo.save!
 
 spot5Story2 = Story.new(user: user_set.sample, content: "Pasta brings me so much happiness", spot: spot5)
 spot5_story2_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1066/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/d8c2eca0a9d251713ed3aedb410628f3_xh7q1n.jpg")
 spot5_story2_photo.file.attach(io: file, filename: "spot5_story2_photo.jpg", content_type: 'image/jpg')
 spot5_story2_photo.photoable = spot5Story2
 spot5_story2_photo.save!
 
 spot5Story3 = Story.new(user: user_set.sample, content: "Sit at the bar", spot: spot5)
 spot5_story3_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1067/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/d8c2eca0a9d251713ed3aedb410628f3_xh7q1n.jpg")
 spot5_story3_photo.file.attach(io: file, filename: "spot5_story3_photo.jpg", content_type: 'image/jpg')
 spot5_story3_photo.photoable = spot5Story3
 spot5_story3_photo.save!
