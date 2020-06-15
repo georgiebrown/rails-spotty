@@ -16,6 +16,11 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+    avatar = @user.photo
+    avatar.file.detach
+    avatar.file.attach(params[:no_model_fields][:photo_file])
+    @user.photo = [avatar]
+    @user.save
   end
 
   def followers
