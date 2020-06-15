@@ -92,16 +92,139 @@ user_set.each do |follower|
 end
 
 puts "Creating Categories..."
-pubCategory = Category.create!(name: "Pub", question: "What did you have to eat?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-hikeCategory = Category.create!(name: "Hike", question: "How far did you walk?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-restaurantCategory = Category.create!(name: "Restaurant", question: "What was the strangest thing your waiter said?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-shoppingCategory = Category.create!(name: "Shopping", question: "What did you buy", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%2373D8FF&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-campingCategory = Category.create!(name: "Camping", question: "What animals did you see", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-outdoorCategory = Category.create!(name: "Outdoor Activity", question: "What was the best part?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%230062B1&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-cafeCategory = Category.create!(name: "Cafe", question: "What was the strangest thing on the menu?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-cafeCategory = Category.create!(name: "Other", question: "What is this?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+pubCategory = Category.create!(name: "Pub")
+hikeCategory = Category.create!(name: "Hike")
+restaurantCategory = Category.create!(name: "Restaurant")
+shoppingCategory = Category.create!(name: "Shopping")
+campingCategory = Category.create!(name: "Camping")
+outdoorCategory = Category.create!(name: "Outdoor Activity")
+cafeCategory = Category.create!(name: "Cafe")
+otherCategory = Category.create!(name: "Other")
 
 puts "Added Categories!"
+pub_questions = []
+
+puts "Creating pub question 1..."
+pubQuestion1 = Question.new(content: "Who did you go with?", category: pubCategory)
+pub_questions << pubQuestion1
+pubQuestion1.save!
+
+puts "Creating pub question 2..."
+pubQuestion2 = Question.new(content: "What did you eat?", category: pubCategory)
+pub_questions << pubQuestion2
+pubQuestion2.save!
+
+puts "Creating pub question 3..."
+pubQuestion3 = Question.new(content: "Best/Worst or wierdest thing that happened?", category: pubCategory)
+pub_questions << pubQuestion3
+pubQuestion3.save!
+
+################################################################################
+################################################################################
+
+hike_questions = []
+puts "Creating hike question 1..."
+hikeQuestion1 = Question.new(content: "Who did you go with?", category: hikeCategory)
+hike_questions << hikeQuestion1
+hikeQuestion1.save!
+
+puts "Creating hike question 2..."
+hikeQuestion2 = Question.new(content: "How far did you walk?", category: hikeCategory)
+hike_questions << hikeQuestion2
+hikeQuestion2.save!
+
+puts "Creating hike question 3..."
+hikeQuestion3 = Question.new(content: "What animals did you see?", category: hikeCategory)
+hike_questions << hikeQuestion3
+hikeQuestion3.save!
+
+################################################################################
+################################################################################
+
+restaurant_questions = []
+
+puts "Creating restaurant question 1..."
+restaurantQuestion1 = Question.new(content: "Who did you go with?", category: restaurantCategory)
+restaurant_questions << restaurantQuestion1
+restaurantQuestion1.save!
+
+puts "Creating restaurant question 2..."
+restaurantQuestion2 = Question.new(content: "What did you eat?", category: restaurantCategory)
+restaurant_questions << restaurantQuestion2
+restaurantQuestion2.save!
+
+puts "Creating restaurant question 3..."
+restaurantQuestion3 = Question.new(content: "Best/Worst or wierdest thing that happened?", category: restaurantCategory)
+restaurant_questions << restaurantQuestion3
+restaurantQuestion3.save!
+
+################################################################################
+################################################################################
+
+shopping_questions = []
+
+puts "Creating restaurant question 1..."
+shoppingQuestion1 = Question.new(content: "What did you buy?", category: shoppingCategory)
+shopping_questions << shoppingQuestion1
+shoppingQuestion1.save!
+
+puts "Creating restaurant question 2..."
+shoppingQuestion2 = Question.new(content: "What was the occasion", category: shoppingCategory)
+shopping_questions << shoppingQuestion2
+shoppingQuestion2.save!
+
+################################################################################
+################################################################################
+
+camping_questions = []
+puts "Creating camping question 1..."
+campingQuestion1 = Question.new(content: "Who did you go with?", category: campingCategory)
+camping_questions << campingQuestion1
+campingQuestion1.save!
+
+puts "Creating camping question 2..."
+campingQuestion2 = Question.new(content: "Where did you sleep?", category: campingCategory)
+camping_questions << campingQuestion2
+campingQuestion2.save!
+
+
+puts "Creating camping question 3..."
+campingQuestion3 = Question.new(content: "What did you do?", category: campingCategory)
+camping_questions << campingQuestion3
+campingQuestion3.save!
+
+################################################################################
+################################################################################
+
+outdoor_questions = []
+
+puts "Creating outdoor question 1..."
+outdoorQuestion1 = Question.new(content: "What did you do?", category: outdoorCategory)
+outdoor_questions << outdoorQuestion1
+outdoorQuestion1.save!
+
+outdoorQuestion2 = Question.new(content: "What was the best thing you did?", category: outdoorCategory)
+outdoor_questions << outdoorQuestion2
+outdoorQuestion2.save!
+
+outdoorQuestion3 = Question.new(content: "Any hot tips?", category: outdoorCategory)
+outdoor_questions << outdoorQuestion3
+outdoorQuestion3.save!
+
+################################################################################
+################################################################################
+
+cafe_questions = []
+
+puts "Creating cafe question 1..."
+cafeQuestion1 = Question.new(content: "How do you take your coffee?", category: cafeCategory)
+cafe_questions << cafeQuestion1
+cafeQuestion1.save!
+
+cafeQuestion3 = Question.new(content: "Did you rate the barrista?", category: cafeCategory)
+cafe_questions << cafeQuestion3
+cafeQuestion3.save!
+
 
 puts "Creating Spots..."
 spot_set = []
@@ -113,15 +236,15 @@ spot_set << spot1
 
 puts "Adding Photos to Spot 1..."
 spot1_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1043/1000")
-spot1_photo1.file.attach(io: file, filename: "spot1_photo1.jpg", content_type: 'image/jpg')
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592200069/08mhajgd48studt6ypeksexhayme.heic")
+spot1_photo1.file.attach(io: file, filename: "spot1_photo1.jpg", content_type: 'image/heic')
 
 spot1_photo2 = Photo.new
-file = URI.open("https://picsum.photos/id/1044/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180282/IMG_3116_ixaz21.heic")
 spot1_photo2.file.attach(io: file, filename: "spot1_photo2.jpg", content_type: 'image/jpg')
 
 spot1_photo3 = Photo.new
-file = URI.open("https://picsum.photos/id/1045/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180008/IMG_2260_l6oc8l.heic")
 spot1_photo3.file.attach(io: file, filename: "spot1_photo3.jpg", content_type: 'image/jpg')
 spot1.photos = [spot1_photo1, spot1_photo2, spot1_photo3]
 spot1.save!
@@ -131,21 +254,21 @@ puts "Adding Stories to Spot 1..."
 
 spot1Story1 = Story.new(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
 spot1_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1056/1000")
-spot1_story1_photo.file.attach(io: file, filename: "spot1_story1_photo.jpg", content_type: 'image/jpg')
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592200069/08mhajgd48studt6ypeksexhayme.heic")
+spot1_story1_photo.file.attach(io: file, filename: "spot1_story1_photo.jpg", content_type: 'image/heic')
 spot1_story1_photo.photoable = spot1Story1
 spot1_story1_photo.save!
 
 spot1Story2 = Story.new(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
 spot1_story2_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1057/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180008/IMG_2260_l6oc8l.heic")
 spot1_story2_photo.file.attach(io: file, filename: "spot1_story2_photo.jpg", content_type: 'image/jpg')
 spot1_story2_photo.photoable = spot1Story2
 spot1_story2_photo.save!
 
 spot1Story3 = Story.new(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
 spot1_story3_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1058/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180275/IMG_1660_kkoban.heic")
 spot1_story3_photo.file.attach(io: file, filename: "spot1_story3_photo.jpg", content_type: 'image/jpg')
 spot1_story3_photo.photoable = spot1Story3
 spot1_story3_photo.save!
@@ -158,7 +281,7 @@ spot2 = Spot.new(name: "Wilsons Prom Lighthouse", location: "Wilsons Prom", cate
 spot_set << spot2
 puts "Adding Photos to Spot 2..."
 spot2_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1055/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207623/wilsonsprom_p1g2tx.jpg")
 spot2_photo1.file.attach(io: file, filename: "spot2_photo1.jpg", content_type: 'image/jpg')
 
 spot2_photo2 = Photo.new
@@ -176,21 +299,21 @@ puts "Adding Stories to Spot 2..."
 
 spot2Story1 = Story.new(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 spot2_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1059/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207623/wilsonsprom_p1g2tx.jpg")
 spot2_story1_photo.file.attach(io: file, filename: "spot2_story1_photo.jpg", content_type: 'image/jpg')
 spot2_story1_photo.photoable = spot2Story1
 spot2_story1_photo.save!
 
 spot2Story2 = Story.new(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 spot2_story2_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1060/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207719/466c9021b812de931ff99d7e8cf9f7fc_2048X1152_icundo.jpg")
 spot2_story2_photo.file.attach(io: file, filename: "spot2_story2_photo.jpg", content_type: 'image/jpg')
 spot2_story2_photo.photoable = spot2Story2
 spot2_story2_photo.save!
 
 spot2Story3 = Story.new(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 spot2_story3_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1061/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207720/GettyImages-160518799-800x584_xudtsm.jpg")
 spot2_story3_photo.file.attach(io: file, filename: "spot2_story3_photo.jpg", content_type: 'image/jpg')
 spot2_story3_photo.photoable = spot2Story3
 spot2_story3_photo.save!
@@ -203,7 +326,7 @@ spot3 = Spot.new(name: "RYDER", location: "126 Cubitt St, Cremorne", category: s
 spot_set << spot3
 puts "Adding Photos to Spot 3..."
 spot3_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1049/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207851/c4197b60b1396f6054a0d5f1e88653c5_cuzvov.jpg")
 spot3_photo1.file.attach(io: file, filename: "spot3_photo1.jpg", content_type: 'image/jpg')
 
 spot3_photo2 = Photo.new
@@ -221,7 +344,7 @@ puts "Adding Stories to Spot 3..."
 
 spot3Story1 = Story.new(user: user_set.sample, content: "You have to go shopping here, great Australian label with awesome clothes. I bought a G'day jumper", spot: spot3)
 spot3_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1062/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207851/c4197b60b1396f6054a0d5f1e88653c5_cuzvov.jpg")
 spot3_story1_photo.file.attach(io: file, filename: "spot3_story1_photo.jpg", content_type: 'image/jpg')
 spot3_story1_photo.photoable = spot3Story1
 spot3_story1_photo.save!
@@ -248,15 +371,15 @@ spot4 = Spot.new(name: "Marquis Of Lorne", location: "North Fitzroy", category: 
 spot_set << spot4
 puts "Adding Photos to Spot 4..."
 spot4_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1052/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_photo1.file.attach(io: file, filename: "spot4_photo1.jpg", content_type: 'image/jpg')
 
 spot4_photo2 = Photo.new
-file = URI.open("https://picsum.photos/id/1053/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_photo2.file.attach(io: file, filename: "spot4_photo2.jpg", content_type: 'image/jpg')
 
 spot4_photo3 = Photo.new
-file = URI.open("https://picsum.photos/id/1054/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_photo3.file.attach(io: file, filename: "spot4_photo3.jpg", content_type: 'image/jpg')
 spot4.photos = [spot4_photo1, spot4_photo2, spot4_photo3]
 spot4.save!
@@ -266,24 +389,71 @@ puts "Adding Stories to Spot 4..."
 
 spot4Story1 = Story.new(user: user_set.sample, content: "Best pub in the North. Had my 25th birthday here. Had the chicken. I spent about $200 because it was my birthday. Yolo. It was sunny", spot: spot4)
 spot4_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1065/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_story1_photo.file.attach(io: file, filename: "spot4_story1_photo.jpg", content_type: 'image/jpg')
 spot4_story1_photo.photoable = spot4Story1
 spot4_story1_photo.save!
 
 spot4Story2 = Story.new(user: user_set.sample, content: "Great pub, not welcome after my friends 25th though.", spot: spot4)
 spot4_story2_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1066/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_story2_photo.file.attach(io: file, filename: "spot4_story2_photo.jpg", content_type: 'image/jpg')
 spot4_story2_photo.photoable = spot4Story2
 spot4_story2_photo.save!
 
 spot4Story3 = Story.new(user: user_set.sample, content: "Love this place, used to work here when I was in uni. Owners are lovely", spot: spot4)
 spot4_story3_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1067/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_story3_photo.file.attach(io: file, filename: "spot4_story3_photo.jpg", content_type: 'image/jpg')
 spot4_story3_photo.photoable = spot4Story3
 spot4_story3_photo.save!
+
+puts "Finished Spot 4!"
+puts "Adding some favourites"
+
+################################################################################
+################################################################################
+puts "Creating spot 5..."
+spot5 = Spot.new(name: "Tipo", location: "Melbourne", category: restaurantCategory)
+spot_set << spot5
+puts "Adding Photos to Spot 5..."
+spot5_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/384c17e06290418805406ff40142422a_z5rqjv.jpg")
+spot5_photo1.file.attach(io: file, filename: "spot5_photo1.jpg", content_type: 'image/jpg')
+
+spot5_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/d8c2eca0a9d251713ed3aedb410628f3_xh7q1n.jpg")
+spot5_photo2.file.attach(io: file, filename: "spot5_photo2.jpg", content_type: 'image/jpg')
+
+spot5_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/d8c2eca0a9d251713ed3aedb410628f3_xh7q1n.jpg")
+spot5_photo3.file.attach(io: file, filename: "spot5_photo3.jpg", content_type: 'image/jpg')
+spot5.photos = [spot5_photo1, spot5_photo2, spot5_photo3]
+spot5.save!
+
+############################################
+puts "Adding Stories to Spot 5..."
+
+spot5Story1 = Story.new(user: user_set.sample, content: "I went here with Bella for our birthdays. Best pasta in Melbourne. $$$", spot: spot5)
+spot5_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/d8c2eca0a9d251713ed3aedb410628f3_xh7q1n.jpg")
+spot5_story1_photo.file.attach(io: file, filename: "spot5_story1_photo.jpg", content_type: 'image/jpg')
+spot5_story1_photo.photoable = spot5Story1
+spot5_story1_photo.save!
+
+spot5Story2 = Story.new(user: user_set.sample, content: "Pasta brings me so much happiness", spot: spot5)
+spot5_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/d8c2eca0a9d251713ed3aedb410628f3_xh7q1n.jpg")
+spot5_story2_photo.file.attach(io: file, filename: "spot5_story2_photo.jpg", content_type: 'image/jpg')
+spot5_story2_photo.photoable = spot5Story2
+spot5_story2_photo.save!
+
+spot5Story3 = Story.new(user: user_set.sample, content: "Sit at the bar", spot: spot5)
+spot5_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592185100/d8c2eca0a9d251713ed3aedb410628f3_xh7q1n.jpg")
+spot5_story3_photo.file.attach(io: file, filename: "spot5_story3_photo.jpg", content_type: 'image/jpg')
+spot5_story3_photo.photoable = spot5Story3
+spot5_story3_photo.save!
 
 puts "Finished Spot 4!"
 puts "Adding some favourites"

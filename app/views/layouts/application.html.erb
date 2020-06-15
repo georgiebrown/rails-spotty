@@ -12,11 +12,17 @@
   </head>
 
   <body>
+    <% if current_page? root_path %>
+      <div class="landing-page">
+  <% else %>
     <%= render 'shared/navbar' %>
+    <div class="container">
+  <!-- PUT this above the 'yield' -->
+  <% end %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
-    <%= render 'shared/footer'  %>
+
 
 
     <%= javascript_pack_tag "map" , 'data-turbolinks-track': 'reload'%>

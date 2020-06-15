@@ -1,5 +1,5 @@
 const FollowButton = followBtn => {
-  const btnParent = favBtn.closest('.js-follow-collapse')
+  const btnParent = followBtn.closest('.js-follow-collapse')
   const csrfToken = document.querySelector('meta[name=csrf-token]').content
     followBtn.addEventListener("click", () => {
     if (followBtn.dataset.followstate == "following") {
