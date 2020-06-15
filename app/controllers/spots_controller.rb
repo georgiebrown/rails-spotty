@@ -2,11 +2,10 @@ class SpotsController < ApplicationController
   require "open-uri"
 
   def index
+    @spots = following_only
+    @spots = @spots.geocoded
     if params[:query].present?
-      @spots = Spot.geocoded
-      @spots = Spot.search_by_name_location_and_category(params[:query])
-    else
-      @spots = Spot.geocoded
+      @spots = @spots.search_by_name_location_and_category(params[:query])
     end
 
     @spots = @spots.near(params[:query_location], 5) if (params[:query_location].present? && !@spots.empty?)
@@ -30,7 +29,6 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
 
-
   def create
     @spot = Spot.new(spot_params)
     @user = current_user
@@ -50,7 +48,6 @@ class SpotsController < ApplicationController
     #     render 'new'
     #   end
 
-
   def destroy
     @spot.destroy
     redirect_to spots_path
@@ -62,4 +59,8 @@ class SpotsController < ApplicationController
     params.require(:spot).permit(:location, :name, :category_id, :photos)
   end
 
+  # returns spots with associated stories created by users the current user is following
+  def following_only
+    Spot.includes(:stories).where(stories: { user_id: current_user.leaders_ids + [current_user.id] })
+  end
 end
