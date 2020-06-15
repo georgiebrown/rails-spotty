@@ -131,7 +131,7 @@ puts "Adding Stories to Spot 1..."
 
 spot1Story1 = Story.new(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
 spot1_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1056/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180008/IMG_2260_l6oc8l.heic")
 spot1_story1_photo.file.attach(io: file, filename: "spot1_story1_photo.jpg", content_type: 'image/jpg')
 spot1_story1_photo.photoable = spot1Story1
 spot1_story1_photo.save!
@@ -248,7 +248,7 @@ spot4 = Spot.new(name: "Marquis Of Lorne", location: "North Fitzroy", category: 
 spot_set << spot4
 puts "Adding Photos to Spot 4..."
 spot4_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1052/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592179979/694ebbd76a01a7b3c5171e87f33d0205_ujovwg.jpg")
 spot4_photo1.file.attach(io: file, filename: "spot4_photo1.jpg", content_type: 'image/jpg')
 
 spot4_photo2 = Photo.new
@@ -284,6 +284,53 @@ file = URI.open("https://picsum.photos/id/1067/1000")
 spot4_story3_photo.file.attach(io: file, filename: "spot4_story3_photo.jpg", content_type: 'image/jpg')
 spot4_story3_photo.photoable = spot4Story3
 spot4_story3_photo.save!
+
+puts "Finished Spot 4!"
+puts "Adding some favourites"
+
+################################################################################
+################################################################################
+puts "Creating spot 5..."
+spot5 = Spot.new(name: "Tipo", location: "Melbourne", category: restaurantCategory)
+spot_set << spot5
+puts "Adding Photos to Spot 5..."
+spot5_photo1 = Photo.new
+file = URI.open("https://picsum.photos/id/1052/1000")
+spot5_photo1.file.attach(io: file, filename: "spot5_photo1.jpg", content_type: 'image/jpg')
+
+spot5_photo2 = Photo.new
+file = URI.open("https://picsum.photos/id/1053/1000")
+spot5_photo2.file.attach(io: file, filename: "spot5_photo2.jpg", content_type: 'image/jpg')
+
+spot5_photo3 = Photo.new
+file = URI.open("https://picsum.photos/id/1054/1000")
+spot5_photo3.file.attach(io: file, filename: "spot5_photo3.jpg", content_type: 'image/jpg')
+spot5.photos = [spot5_photo1, spot5_photo2, spot5_photo3]
+spot5.save!
+
+############################################
+puts "Adding Stories to Spot 5..."
+
+spot5Story1 = Story.new(user: user_set.sample, content: "I went here with Bella for our birthdays. Best pasta in Melbourne. $$$", spot: spot5)
+spot5_story1_photo = Photo.new
+file = URI.open("https://picsum.photos/id/1065/1000")
+spot5_story1_photo.file.attach(io: file, filename: "spot5_story1_photo.jpg", content_type: 'image/jpg')
+spot5_story1_photo.photoable = spot5Story1
+spot5_story1_photo.save!
+
+spot5Story2 = Story.new(user: user_set.sample, content: "Pasta brings me so much happiness", spot: spot5)
+spot5_story2_photo = Photo.new
+file = URI.open("https://picsum.photos/id/1066/1000")
+spot5_story2_photo.file.attach(io: file, filename: "spot5_story2_photo.jpg", content_type: 'image/jpg')
+spot5_story2_photo.photoable = spot5Story2
+spot5_story2_photo.save!
+
+spot5Story3 = Story.new(user: user_set.sample, content: "Sit at the bar", spot: spot5)
+spot5_story3_photo = Photo.new
+file = URI.open("https://picsum.photos/id/1067/1000")
+spot5_story3_photo.file.attach(io: file, filename: "spot5_story3_photo.jpg", content_type: 'image/jpg')
+spot5_story3_photo.photoable = spot5Story3
+spot5_story3_photo.save!
 
 puts "Finished Spot 4!"
 puts "Adding some favourites"

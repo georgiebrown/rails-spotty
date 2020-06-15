@@ -30,15 +30,19 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
 
-
   def create
     @spot = Spot.new(spot_params)
     @user = current_user
-      if @spot.save
-        redirect_to spot_path(@spot)
-      else
-        render 'new'
-      end
+    # @spot.photo = spot_params[:photos]
+    spot_photo = Photo.new
+    file = URI.open(params[:no_model_fields][:photo_url])
+    spot_photo.file.attach(io: file, filename: "#{@spot.name}", content_type: 'image/jpg')
+    @spot.photos = [spot_photo]
+    if @spot.save
+      redirect_to spot_path(@spot)
+    else
+      render 'new'
+    end
   end
     # @spot = Spot.new(spot_params)
     # @user = current_user
@@ -59,7 +63,7 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:location, :name, :category_id, :photos)
+    params.require(:spot).permit(:location, :name, :category_id)
   end
 
 end
