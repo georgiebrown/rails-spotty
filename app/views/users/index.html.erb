@@ -1,7 +1,9 @@
 <div class="container">
   <%= render 'user_search_bar' %>
   <div class="d-flex justify-content-center align-items-center mb-3">
+    <%= link_to "Followers", "my_followers" , class: "btn btn-primary"%>
     <%= link_to "My details", "users/#{current_user.id}/edit" , class: "btn btn-primary"%>
+    <%= link_to "Follows", "my_follows" , class: "btn btn-primary"%>
   </div>
   <%= render 'user_list', users: @users %>
 </div>
