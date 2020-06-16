@@ -56,5 +56,6 @@ initPlugin(".js-account-wizard", WizardForm);
 initPlugin(".js-collapsible", Collapsible);
 initPlugin(".js-page", SlideMenu);
 initPlugin(".js-map-carousel", MapCarousel);
+
 });
 
