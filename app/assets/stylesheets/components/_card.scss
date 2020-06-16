@@ -43,11 +43,12 @@
 }
 
 .card-button{
-  height: 70px;
+  height: 80px;
   padding:12px;
   text-transform:capitalize;
   &:hover{
   background-color: white;
+  align-items: center;
   }
 
 }
