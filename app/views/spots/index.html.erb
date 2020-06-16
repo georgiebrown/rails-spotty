@@ -7,11 +7,11 @@
     height: 600px;"
     data-markers="<%= @markers.to_json %>">
   </div>
-
   <div class="horizontal-scrollable">
      <div class="horizontal-row">
         <% @spots.each do |spot| %>
           <!-- <div class="col-6 col-md-3 col-lg-3"> -->
+
           <div class="card mt-3">
             <div class="index-image">
               <% if spot.photos.first %>
