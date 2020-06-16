@@ -3,24 +3,20 @@ $whitey: #f0f0f0;
 $snap: cubic-bezier(1.000, 0.005, 0.240, 1.000);
 $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 
-// * {
-//   box-sizing: border-box;
-// }
-html,
-body {
-  height: 100%;
-  overflow: hidden;
-}
+
 .page {
-  height: 100%;
   background-color: $whitey;
+  overflow-x: hidden;
 }
 .content {
-  // essential
   transition: transform .7s $snap;
   background-color: $white;
 }
-
+.content-inner {
+  padding-top: 45px;
+  height: 100vh;
+  overflow-y: scroll;
+}
 
 /* basically all styling from now on */
 .menu_toggle {
@@ -62,12 +58,11 @@ body {
 }
 .menu_items {
   position: fixed;
-  bottom: 10%;
+  bottom: 25%;
   left: 50px;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  transform: translate(0%, -50%);
   li {
     height: 60px;
     margin-bottom: 30px;
@@ -89,18 +84,8 @@ body {
 /* Let's open up the menu */
 .shazam {
   .content {
-    transform: scale(0.5) translate(+100%);
+    transform: scale(0.8) translate(+65%);
   }
-
-  // this will show hidden content overflow when rotated,
-  // but will result in a jump, if you've already scrolled down the content
-  // plus, you will lose your current reading position
-  // fixable with JS, not gonna bother
-
-  /*.content_inner {
-    height: 100%;
-  }*/
-
   .menu_open {
     transform: rotate(-20deg);
   }

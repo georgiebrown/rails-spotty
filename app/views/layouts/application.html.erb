@@ -23,7 +23,9 @@
       <%= render 'shared/sidebar_menu' %>
       <%= render 'shared/flashes' %>
       <main class="content js-content">
-        <%= yield %>
+        <div class="content-inner">
+          <%= yield %>
+        </div>
       </main>
     </div>
   <% end %>

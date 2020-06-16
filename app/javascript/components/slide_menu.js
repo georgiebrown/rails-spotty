@@ -4,7 +4,7 @@ const SlideMenu = page => {
     page.classList.toggle('shazam');
   });
   document.querySelector('.js-content').addEventListener("click", () => {
-    page.classlist.remove('shazam');
+    page.classList.remove('shazam');
   });
 };
 
