@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
   def index
     if params[:query].present?
       @users = User.user_search(params[:query])
@@ -8,15 +9,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-
   end
 
   def update
-
+    @user.update(user_params.except(:photos_attributes))
+    avatar = @user.photo
+    avatar.file.detach
+    avatar.file.attach(user_params[:file])
+    @user.photo = avatar
+    @user.save
   end
 
   def followers
@@ -30,6 +34,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
+    params.require(:user).permit(:first_name, :last_name, :bio, photos_attributes: [:file])
+  end
 
+  def set_user
+    @user = User.find(params[:id])
   end
 end

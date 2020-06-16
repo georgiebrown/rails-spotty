@@ -17,15 +17,20 @@
   <body>
     <% if current_page? root_path %>
       <div class="landing-page">
-  <% else %>
-    <%= render 'shared/navbar' %>
-    <div class="container">
-  <!-- PUT this above the 'yield' -->
-  <% end %>
-    <%= render 'shared/flashes' %>
-
-    <%= yield %>
-
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+      </div>
+    <% else %>
+      <div class="page js-page">
+        <%= render 'shared/sidebar_menu' %>
+        <%= render 'shared/flashes' %>
+        <main class="content js-content">
+          <div class="content-inner">
+            <%= yield %>
+          </div>
+        </main>
+      </div>
+    <% end %>
     <%= javascript_pack_tag "map" , 'data-turbolinks-track': 'reload'%>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
