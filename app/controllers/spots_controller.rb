@@ -11,7 +11,7 @@ class SpotsController < ApplicationController
     @spots = @spots.near(params[:query_location], 5) if (params[:query_location].present? && !@spots.empty?)
     # spots.near(location search)
     @markers = @spots.map do |spot| {
-      icon: spot.category.icon,
+      icon: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592222357/map-pin-icon-isolated-on-transparent-background-vector-23606168_ufqzll.png",
       lat: spot.latitude,
       lng: spot.longitude,
       infoWindow: { content: render_to_string(partial: "info_window", locals: { spot: spot }) }

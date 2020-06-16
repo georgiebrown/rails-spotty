@@ -1,16 +1,10 @@
-<div class="container">
-<div class="d-flex justify-content-between">
-<%= render 'shared/favourite_button', spot: spot %>
-</div>
-</div>
-<p><%= spot.location %></p>
-<p><%= spot.category.name %></p>
-<% spot.stories.each do |story| %>
-<p><%= spot.stories.first.user.first_name %> went here:
-<%=story.content %></p>
-<% end %>
-<% if spot.photos.first %>
-<%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top waves-light waves-effect"%>
-<% end %>
+<div class="container map-info-window">
+  <div class="d-flex justify-content-between">
+  <%= render 'shared/favourite_button', spot: spot %>
+  </div>
+  <%= link_to spot.name, spot_path(spot) %>
+
+  <p><%= spot.location %></p>
+  <p><%= spot.category.name %></p>
 </div>
 
