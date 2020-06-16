@@ -15,7 +15,7 @@
           <div class="card mt-3">
             <div class="index-image">
               <% if spot.photos.first %>
-                <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top"%>
+                <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top waves-light waves-effect"%>
               <% end %>
             </div>
             <div class="card-description p-1 d-flex flex-wrap flex-column">
@@ -30,5 +30,5 @@
       </div>
   </div>
 </div>
-<%= render 'shared/footer' %>
+
 
