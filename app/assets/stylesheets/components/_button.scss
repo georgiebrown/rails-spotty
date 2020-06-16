@@ -9,8 +9,8 @@
   display: flex;
   padding: 12px;
   background: rgb(4,3,14);
-  background: linear-gradient(180deg, rgba(4,3,14,0.758140756302521) 0%, rgba(108,200,229,0.18951330532212884) 83%, rgba(255,255,255,0) 100%);
-  }
+  background: linear-gradient(180deg, rgba(4, 3, 14, 0.53) 0%, rgba(108, 200, 229, 0.189513) 83%, rgba(255, 255, 255, 0) 100%);
+}
 
 .fa-heart{
   color: #6CC8E5;
@@ -25,4 +25,19 @@
   right: 0;
   z-index:10;
   position:fixed;
+}
+
+.add-spot-button{
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+  position: fixed;
+}
+
+.spot-button-container > a{
+  font-size: 10px;
+}
+
+.hide-me{
+  display:none;
 }
