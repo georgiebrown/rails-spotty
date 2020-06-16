@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+
+.story-cover {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  color: white;
+}
+.story-content-scroller {
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 1;
+}
+.story-content {
+  margin-top: 100vh;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.15);
+}

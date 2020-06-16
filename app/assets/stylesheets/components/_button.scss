@@ -1,0 +1,16 @@
+.button-bar{
+  width: 100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  z-index:10;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 12px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.24273459383753504) 0%, rgba(0,0,0,0.4051995798319328) 100%, rgba(0,0,0,0.6629026610644257) 100%);
+}
+
+.fa-heart{
+  color: #6CC8E5;
+}
