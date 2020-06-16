@@ -14,7 +14,6 @@ class SpotsController < ApplicationController
       icon: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592222357/map-pin-icon-isolated-on-transparent-background-vector-23606168_ufqzll.png",
       lat: spot.latitude,
       lng: spot.longitude,
-      infoWindow: { content: render_to_string(partial: "info_window", locals: { spot: spot }) }
       }
     end
   end
