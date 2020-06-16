@@ -6,7 +6,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
   const markers = JSON.parse(mapElement.dataset.markers);
 
-  map.addMarkers(markers);
+
   if (markers.length === 0) {
     map.setZoom(2);
   } else if (markers.length === 1) {
@@ -14,11 +14,20 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     map.setZoom(14);
   } else {
     map.fitLatLngBounds(markers);
-
   }
 
+  // Add Event listeners to markers
+  markers.forEach((marker, index) => {
+    map.addMarker({
+      ...marker,
+      click: function(e) {
+        window.setCarouselPos(index);
+      }
+    });
+  });
+
   window.selectMapMarker = (markerIndex) => {
-    console.log("selectMarker" + markerIndex);
+    // console.log("selectMarker" + markerIndex);
     map.setCenter(markers[markerIndex].lat, markers[markerIndex].lng);
     map.setZoom(14);
   }
