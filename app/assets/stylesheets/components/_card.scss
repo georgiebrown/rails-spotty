@@ -39,5 +39,15 @@
   padding: 0;
   background-color:white;
   border-bottom: none;
+  height: 100px;
+}
+
+.card-button{
+  height: 70px;
+  padding:12px;
+  text-transform:capitalize;
+  &:hover{
+  background-color: white;
+  }
 
 }

@@ -2,8 +2,8 @@ class Story < ApplicationRecord
   # Associations
   belongs_to :user
   belongs_to :spot
+  belongs_to :question
   has_many :photos, as: :photoable
-
   # accepts_nested_attributes_for :photos
 
   # Validations

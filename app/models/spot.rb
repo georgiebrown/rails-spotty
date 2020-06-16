@@ -5,6 +5,7 @@ class Spot < ApplicationRecord
   belongs_to :category
   has_many :photos, as: :photoable
   has_many :favourites
+  has_many :questions, through: :category
   # Validations
   validates :name, presence: true
   validates :location, presence: true
