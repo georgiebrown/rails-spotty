@@ -24,9 +24,8 @@
             <% end %>
            </div>
           <div class="card-description p-3 d-flex flex-wrap flex-column">
-            <p><%= link_to spot.name, spot_path(spot) %></p>
-             <%= render 'shared/favourite_button', spot: spot %>
-            <p><%= spot.location  %><p>
+            <h5><%= link_to spot.name, spot_path(spot) %></h5>
+            <p><%= spot.location %><p>
             <p><%= spot.category.name %></p>
           </div>
 
