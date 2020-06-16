@@ -15,8 +15,7 @@ class SpotsController < ApplicationController
       lat: spot.latitude,
       lng: spot.longitude,
       infoWindow: { content: render_to_string(partial: "info_window", locals: { spot: spot }) }
-      # image_url: helpers.asset_url('icon.png')
-    }
+      }
     end
   end
 
