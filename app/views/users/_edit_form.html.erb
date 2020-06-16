@@ -1,0 +1,29 @@
+<%= simple_form_for user, defaults: { label: false, highlighting: false } do |f| %>
+<div class="row justify-content-center">
+  <div class="col">
+    <%= f.input :first_name,  placeholder: "First Name"  %>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col">
+    <%= f.input :last_name, placeholder: "Last Name" %>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col">
+    <%= f.input :bio, as: :text, input_html: {rows: 6}, placeholder: "Tell us a bit about you..." %>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <%= f.simple_fields_for :photo do |m| %>
+      <%= m.input :file, as: :file, name: "file" , label: "Change Avatar" %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col d-flex justify-content-center">
+    <%= f.button :submit , "Save!" , class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>

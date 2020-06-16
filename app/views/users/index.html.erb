@@ -1,2 +1,7 @@
-<%= render 'user_search_bar' %>
-<%= render 'user_list', users: @users %>
+<div class="container">
+  <%= render 'user_search_bar' %>
+  <div class="d-flex justify-content-center align-items-center mb-3">
+    <%= link_to "My details", "users/#{current_user.id}/edit" , class: "btn btn-primary"%>
+  </div>
+  <%= render 'user_list', users: @users %>
+</div>

@@ -1,5 +1,5 @@
 <div class="card d-flex flex-column align-items-center justify-content-center">
-  <%= cl_image_tag user.photo.file.key, height: 200, width: 200, crop: :fill, class: "avatar-large-square", alt: "avatar-large-square" %>
+  <%= cl_image_tag user.photo.file.key, height: 200, width: 200, crop: :fill, class: "avatar-large-circle", alt: "avatar-large-square" %>
   <div class="card-body">
     <div class="d-flex align-items-center">
     <%= render 'shared/follow_button', user: user %>
