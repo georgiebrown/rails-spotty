@@ -8,6 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<%=ENV['GOOGLE_API_SERVER_KEY']%>" data-turbolinks-eval="false"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
@@ -16,15 +17,20 @@
   <body>
     <% if current_page? root_path %>
       <div class="landing-page">
-  <% else %>
-    <%= render 'shared/navbar' %>
-    <div class="container">
-  <!-- PUT this above the 'yield' -->
-  <% end %>
-    <%= render 'shared/flashes' %>
-
-    <%= yield %>
-
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+      </div>
+    <% else %>
+      <div class="page js-page">
+        <%= render 'shared/sidebar_menu' %>
+        <%= render 'shared/flashes' %>
+        <main class="content js-content">
+          <div class="content-inner">
+            <%= yield %>
+          </div>
+        </main>
+      </div>
+    <% end %>
     <%= javascript_pack_tag "map" , 'data-turbolinks-track': 'reload'%>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
