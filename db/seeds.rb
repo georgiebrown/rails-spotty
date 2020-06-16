@@ -93,14 +93,14 @@ user_set.each do |follower|
 end
 
 puts "Creating Categories..."
-pubCategory = Category.create!(name: "Pub", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-hikeCategory = Category.create!(name: "Hike", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-restaurantCategory = Category.create!(name: "Restaurant", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-shoppingCategory = Category.create!(name: "Shopping", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%2373D8FF&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-campingCategory = Category.create!(name: "Camping", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23194D33&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-outdoorCategory = Category.create!(name: "Outdoor Activity", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%230062B1&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-cafeCategory = Category.create!(name: "Cafe", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
-otherCategory = Category.create!(name: "Other", question: "What is this?", icon: "https://cdn.mapmarker.io/api/v1/pin?size=60&background=%23FCC400&icon=fa-star&color=%23FFFFFF&voffset=1&hoffset=1&")
+pubCategory = Category.create!(name: "Pub")
+hikeCategory = Category.create!(name: "Hike")
+restaurantCategory = Category.create!(name: "Restaurant")
+shoppingCategory = Category.create!(name: "Shopping")
+campingCategory = Category.create!(name: "Camping")
+outdoorCategory = Category.create!(name: "Outdoor Activity")
+cafeCategory = Category.create!(name: "Cafe")
+otherCategory = Category.create!(name: "Other")
 
 puts "Added Categories!"
 pub_questions = []
@@ -240,6 +240,7 @@ spot1_photo1 = Photo.new
 file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592265682/Howqua-River-Walk-RC.1600x900-1100x619_zzj3zg.jpg")
 spot1_photo1.file.attach(io: file, filename: "spot1_photo1.jpg", content_type: 'image/jpg')
 
+
 spot1_photo2 = Photo.new
 file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592265682/51890742_zumoky.jpg")
 spot1_photo2.file.attach(io: file, filename: "spot1_photo2.jpg", content_type: 'image/jpg')
@@ -282,7 +283,7 @@ spot2 = Spot.new(name: "Wilsons Prom Lighthouse", location: "Wilsons Prom", cate
 spot_set << spot2
 puts "Adding Photos to Spot 2..."
 spot2_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1055/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207623/wilsonsprom_p1g2tx.jpg")
 spot2_photo1.file.attach(io: file, filename: "spot2_photo1.jpg", content_type: 'image/jpg')
 
 spot2_photo2 = Photo.new
@@ -300,21 +301,21 @@ puts "Adding Stories to Spot 2..."
 
 spot2Story1 = Story.new(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 spot2_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1059/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207623/wilsonsprom_p1g2tx.jpg")
 spot2_story1_photo.file.attach(io: file, filename: "spot2_story1_photo.jpg", content_type: 'image/jpg')
 spot2_story1_photo.photoable = spot2Story1
 spot2_story1_photo.save!
 
 spot2Story2 = Story.new(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 spot2_story2_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1060/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207719/466c9021b812de931ff99d7e8cf9f7fc_2048X1152_icundo.jpg")
 spot2_story2_photo.file.attach(io: file, filename: "spot2_story2_photo.jpg", content_type: 'image/jpg')
 spot2_story2_photo.photoable = spot2Story2
 spot2_story2_photo.save!
 
 spot2Story3 = Story.new(user: user_set.sample, content: "20km there and back. Saw a Koala and a kangaroo. Stayed the night in the lighthouse which was a real experience.  ", spot: spot2)
 spot2_story3_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1061/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207720/GettyImages-160518799-800x584_xudtsm.jpg")
 spot2_story3_photo.file.attach(io: file, filename: "spot2_story3_photo.jpg", content_type: 'image/jpg')
 spot2_story3_photo.photoable = spot2Story3
 spot2_story3_photo.save!
@@ -327,7 +328,7 @@ spot3 = Spot.new(name: "RYDER", location: "126 Cubitt St, Cremorne", category: s
 spot_set << spot3
 puts "Adding Photos to Spot 3..."
 spot3_photo1 = Photo.new
-file = URI.open("https://picsum.photos/id/1049/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207851/c4197b60b1396f6054a0d5f1e88653c5_cuzvov.jpg")
 spot3_photo1.file.attach(io: file, filename: "spot3_photo1.jpg", content_type: 'image/jpg')
 
 spot3_photo2 = Photo.new
@@ -345,7 +346,7 @@ puts "Adding Stories to Spot 3..."
 
 spot3Story1 = Story.new(user: user_set.sample, content: "You have to go shopping here, great Australian label with awesome clothes. I bought a G'day jumper", spot: spot3)
 spot3_story1_photo = Photo.new
-file = URI.open("https://picsum.photos/id/1062/1000")
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592207851/c4197b60b1396f6054a0d5f1e88653c5_cuzvov.jpg")
 spot3_story1_photo.file.attach(io: file, filename: "spot3_story1_photo.jpg", content_type: 'image/jpg')
 spot3_story1_photo.photoable = spot3Story1
 spot3_story1_photo.save!
