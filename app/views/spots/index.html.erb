@@ -9,12 +9,12 @@
     <div class="mt-5 mb-3">
       <%= render 'search_bar' %>
     </div>
-    <div class="row d-flex justify-content-center">
-      <div class="col-12 col-lg-6">
-      <% @spots.each do |spot| %>
-        <!-- <div class="col-6 col-md-3 col-lg-3"> -->
-          <div class="card mt-3">
-            <div class="card-description">
+  <div class="horizontal-scrollable">
+     <div class="horizontal-row">
+        <% @spots.each do |spot| %>
+          <!-- <div class="col-6 col-md-3 col-lg-3"> -->
+          <div class="card scrolling mt-3">
+            <div class="index-image">
               <% if spot.photos.first %>
                 <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top"%>
               <% end %>
