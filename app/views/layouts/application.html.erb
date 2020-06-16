@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="/path/to/waves.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<%=ENV['GOOGLE_API_SERVER_KEY']%>" data-turbolinks-eval="false"></script>
@@ -19,10 +19,9 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
-    <%= render 'shared/footer'  %>
 
 
     <%= javascript_pack_tag "map" , 'data-turbolinks-track': 'reload'%>
-    <script type="text/javascript" src="/path/to/waves.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
