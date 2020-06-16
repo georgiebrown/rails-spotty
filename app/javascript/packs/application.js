@@ -35,6 +35,7 @@ import MapCarousel from "../components/map_carousel"
 import { initWaveEffect } from "../components/click_effect";
 
 
+
 autocomplete();
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -55,6 +56,7 @@ initOwlCarousel();
 initPlugin(".js-account-wizard", WizardForm);
 initPlugin(".js-collapsible", Collapsible);
 initPlugin(".js-map-carousel", MapCarousel);
+
 
 // initWaveEffect();
 
