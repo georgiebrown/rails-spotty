@@ -30,6 +30,12 @@
   font-size: 10px;
 }
 
+#wrapper {
+  position: relative;
+  max-width: 100%;
+ }
+#over_map { position: absolute; bottom: 5px; left: 0px; z-index: 99; }
+
 @media screen and (max-width: 700px) {
   .card-description p {
   font-size: 8px;
