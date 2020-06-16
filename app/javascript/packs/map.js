@@ -14,6 +14,14 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     map.setZoom(14);
   } else {
     map.fitLatLngBounds(markers);
+
+  }
+
+  window.selectMapMarker = (markerIndex) => {
+    console.log("selectMarker" + markerIndex);
+    map.setCenter(markers[markerIndex].lat, markers[markerIndex].lng);
+    map.setZoom(14);
+
   }
 
   if (navigator.geolocation) {
