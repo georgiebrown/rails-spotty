@@ -37,15 +37,17 @@
       </div>
       <em><%= story.content %></em>
       <br>
-      <%= link_to "See more", spot_story_path(@spot, story), class: "btn btn-outline-dark btn-sm" %>
+
+        <%= link_to "See more", spot_story_path(@spot, story), class: "btn btn-outline-dark btn-sm waves-light waves-effect" %>
     </div>
     <% end %>
   </div>
   <div>
-    <%= link_to "Add your story", new_spot_story_path(@spot), class: "btn btn-dark mt-3 mb-3" %>
+
+  <%= link_to "Add your story", new_spot_story_path(@spot), class: "btn btn-dark mt-3 mb-3 waves-light waves-effect" %>
   </div>
   <div>
-    <%= link_to "Back", spots_path, class: "btn btn-dark mb-5" %>
+  <%= link_to "Back", spots_path, class: "btn btn-dark mb-5 waves-light waves-effect" %>
   </div>
 </div>
 </div>
