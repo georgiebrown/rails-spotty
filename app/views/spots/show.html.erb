@@ -20,7 +20,6 @@
       <%= cl_image_tag photo.file.key, height: 300, width: 300, crop: :fill, class: "d-block w-100" %>
       <% end %>
     </div>
-
   </div>
 </div>
 
@@ -28,11 +27,17 @@
 <div class="accordion" id="accordionStories">
   <% @stories.each_with_index do |story, index| %>
   <div class="card">
-    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+    <button class="btn btn-link card-button" type="button" data-toggle="collapse" data-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+
       <div class="card-header" id="heading<%= index %>">
-        <h4 class="mb-0">
-          <%= link_to "#{story.user.username.capitalize}", user_path(story.user) %>'s<p class="ml-1">Story</p>
+
+        <div>
+          <h4 class="mb-0">
+          <%= link_to "#{story.user.username}", user_path(story.user) %>'s
+          <h4 class="ml-1">Story</h4>
         </h4>
+
+        </div>
       </div>
     </button>
 
@@ -42,16 +47,13 @@
       </div>
     </div>
 
-  <div>
-  <%= link_to "Add your story", new_spot_story_path(@spot), class: "btn btn-dark mt-3 mb-3 waves-light waves-effect" %>
-  </div>
-
-
   </div>
   <% end %>
 
 </div>
-</div>
 
+<div class=text-center>
+  <%= link_to "Add your story", new_spot_story_path(@spot), class: "btn btn-dark mt-3 mb-3 waves-light waves-effect" %>
+</div>
 
 

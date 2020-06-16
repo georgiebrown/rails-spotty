@@ -37,7 +37,7 @@ import { initWaveEffect } from "../components/click_effect";
 
 autocomplete();
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/inist_select2';
+import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Marty Magic
@@ -56,6 +56,6 @@ initPlugin(".js-account-wizard", WizardForm);
 initPlugin(".js-collapsible", Collapsible);
 initPlugin(".js-page", SlideMenu);
 initPlugin(".js-map-carousel", MapCarousel);
-
+initSelect2();
 });
 
