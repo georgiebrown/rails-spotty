@@ -7,6 +7,7 @@ User.destroy_all
 Spot.destroy_all
 Story.destroy_all
 Category.destroy_all
+Question.destroy_all
 puts "Clean!"
 
 puts 'Creating Users...'
@@ -236,11 +237,7 @@ spot_set << spot1
 
 puts "Adding Photos to Spot 1..."
 spot1_photo1 = Photo.new
-<<<<<<< Updated upstream
-file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180282/IMG_3116_ixaz21.heic")
-=======
 file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592265682/Howqua-River-Walk-RC.1600x900-1100x619_zzj3zg.jpg")
->>>>>>> Stashed changes
 spot1_photo1.file.attach(io: file, filename: "spot1_photo1.jpg", content_type: 'image/jpg')
 
 spot1_photo2 = Photo.new
@@ -258,13 +255,8 @@ puts "Adding Stories to Spot 1..."
 
 spot1Story1 = Story.new(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
 spot1_story1_photo = Photo.new
-<<<<<<< Updated upstream
-file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592180008/IMG_2260_l6oc8l.heic")
-spot1_story1_photo.file.attach(io: file, filename: "spot1_story1_photo.jpg", content_type: 'image/jpg')
-=======
 file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592265682/Howqua-River-Walk-RC.1600x900-1100x619_zzj3zg.jpg")
-spot1_story1_photo.file.attach(io: file, filename: "spot1_story1_photo.jpg", content_type: 'image/heic')
->>>>>>> Stashed changes
+spot1_story1_photo.file.attach(io: file, filename: "spot1_story1_photo.jpg", content_type: 'image/jpg')
 spot1_story1_photo.photoable = spot1Story1
 spot1_story1_photo.save!
 
@@ -511,6 +503,98 @@ spot6_story3_photo.photoable = spot6Story3
 spot6_story3_photo.save!
 
 puts "Finished Spot 6!"
+
+################################################################################
+################################################################################
+puts "Creating spot 7..."
+spot7 = Spot.new(name: "Fairfield Boat House", location: "Fairfield Park Dr, Fairfield VIC 3078", category: outdoorCategory)
+spot_set << spot7
+puts "Adding Photos to Spot 7..."
+spot7_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592269599/Fairfield_Boathouse_Mamma_Knows_North_1_of_10_czpax2.jpg")
+spot7_photo1.file.attach(io: file, filename: "spot7_photo1.jpg", content_type: 'image/jpg')
+
+spot7_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592269641/main_dgc3gd.png")
+spot7_photo2.file.attach(io: file, filename: "spot7_photo2.jpg", content_type: 'image/jpg')
+
+spot7_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592269644/fairfield-boat-house-yarra-river11_s2z1xy.jpg")
+spot7_photo3.file.attach(io: file, filename: "spot7_photo3.jpg", content_type: 'image/jpg')
+spot7.photos = [spot7_photo1, spot7_photo2, spot7_photo3]
+spot7.save!
+
+############################################
+puts "Adding Stories to Spot 7..."
+
+spot7Story1 = Story.new(user: user_set.sample, content: "This is such a fun acitivity on a sunny day. Pack a couple of bottles and some snacks and your afternoon is sorted", spot: spot7)
+spot7_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592269644/fairfield-boat-house-yarra-river11_s2z1xy.jpg")
+spot7_story1_photo.file.attach(io: file, filename: "spot7_story1_photo.jpg", content_type: 'image/jpg')
+spot7_story1_photo.photoable = spot7Story1
+spot7_story1_photo.save!
+
+spot7Story2 = Story.new(user: user_set.sample, content: "I got taken on a date here, it was a great idea however we were stuck on a boat together...", spot: spot7)
+spot7_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592269641/main_dgc3gd.png")
+spot7_story2_photo.file.attach(io: file, filename: "spot7_story2_photo.jpg", content_type: 'image/jpg')
+spot7_story2_photo.photoable = spot7Story2
+spot7_story2_photo.save!
+
+spot7Story3 = Story.new(user: user_set.sample, content: "So much fun, we took our dog out on the boats", spot: spot7)
+spot7_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592269599/Fairfield_Boathouse_Mamma_Knows_North_1_of_10_czpax2.jpg")
+spot7_story3_photo.file.attach(io: file, filename: "spot7_story3_photo.jpg", content_type: 'image/jpg')
+spot7_story3_photo.photoable = spot7Story3
+spot7_story3_photo.save!
+
+puts "Finished Spot 7!"
+
+################################################################################
+################################################################################
+puts "Creating spot 8..."
+spot8 = Spot.new(name: "Burnside", location: "87A Smith St, Fitzroy VIC 3065", category: cafeCategory)
+spot_set << spot
+puts "Adding Photos to Spot 8..."
+spot8_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592270045/Sprudge-Burnside-EileenKenny-IMG_2409_1_bou82c.jpg")
+spot8_photo1.file.attach(io: file, filename: "spot8_photo1.jpg", content_type: 'image/jpg')
+
+spot8_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592270043/60ae4d6695088577ad34efa92cee2a27_s57uw1.jpg")
+spot8_photo2.file.attach(io: file, filename: "spot8_photo2.jpg", content_type: 'image/jpg')
+
+spot8_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592270043/60ae4d6695088577ad34efa92cee2a27_s57uw1.jpg")
+spot8_photo3.file.attach(io: file, filename: "spot7_photo3.jpg", content_type: 'image/jpg')
+spot8.photos = [spot8_photo1, spot8_photo2, spot8_photo3]
+spot8.save!
+
+############################################
+puts "Adding Stories to Spot 8..."
+
+spot8Story1 = Story.new(user: user_set.sample, content: "I get a long black and a sandwich. Top blokes", spot: spot8)
+spot8_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592270045/Sprudge-Burnside-EileenKenny-IMG_2409_1_bou82c.jpg")
+spot8_story1_photo.file.attach(io: file, filename: "spot8_story1_photo.jpg", content_type: 'image/jpg')
+spot8_story1_photo.photoable = spot8Story1
+spot8_story1_photo.save!
+
+spot8Story2 = Story.new(user: user_set.sample, content: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592270043/60ae4d6695088577ad34efa92cee2a27_s57uw1.jpg", spot: spot8)
+spot8_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592269641/main_dgc3gd.png")
+spot8_story2_photo.file.attach(io: file, filename: "spot8_story2_photo.jpg", content_type: 'image/jpg')
+spot8_story2_photo.photoable = spot8Story2
+spot8_story2_photo.save!
+
+spot8Story3 = Story.new(user: user_set.sample, content: "", spot: spot8)
+spot8_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592269599/Fairfield_Boathouse_Mamma_Knows_North_1_of_10_czpax2.jpg")
+spot8_story3_photo.file.attach(io: file, filename: "spot8_story3_photo.jpg", content_type: 'image/jpg')
+spot8_story3_photo.photoable = spot8Story3
+spot8_story3_photo.save!
+
+puts "Finished Spot 8!"
 
 puts "Adding some favourites"
 
