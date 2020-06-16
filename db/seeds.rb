@@ -6,6 +6,7 @@ Photo.destroy_all
 User.destroy_all
 Spot.destroy_all
 Story.destroy_all
+Question.destroy_all
 Category.destroy_all
 puts "Clean!"
 

@@ -15,17 +15,18 @@
   <body>
     <% if current_page? root_path %>
       <div class="landing-page">
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+      </div>
   <% else %>
-    <%= render 'shared/navbar' %>
-    <div class="container">
-  <!-- PUT this above the 'yield' -->
+    <div class="page js-page">
+      <%= render 'shared/sidebar_menu' %>
+      <%= render 'shared/flashes' %>
+      <main class="content js-content">
+        <%= yield %>
+      </main>
+    </div>
   <% end %>
-    <%= render 'shared/flashes' %>
-
-    <%= yield %>
-
-
-
     <%= javascript_pack_tag "map" , 'data-turbolinks-track': 'reload'%>
   </body>
 </html>

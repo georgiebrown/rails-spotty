@@ -16,8 +16,8 @@
 </div>
 <div class="row">
   <div class="col">
-    <%= simple_fields_for :no_model_fields do |n| %>
-      <%= n.input :photo_file, as: :file, :label => "Change Avatar" %>
+    <%= f.simple_fields_for :photo do |m| %>
+      <%= m.input :file, as: :file, name: "file" , label: "Change Avatar" %>
     <% end %>
   </div>
 </div>

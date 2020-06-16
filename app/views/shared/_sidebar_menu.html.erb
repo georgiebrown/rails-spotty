@@ -1,0 +1,27 @@
+<span class="menu_toggle js-menu-toggle">
+  <i class="menu_open fa fa-bars fa-lg"></i>
+  <i class="menu_close fa fa-times fa-lg"></i>
+</span>
+<ul class="menu_items">
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to "Spots", spots_path %>
+    </li>
+    <li>
+      <%= link_to "Connect", users_path %>
+    </li>
+    <li>
+      <%= link_to "Bucket List", favourites_path %>
+    </li>
+    <li>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to "Spots", spots_path %>
+    </li>
+    <li>
+      <%= link_to "Log in", new_user_session_path, style: "color: white;" %>
+    </li>
+<% end %>
+</ul>

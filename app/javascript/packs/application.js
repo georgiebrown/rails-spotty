@@ -30,6 +30,7 @@ import FollowButton from "../components/follow_button";
 import FavButton from "../components/favourite_button";
 import WizardForm from "../components/WizardForm";
 import Collapsible from "../components/Collapsible";
+import SlideMenu from "../components/slide_menu";
 
 autocomplete();
 // Internal imports, e.g:
@@ -49,5 +50,6 @@ initPlugin(".js-follow-btn", FollowButton);
 initPlugin(".js-favourite-btn", FavButton);
 initPlugin(".js-account-wizard", WizardForm);
 initPlugin(".js-collapsible", Collapsible);
+initPlugin(".js-page", SlideMenu);
 });
 

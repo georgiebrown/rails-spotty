@@ -15,11 +15,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
+    @user.update(user_params.except(:photos_attributes))
     avatar = @user.photo
     avatar.file.detach
-    avatar.file.attach(params[:no_model_fields][:photo_file])
-    @user.photo = [avatar]
+    avatar.file.attach(user_params[:file])
+    @user.photo = avatar
     @user.save
   end
 
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :bio)
+    params.require(:user).permit(:first_name, :last_name, :bio, photos_attributes: [:file])
   end
 
   def set_user
