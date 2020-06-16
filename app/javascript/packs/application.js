@@ -28,9 +28,12 @@ import "bootstrap";
 import { autocomplete } from '../components/autocomplete';
 import FollowButton from "../components/follow_button";
 import FavButton from "../components/favourite_button";
+import { initOwlCarousel } from "../components/init_owl_carousel";
 import WizardForm from "../components/WizardForm";
 import Collapsible from "../components/Collapsible";
 import MapCarousel from "../components/map_carousel"
+import { initWaveEffect } from "../components/click_effect";
+
 
 autocomplete();
 // Internal imports, e.g:
@@ -48,8 +51,12 @@ document.addEventListener('turbolinks:load', () => {
   };
 initPlugin(".js-follow-btn", FollowButton);
 initPlugin(".js-favourite-btn", FavButton);
+initOwlCarousel();
 initPlugin(".js-account-wizard", WizardForm);
 initPlugin(".js-collapsible", Collapsible);
 initPlugin(".js-map-carousel", MapCarousel);
+
+// initWaveEffect();
+
 });
 

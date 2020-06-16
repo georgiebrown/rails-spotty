@@ -1,26 +1,57 @@
-<div class="container text-center">
+<div class="container">
   <div class="row">
-    <div class="col-sm flex-column">
-     <div class="card mt-5" style="width: 18rem; margin: 0 auto;">
-      <div class="card-body">
-        <div>
-          <h3>
-            <%= @story.spot.name %>
-          </h3>
+
+    <div class="story">
+      <div class="story-cover flex-column" style="background-image: url(<%= render 'shared/carousel', photoable: @story %>)">
+        <div class="col d-flex justify-content-between px-3 mt-3">
+          <div>
+          <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-3" %>
+
+          </div>
+          <div>
+            <%= render 'shared/favourite_button', spot: @spot %>
+          </div>
         </div>
-        <%= render 'shared/carousel', photoable: @story %>
+      </div>
+
+          <div class="col-sm d-flex justify-content-center">
+      <h3><%= @story.spot.name %></h3>
+          </div>
+
+      <div class="story-content-scroller">
+        <div class="story-content">
+          <div class="col-sm d-flex justify-content-between px-3 mt-3">
+            <div>
+              <h5><%= link_to @spot.location, "https://www.google.com/maps", target: :_blank %>
+               / <%= @spot.category.name %></h5>
+             </div>
+
+             <div>
+              <p><%= @spot.favourites.count %> like</p>
+            </div>
+          </div>
+
+          <div class="col-sm border-bottom px-3">
+          </div>
+          <div class="col-sm d-flex justify-content-between px-3 mt-3" style="">
+            <h5><%= "#{@spot.category.question}?" %></h5>
+          </div>
+          <div class="col-sm d-flex justify-content-between px-3 mt-3">
+            <h5><%= @story.content %></h5>
+          </div>
+          <div class="col-sm d-flex justify-content-end border-bottom px-3 mt-3">
+            <h5>
+              <%= current_user.first_name %>
+            </h5>
+          </div>
+
+
+
+        </div>
       </div>
     </div>
-    <div class="card mt-5 p-3" style="width: 18rem; margin: 0 auto;">
-      <div><p>
-        <%= "#{@spot.category.question}? #{@story.content}" %>
-      </p></div>
-      <div><p>
-        <%= "#{current_user.first_name}" %>
-      </p></div>
-
-    </div>
   </div>
-    <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-5 mb-5" %>
+
+    <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-5 mb-5 waves-light waves-effect" %>
 </div>
 </div>

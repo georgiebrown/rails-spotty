@@ -4,7 +4,7 @@ class Spot < ApplicationRecord
   has_many :stories, dependent: :destroy
   belongs_to :category
   has_many :photos, as: :photoable
-
+  has_many :favourites
   # Validations
   validates :name, presence: true
   validates :location, presence: true

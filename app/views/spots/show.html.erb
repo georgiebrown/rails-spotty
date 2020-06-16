@@ -1,28 +1,53 @@
-<div class="container mt-3">
-  <%= render 'shared/carousel', photoable: @spot %>
-  <div class="row text-center flex-column">
-   <div class="card mt-2" style="width: 18rem; margin: 0 auto;">
-    <div class="card-body">
+<div class="spot-page">
+  <div class="spot-banner mb-3">
+    <div class="button-bar">
+      <div class="back-button">
+        <%= link_to "Back", spots_path, class: "btn btn-dark" %>
+      </div>
+      <%= render 'shared/favourite_button', spot: @spot %>
+    </div>
+    <div class="owl-carousel">
+      <% @spot.photos.each do |photo| %>
+      <%= cl_image_tag photo.file.key, height: 300, width: 300, crop: :fill, class: "d-block w-100" %>
+      <% end %>
+    </div>
+    <div class="spot-info p-3">
       <h5 class="card-title"><%= @spot.name  %></h5>
       <p class="card-text"><%= @spot.location  %> </p>
     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="">
+  <%= render 'shared/carousel', photoable: @spot %>
+  <div class="row text-center flex-column">
+   <div class="card mt-2" style="width: 18rem; margin: 0 auto;">
+
     <% @stories.each do |story| %>
     <div class="card mt-2 p-5">
       <div class="d-flex">
         <%= link_to "#{story.user.username}", user_path(story.user) %>
-         <p class="ml-1">left a story:</p>
+        <p class="ml-1">left a story:</p>
       </div>
       <em><%= story.content %></em>
       <br>
-        <%= link_to "See more", spot_story_path(@spot, story), class: "btn btn-outline-dark btn-sm" %>
+
+        <%= link_to "See more", spot_story_path(@spot, story), class: "btn btn-outline-dark btn-sm waves-light waves-effect" %>
     </div>
     <% end %>
   </div>
   <div>
-  <%= link_to "Add your story", new_spot_story_path(@spot), class: "btn btn-dark mt-3 mb-3" %>
+
+  <%= link_to "Add your story", new_spot_story_path(@spot), class: "btn btn-dark mt-3 mb-3 waves-light waves-effect" %>
   </div>
   <div>
-  <%= link_to "Back", spots_path, class: "btn btn-dark mb-5" %>
+  <%= link_to "Back", spots_path, class: "btn btn-dark mb-5 waves-light waves-effect" %>
   </div>
 </div>
 </div>
