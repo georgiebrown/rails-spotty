@@ -7,15 +7,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const markers = JSON.parse(mapElement.dataset.markers);
 
 
-  // // Add Event listeners to markers
-  // markers.forEach((marker, index) => {
-  //   marker.addListener('click', function() {
-  //     // document.querySelector(".js-map-carousel").scrollTo(500,0)
-  //     consle.log("Marker CLICK")
-  //   });
-  // });
-
-  map.addMarkers(markers);
   if (markers.length === 0) {
     map.setZoom(2);
   } else if (markers.length === 1) {
@@ -23,11 +14,20 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     map.setZoom(14);
   } else {
     map.fitLatLngBounds(markers);
-
   }
 
+  // Add Event listeners to markers
+  markers.forEach((marker, index) => {
+    map.addMarker({
+      ...marker,
+      click: function(e) {
+        window.setCarouselPos(index);
+      }
+    });
+  });
+
   window.selectMapMarker = (markerIndex) => {
-    console.log("selectMarker" + markerIndex);
+    // console.log("selectMarker" + markerIndex);
     map.setCenter(markers[markerIndex].lat, markers[markerIndex].lng);
     map.setZoom(14);
   }
