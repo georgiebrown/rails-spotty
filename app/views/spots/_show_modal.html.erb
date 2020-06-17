@@ -37,7 +37,7 @@
           <% end %>
           <div class="story-title mt-2 ml-3">
             <h4><%= story.user.first_name %> says:</h4>
-            <p>"<%= story.content[0..15] %>.....</p>
+            <p> "<%= story.content %>"</p>
           </div>
         </div>
       </div>
@@ -45,8 +45,7 @@
 
     <div id="collapse<%= index %>" class="collapse" aria-labelledby="heading<%= index %>" data-parent="#accordionStories">
       <div class="card-body">
-
-        <em><%= story.content %></em>
+        <p style="color: transparent;"><%= story.content %></p>
       </div>
     </div>
   </div>
