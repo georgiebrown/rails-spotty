@@ -1,6 +1,7 @@
 .horizontal-scrollable > .horizontal-row {
   overflow-x: auto;
   white-space: nowrap;
+  padding-right: 20vw !important;
 }
 
 .horizontal-scrollable > .horizontal-row > .col-xs-4 {
@@ -47,13 +48,19 @@
   position: relative;
   max-width: 100%;
   overflow: scroll;
+  height: 100vh;
  }
 #over_map {
   position: absolute;
-  bottom: -170px;
+  bottom: 10px;
   left: 0px;
   z-index: 99;
   width: 100%;
+}
+
+.active{
+  min-width: 220px !important;
+
 }
 
 @media screen and (max-width: 700px) {

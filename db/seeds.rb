@@ -25,7 +25,7 @@ georgie = User.create!(
   email: 'georgie@gmail.com',
   password: 'password',
   bio: 'Vino quarantino'
-  )
+)
 
 photo1.photoable = georgie
 photo1.save!
