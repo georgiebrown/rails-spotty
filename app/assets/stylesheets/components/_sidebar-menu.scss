@@ -19,6 +19,21 @@ $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }
 
 /* basically all styling from now on */
+.menu-top-bar {
+  height: 44px;
+  background-color: $blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 55px;
+  line-height: 40px;
+}
+
 .menu_toggle {
   z-index: 900;
   position: fixed;
@@ -26,10 +41,10 @@ $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   left: 0;
   display: block;
   cursor: pointer;
-  width: 100px;
-  height: 80px;
+  width: 44px;
+  height: 44px;
   background-color: $blue;
-  border-bottom-right-radius: 100%;
+
 
   &:active {
     i {
