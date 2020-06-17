@@ -1,3 +1,5 @@
+<!-- NOTE: We Don't Use This View Any More -->
+
 <div class="container">
   <div class="row">
 
@@ -5,18 +7,16 @@
       <div class="story-cover flex-column" style="background-image: url(<%= render 'shared/carousel', photoable: @story %>)">
         <div class="col d-flex justify-content-between px-3 mt-3">
           <div>
-          <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-3" %>
-
+            <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-3" %>
           </div>
           <div>
             <%= render 'shared/favourite_button', spot: @spot %>
           </div>
         </div>
       </div>
-
-          <div class="col-sm d-flex justify-content-center">
-      <h3><%= @story.spot.name %></h3>
-          </div>
+      <div class="col-sm d-flex justify-content-center">
+        <h3><%= @story.spot.name %></h3>
+      </div>
 
       <div class="story-content-scroller">
         <div class="story-content">
@@ -44,14 +44,56 @@
               <%= current_user.first_name %>
             </h5>
           </div>
-
-
-
         </div>
       </div>
     </div>
   </div>
+  <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-5 mb-5 waves-light waves-effect" %>
+</div>
+</div>
 
-    <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-5 mb-5 waves-light waves-effect" %>
+
+
+
+<!-- Just Keep Original Code of Spot Index Page -->
+
+<div class="mt-5 mb-3 container">
+    <%= render 'search_bar' %>
 </div>
+<div id="wrapper">
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>">
+  </div>
+  <div class="horizontal-scrollable" id="over_map">
+    <div class="horizontal-row px-5 js-map-carousel">
+
+        <% @spots.each do |spot| %>
+        <div class="card mt-3">
+          <div class="spot-banner">
+            <div class="button-bar">
+              <%= render 'shared/favourite_button', spot: spot %>
+            </div>
+          </div>
+          <div class="index-image">
+            <% if spot.photos.first %>
+               <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top waves-light waves-effect"%>
+            <% end %>
+           </div>
+          <div class="card-description p-3 d-flex flex-wrap flex-column">
+            <h5><%= link_to spot.name, spot_path(spot) %></h5>
+            <p><%= spot.location %><p>
+            <p><%= spot.category.name %></p>
+          </div>
+
+        </div>
+        <% end %>
+    </div>
+  </div>
 </div>
+
+
+
+

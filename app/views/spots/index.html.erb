@@ -1,3 +1,5 @@
+  
+ 
 <div class="mt-5 mb-3 container map-container">
   <div class="add-spot-button-container">
     <div class="d-flex justify-content-end m-2 spot-button-container">
@@ -38,9 +40,35 @@
            </div>
           <% end %>
         <% end %>
+      </div>
+
+      <div class="card-description p-3 d-flex flex-wrap flex-column">
+        <h5><%= spot.name %></h5>
+        <p><%= spot.location %><p>
+          <p><%= spot.category.name %></p>
+        </div>
+
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
+<!-- Modal from here -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="far fa-times-circle"></i></span>
+        </button>
+      </div>
+      <div class="modal-body js-spot-show">
+        <!-- Called show.js.erb using class js-spot-show above -->
+      </div>
 
-
-
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
