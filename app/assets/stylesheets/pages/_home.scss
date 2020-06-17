@@ -8,7 +8,7 @@
 
 .landing-page{
   height: 100vh;
-  background-color: #125143;
+  background-color: #ffa623;;
 }
 
 .landing-page-button {
@@ -22,4 +22,9 @@
 .landing-page-button:hover {
   text-decoration: none;
   color: white;
+}
+
+.what_spot{
+  background-color: $green;
+  height: 100vh;
 }
