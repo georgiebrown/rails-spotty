@@ -24,7 +24,7 @@ class StoriesController < ApplicationController
       # @photo.file.attach(story_params[:photo][:file])
       # @photo.photoable = @story
       # @photo.save!
-      redirect_to spot_path(@spot)
+      redirect_to spots_path
     else
       render 'new'
     end

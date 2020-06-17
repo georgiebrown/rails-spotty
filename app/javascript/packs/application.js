@@ -52,6 +52,7 @@ document.addEventListener('turbolinks:load', () => {
 initPlugin(".js-follow-btn", FollowButton);
 initPlugin(".js-favourite-btn", FavButton);
 initOwlCarousel();
+window.initOwlCarousel = initOwlCarousel;
 initPlugin(".js-account-wizard", WizardForm);
 initPlugin(".js-collapsible", Collapsible);
 initPlugin(".js-page", SlideMenu);

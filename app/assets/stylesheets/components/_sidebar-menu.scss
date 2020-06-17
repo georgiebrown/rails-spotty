@@ -13,7 +13,6 @@ $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   background-color: $white;
 }
 .content-inner {
-  padding-top: 45px;
   height: 100vh;
   overflow-y: scroll;
 }
@@ -44,8 +43,6 @@ $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   width: 44px;
   height: 44px;
   background-color: $blue;
-
-
   &:active {
     i {
       opacity: 0.8

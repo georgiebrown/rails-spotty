@@ -13,7 +13,7 @@
 }
 
 .fa-heart{
-  color: #6CC8E5;
+  color: #ffa623;
 }
 
 .fa-arrow-left{
@@ -21,24 +21,37 @@
 }
 
 .add-story-button{
-  bottom: 0;
-  right: 0;
+  bottom: 88px;
+  right: 12px;
   z-index:10;
-  position:fixed;
-  color: #6CC8E5;
 }
 
-.add-spot-button{
-  right: 10px;
-  top: 10px;
+.add-spot-button-container{
+  right: 20px;
+  top: 130px;
   z-index: 10;
-  position: fixed;
+  position:fixed;
+}
+.add-spot-button{
+  background: white;
+  height: 50px;
+  width: 50px;
+  border: 2px solid $green;
+  border-radius: 50%;
+  color: $green;
+  text-align: center;
+  font-size: 50px !important;
+  line-height: 45px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .spot-button-container > a{
   font-size: 10px;
 }
 
+.fa-times-circle {
+  font-size:36px;
+}
 .hide-me{
   display:none;
 }
@@ -57,4 +70,3 @@
   background: linear-gradient(180deg, rgba(4, 3, 14, 0.53) 0%, 83%);
 
 }
-

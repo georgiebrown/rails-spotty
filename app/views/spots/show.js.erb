@@ -1,0 +1,3 @@
+$('#staticBackdrop').modal('toggle')
+document.querySelector(".js-spot-show").innerHTML = "<%= escape_javascript(render 'spots/show_modal', spot: @spot) %>";
+window.initOwlCarousel();
