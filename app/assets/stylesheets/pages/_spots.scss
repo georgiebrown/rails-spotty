@@ -1,3 +1,11 @@
+.map-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: white;
+}
+
 .horizontal-scrollable > .horizontal-row {
   overflow-x: auto;
   white-space: nowrap;
@@ -52,7 +60,7 @@
  }
 #over_map {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 0px;
   z-index: 99;
   width: 100%;

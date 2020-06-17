@@ -24,15 +24,25 @@
   bottom: 0;
   right: 0;
   z-index:10;
-  position:fixed;
-  color: #6CC8E5;
 }
 
-.add-spot-button{
-  right: 10px;
-  top: 10px;
+.add-spot-button-container{
+  right: 20px;
+  top: 130px;
   z-index: 10;
-  position: fixed;
+  position:fixed;
+}
+.add-spot-button{
+  background: white;
+  height: 50px;
+  width: 50px;
+  border: 2px solid $blue;
+  border-radius: 50%;
+  color: $blue;
+  text-align: center;
+  font-size: 50px !important;
+  line-height: 45px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .spot-button-container > a{
