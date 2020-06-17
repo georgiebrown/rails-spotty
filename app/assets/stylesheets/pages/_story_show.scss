@@ -29,3 +29,18 @@ body {
   padding: 20px;
   box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.15);
 }
+
+.modal {
+  max-height:90%;
+}
+
+.story-title {
+  h4{
+  color: black;
+  border-bottom: none;
+  }
+  p{
+  color: black;
+  border-bottom: none;
+  }
+}
