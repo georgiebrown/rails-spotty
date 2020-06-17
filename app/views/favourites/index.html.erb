@@ -1,20 +1,19 @@
-<div class="container col-sm">
+<div class="container col-sm mb-3 mt-4">
   <div class="text-center mt-3 mb-3">
     <h3>Bucket List</h3>
   </div>
-   <div class="button-bar">
-        <%= link_to spots_path do %>
-        <i class="fa fa-arrow-left" style="font-size:38px"></i>
-        <% end %>
-      </div>
-  <div class="row d-flex justify-content-center">
+  <div class="button-cart mt-1">
+    <%= link_to spots_path do %>
+    <i class="fa fa-arrow-left" style="color:#404040; font-size:30px"></i>
+    <% end %>
+  </div>
+  <div class="row d-flex justify-content-center mt-5 mb-3">
     <div class="bar-card">
       <ul class="list-group">
         <% @favourites.each do |favourite| %>
         <li class="list-group-item js-fav-collapse">
-          <strong> <%= favourite.spot.category.name %>
-          </strong> : <%= link_to favourite.spot.name, spot_path(favourite.spot) %>
-       - <%= favourite.spot.location  %>   <%= render 'shared/favourite_button', spot: favourite.spot %>
+          </strong> <%= link_to favourite.spot.name, spot_path(favourite.spot) %> --
+          <%= favourite.spot.location  %>   <%= render 'shared/favourite_button', spot: favourite.spot %>
         </li>
         <% end %>
       </ul>
