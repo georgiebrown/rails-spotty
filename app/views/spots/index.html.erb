@@ -1,10 +1,8 @@
 <div class="mt-5 mb-3 container map-container">
   <div class="add-spot-button-container">
     <div class="d-flex justify-content-end m-2 spot-button-container">
-
       <%= link_to "+", new_spot_path, class: "add-spot-button" %>
     </div>
-
   </div>
     <%= render 'search_bar' %>
 </div>
@@ -17,35 +15,32 @@
   </div>
   <div class="horizontal-scrollable" id="over_map">
     <div class="horizontal-row px-5 js-map-carousel">
-
-        <% @spots.each do |spot| %>
-        <div class="card mt-3">
+      <% @spots.each do |spot| %>
+        <div class= "card mt-3">
           <div class="spot-banner">
             <div class="button-bar">
               <%= render 'shared/favourite_button', spot: spot %>
             </div>
           </div>
           <div class="index-image">
-        <%= link_to spot_path(spot), :remote => true do %>
+            <%= link_to spot_path(spot), :remote => true do %>
                 <% if spot.photos.first %>
-                  <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top waves-light waves-effect"%>
-                <% end %>
-        <% end %>
+                <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top waves-light waves-effect"%>
+            <% end %>
+          <% end %>
           </div>
-           <div class="card-description p-3 d-flex flex-wrap flex-column">
+          <div class="card-description p-3 d-flex flex-wrap flex-column">
             <h5><%= spot.name%></h5>
-            <p><%= spot.location %><p>
+            <p><%= spot.location %></p>
             <p><%= spot.category.name %></p>
-           </div>
           </div>
-        <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
 
-
 <!-- Modal from here -->
-
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
@@ -57,10 +52,10 @@
       <div class="modal-body js-spot-show">
         <!-- Called show.js.erb using class js-spot-show above -->
       </div>
-            <!-- <div class=“modal-footer”>
-              <button type=“button” class=“btn btn-secondary” data-dismiss=“modal”>Close</button>
+
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div> -->
           </div>
         </div>
-      </div>
-
+</div>

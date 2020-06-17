@@ -11,7 +11,7 @@ class SpotsController < ApplicationController
     @spots = @spots.near(params[:query_location], 5) if params[:query_location].present? && !@spots.empty?
     # spots.near(location search)
     @markers = @spots.map do |spot| {
-      icon: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592366757/m_x7mbur.png",
+      icon: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592399181/m_bmnl8s.png",
       lat: spot.latitude,
       lng: spot.longitude,
       }
@@ -36,7 +36,7 @@ class SpotsController < ApplicationController
     spot_photo.file.attach(io: file, filename: "#{@spot.name}", content_type: 'image/jpg')
     @spot.photos = [spot_photo]
     if @spot.save
-      redirect_to spot_path(@spot)
+      redirect_to spots_path
     else
       render 'new'
     end
