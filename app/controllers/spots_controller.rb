@@ -32,13 +32,17 @@ class SpotsController < ApplicationController
     @user = current_user
     # @spot.photo = spot_params[:photos]
     spot_photo = Photo.new
-    file = URI.open(params[:no_model_fields][:photo_url])
-    spot_photo.file.attach(io: file, filename: "#{@spot.name}", content_type: 'image/jpg')
-    @spot.photos = [spot_photo]
-    if @spot.save
-      redirect_to spot_path(@spot)
-    else
+    if (params[:no_model_fields][:photo_url]).empty?
       render 'new'
+    else
+      file = URI.open(params[:no_model_fields][:photo_url])
+      spot_photo.file.attach(io: file, filename: "#{@spot.name}", content_type: 'image/jpg')
+      @spot.photos = [spot_photo]
+      if @spot.save
+        redirect_to spot_path(@spot)
+      else
+        render 'new'
+     end
     end
   end
     # @spot = Spot.new(spot_params)
