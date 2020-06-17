@@ -20,6 +20,11 @@
         <%= render 'shared/flashes' %>
         <%= yield %>
       </div>
+      <% elsif current_page? what_spot_path %>
+       <div class="landing-page">
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+      </div>
     <% else %>
       <div class="page js-page">
         <%= render 'shared/sidebar_menu' %>

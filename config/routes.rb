@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   get 'my_follows', to: 'users#follows', as: 'my_follows'
 
+  get 'what_spot', to: 'pages#what_spot'
+
   root to: 'pages#home'
+
+
 
   get 'map', to: 'maps#show'
 

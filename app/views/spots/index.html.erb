@@ -23,8 +23,8 @@
     <div class="horizontal-row px-5 js-map-carousel">
 
         <% @spots.each do |spot| %>
-        <%= link_to spot_path(spot) do %>
-        <div class="card mt-3">
+        <%= link_to spot_path(spot), class: "card mt-3" do %>
+
           <div class="spot-banner">
             <div class="button-bar">
               <%= render 'shared/favourite_button', spot: spot %>
@@ -34,15 +34,13 @@
             <% if spot.photos.first %>
                <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top waves-light waves-effect"%>
             <% end %>
-           </div>
+          </div>
            <div class="card-description p-3 d-flex flex-wrap flex-column">
-            <h5><%= link_to spot.name, spot_path(spot) %></h5>
+            <h5><%= spot.name%></h5>
             <p><%= spot.location %><p>
             <p><%= spot.category.name %></p>
 
            </div>
-
-            </div>
           <% end %>
         <% end %>
     </div>
