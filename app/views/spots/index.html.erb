@@ -1,13 +1,13 @@
-<div class="mt-5 mb-3 container">
   
-  <div class="add-spot-button">
+ 
+<div class="mt-5 mb-3 container map-container">
+  <div class="add-spot-button-container">
     <div class="d-flex justify-content-end m-2 spot-button-container">
-      <%= link_to new_spot_path do %>
-        <div class="fas fa-plus-circle" style="font-size:50px;">
-        </div>
-      <% end %>
+
+      <%= link_to "+", new_spot_path, class: "add-spot-button" %>
+    </div>
+
   </div>
-</div>
     <%= render 'search_bar' %>
 </div>
 <div id="wrapper">
@@ -37,7 +37,6 @@
             <h5><%= spot.name%></h5>
             <p><%= spot.location %><p>
             <p><%= spot.category.name %></p>
-
            </div>
           <% end %>
         <% end %>
