@@ -64,6 +64,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
+.add-spot-button:hover{
+  text-decoration: none;
+  color: $green;
+}
+
 .spot-button-container > a{
   font-size: 10px;
 }

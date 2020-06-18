@@ -2,4 +2,4 @@ meta_product_name: "Spotty"
 meta_title: "Spotty - Whatspot?"
 meta_description: "WhatSpot let you keep track of your favourite places"
 # meta_image: "cover.png" # should exist in `app/assets/images/`s
-meta_image: "metapic.jpeg" # should exist in `app/assets/images/` 1200*630
+meta_image: "metapic.jpg" # should exist in `app/assets/images/` 1200*630
