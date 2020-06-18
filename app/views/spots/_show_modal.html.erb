@@ -9,7 +9,7 @@
       <%= render 'shared/favourite_button', spot: spot %>
     </div>
 
-    <div class="spot-info p-3 d-flex flex-wrap flex-column">
+    <div class="modal-info spot-info p-3 d-flex flex-wrap flex-column">
       <h5 class=""><%= @spot.name  %></h5>
       <p class=""><%= @spot.location  %> </p>
       <p><%= @spot.category.name %></p>
@@ -26,8 +26,8 @@
 
 <div class="accordion" id="accordionStories">
   <% @stories.each_with_index do |story, index| %>
-  <div class="card">
-    <button class="btn btn-link card-button" type="button" data-toggle="collapse" data-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+  <div class="modal-card">
+    <button class="card-button" type="button" data-toggle="collapse" data-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
 
       <div class="card-header" id="heading<%= index %>">
 
@@ -36,8 +36,8 @@
           <%= cl_image_tag story.user.photo.file.key, height: 100, width: 100, crop: :fill, class: "avatar-large", alt: "avatar-large" %>
           <% end %>
           <div class="story-title mt-2 ml-3">
-            <h4><%= story.user.first_name %> says:</h4>
-            <p> "<%= story.content %>"</p>
+            <h4><%= story.user.first_name %></h4>
+            <p class="modal-story-content"> "<%= story.content %>"</p>
           </div>
         </div>
       </div>
