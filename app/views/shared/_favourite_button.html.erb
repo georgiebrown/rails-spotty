@@ -2,5 +2,5 @@
 <% if favourite.empty? %>
   <i class="far fa-heart fa-2x m-1 js-favourite-btn" data-favstate = "not favourited" data-spot_id= <%= spot.id %> ></i>
 <% else %>
-  <i class="fas fa-heart fa-2x m-1 js-favourite-btn" data-favstate = "favourited" data-favourite_id= <%= favourite.first.id %> data-spot_id= <%= spot.id %> ></i>
+<i class="fas fa-heart fa-2x m-1 js-favourite-btn" data-favstate = "favourited" data-favourite_id= <%= favourite.first.id %> data-spot_id= <%= spot.id %> ></i>
 <% end %>
