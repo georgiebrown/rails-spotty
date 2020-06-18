@@ -100,7 +100,7 @@ shoppingCategory = Category.create!(name: "Shopping")
 campingCategory = Category.create!(name: "Camping")
 outdoorCategory = Category.create!(name: "Outdoor Activity")
 cafeCategory = Category.create!(name: "Cafe")
-otherCategory = Category.create!(name: "Other")
+otherCategory = Category.create!(name: "Other cool spot")
 
 puts "Added Categories!"
 pub_questions = []
@@ -227,6 +227,18 @@ cafe_questions << cafeQuestion3
 cafeQuestion3.save!
 
 
+other_questions = []
+
+puts "Creating other question 1..."
+otherQuestion1 = Question.new(content: "What is this spot?", category: otherCategory)
+cafe_questions << otherQuestion1
+cafeQuestion1.save!
+
+otherQuestion3 = Question.new(content: "What's so good about it?", category: otherCategory)
+other_questions << otherQuestion3
+otherQuestion3.save!
+
+
 puts "Creating Spots..."
 spot_set = []
 ################################################################################
@@ -330,7 +342,7 @@ puts "Finished Spot 2!"
 ################################################################################
 ################################################################################
 puts "Creating spot 3..."
-spot3 = Spot.new(name: "RYDER", location: "126 Cubitt St, Cremorne", category: shoppingCategory)
+spot3 = Spot.new(name: "Best clothing store in Melbourne", location: "126 Cubitt St, Cremorne", category: shoppingCategory)
 spot_set << spot3
 puts "Adding Photos to Spot 3..."
 spot3_photo1 = Photo.new

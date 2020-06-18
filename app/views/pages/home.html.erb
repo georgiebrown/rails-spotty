@@ -1,6 +1,8 @@
 <div class="landing-page d-flex justify-content-center align-items-center">
 
-  <%= link_to "What Spot?", what_spot_path, class: "landing-page-button"  %>
+  <%= link_to spots_path, class: "landing-page-button" do %>
+    What's the sp<span class="o">o</span>t?
+    <% end %>
 
 </div>
 
