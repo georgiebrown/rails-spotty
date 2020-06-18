@@ -13,7 +13,7 @@ class SpotsController < ApplicationController
     @markers = @spots.map do |spot| {
       icon: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592440394/1946401_aezpko.png",
       lat: spot.latitude,
-      lng: spot.longitude,
+      lng: spot.longitude
       }
     end
   end
