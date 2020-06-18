@@ -294,7 +294,7 @@ puts "Finished Spot 1!"
 ################################################################################
 ################################################################################
 puts "Creating spot 2..."
-spot2 = Spot.new(name: "Wilsons Prom Lighthouse", location: "Wilsons Prom", category: hikeCategory)
+spot2 = Spot.new(name: "Hike to the Lighthouse", location: "Wilsons Prom", category: hikeCategory)
 spot_set << spot2
 puts "Adding Photos to Spot 2..."
 spot2_photo1 = Photo.new
@@ -374,7 +374,7 @@ puts "Finished Spot 3!"
 ################################################################################
 ################################################################################
 puts "Creating spot 4..."
-spot4 = Spot.new(name: "Marquis Of Lorne", location: "North Fitzroy", category: pubCategory)
+spot4 = Spot.new(name: "Best Pub In The North", location: "North Fitzroy", category: pubCategory)
 spot_set << spot4
 puts "Adding Photos to Spot 4..."
 spot4_photo1 = Photo.new
@@ -424,7 +424,7 @@ puts "Adding some favourites"
 ################################################################################
 ################################################################################
 puts "Creating spot 5..."
-spot5 = Spot.new(name: "Tipo", location: "Melbourne", category: restaurantCategory)
+spot5 = Spot.new(name: "Droolworthy Pasta", location: "Melbourne", category: restaurantCategory)
 spot_set << spot5
 puts "Adding Photos to Spot 5..."
 spot5_photo1 = Photo.new
@@ -523,7 +523,7 @@ puts "Finished Spot 6!"
 ################################################################################
 ################################################################################
 puts "Creating spot 7..."
-spot7 = Spot.new(name: "Fairfield Boat House", location: "Fairfield Park Dr, Fairfield VIC 3078", category: outdoorCategory)
+spot7 = Spot.new(name: "Row boats", location: "Fairfield Park Dr, Fairfield VIC 3078", category: outdoorCategory)
 spot_set << spot7
 puts "Adding Photos to Spot 7..."
 spot7_photo1 = Photo.new
@@ -572,7 +572,7 @@ puts "Finished Spot 7!"
 ################################################################################
 ################################################################################
 puts "Creating spot 8..."
-spot8 = Spot.new(name: "Burnside", location: "87A Smith St, Fitzroy VIC 3065", category: cafeCategory)
+spot8 = Spot.new(name: "Cute Barristas", location: "87A Smith St, Fitzroy VIC 3065", category: cafeCategory)
 spot_set << spot8
 puts "Adding Photos to Spot 8..."
 spot8_photo1 = Photo.new
@@ -621,7 +621,7 @@ puts "Finished Spot 8!"
 ################################################################################
 ################################################################################
 puts "Creating Spot 9..."
-spot9 = Spot.new(name: "Tidal River Campground", location: "Tidal River, Victoria 3960", category: campingCategory)
+spot9 = Spot.new(name: "Sweet as camping spot", location: "Tidal River, Victoria 3960", category: campingCategory)
 spot_set << spot9
 
 puts "Adding Photos to Spot 9..."
@@ -701,7 +701,7 @@ spot10_story1_photo.photoable = spot10Story1
 spot10_story1_photo.save!
 spot10Story1.save!
 
-spot10Story2 = Story.new(question: campingQuestion2, user: rob, content: "We went here with a few friends.This place is a hideen gem. If you're after solitude and scenery you will get both in abundance.", spot: spot10)
+spot10Story2 = Story.new(question: campingQuestion2, user: rob, content: "Take as many bottles of wine as you can carry, your packs will be much lighter on the way back dont worry", spot: spot10)
 spot10_story2_photo = Photo.new
 file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443955/0074_001_zip24f.jpg")
 spot10_story2_photo.file.attach(io: file, filename: "spot10_story2_photo.jpg", content_type: 'image/jpg')
