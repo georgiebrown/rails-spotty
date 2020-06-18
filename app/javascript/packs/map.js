@@ -11,7 +11,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     map.setZoom(2);
   } else if (markers.length === 1) {
     map.setCenter(markers[0].lat, markers[0].lng);
-    map.setZoom(30);
+    map.setZoom(15);
   } else {
     map.fitLatLngBounds(markers);
   }
@@ -27,10 +27,18 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   });
 
   window.selectMapMarker = (markerIndex) => {
+    map.setZoom(10 + Math.random() * 2);
+    const { lat,lng } = markers[markerIndex];
     // console.log("selectMarker" + markerIndex);
-    map.setCenter(markers[markerIndex].lat, markers[markerIndex].lng);
-    map.setZoom(14);
+    map.panTo({lat, lng});
+
+    // const degreesPadding = 0.05;
+    // const southWest = new google.maps.LatLng({ lat:lat-degreesPadding, lng:lng-degreesPadding })
+    // const northEast = new google.maps.LatLng({ lat:lat+degreesPadding, lng:lng+degreesPadding })
+    // var markerBounds = new google.maps.LatLngBounds(southWest, northEast);
+    // map.panToBounds(markerBounds);
   }
+
 
 
   if (navigator.geolocation) {
@@ -41,7 +49,8 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
             };
         map.addMarker({
         lat: position.coords.latitude,
-        lng: position.coords.longitude
+        lng: position.coords.longitude,
+        icon: "https://loading.io/icon/bi40d7"
       })
 
             map.setCenter(pos);
