@@ -50,7 +50,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         map.addMarker({
         lat: position.coords.latitude,
         lng: position.coords.longitude,
-        icon: "https://loading.io/icon/bi40d7"
+        icon: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592440394/1946401_aezpko.png"
       })
 
             map.setCenter(pos);

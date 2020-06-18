@@ -12,9 +12,9 @@ class User < ApplicationRecord
   has_many :follows
 
   # Validations
-  validates :username, presence: true, uniqueness: true
-  validates :username, format: { with: /\A[a-zA-Z0-9\.\-\_]{3,24}\z/, message: "Username must be between 3 and 24 letters long and can contain the letters A-Z, 0-9 , or the characters '.' , '/' and '_' . " }
-  validates :bio, presence: true, length: { maximum: 500 }
+  # validates :username, presence: true, uniqueness: true
+  # validates :username, format: { with: /\A[a-zA-Z0-9\.\-\_]{3,24}\z/, message: "Username must be between 3 and 24 letters long and can contain the letters A-Z, 0-9 , or the characters '.' , '/' and '_' . " }
+  validates :bio, length: { maximum: 500 }
 
   def followers
     Follow.where("leader_id = #{id}").map { |f| f.follower }
