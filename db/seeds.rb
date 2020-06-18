@@ -767,6 +767,290 @@ spot11_story3_photo.photoable = spot11Story3
 spot11_story3_photo.save!
 spot11Story3.save!
 
+#################################################
+puts "Creating Spot 12..."
+spot12 = Spot.new(name: "Miznon", location: "59 Hardware Ln, Melbourne VIC 3000", category: restaurantCategory)
+spot_set << spot12
+
+puts "Adding Photos to Spot 12..."
+spot12_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592476470/miznon_bbuokj.jpg")
+spot12_photo1.file.attach(io: file, filename: "spot12_photo1.jpg", content_type: 'image/jpg')
+
+
+spot12_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592476957/miznon-2_r0zsaw.jpg")
+spot12_photo2.file.attach(io: file, filename: "spot12_photo2.jpg", content_type: 'image/jpg')
+
+spot12_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592477141/miznon-3_tpmlve.jpg")
+spot12_photo3.file.attach(io: file, filename: "spot12_photo3.jpg", content_type: 'image/jpg')
+spot12.photos = [spot12_photo1, spot12_photo2, spot12_photo3]
+spot12.save!
+
+###################################################
+puts "Adding Stories to Spot 12..."
+
+spot12Story1 = Story.new(question: restaurantQuestion1, user: keiichi, content: "So visited for the first time with a girlfriend who loves Miznon. OMG, this food makes my heart and tummy sing.", spot: spot12)
+spot12_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592477830/mizzy_efhwsd.jpg")
+spot12_story1_photo.file.attach(io: file, filename: "spot12_story1_photo.jpg", content_type: 'image/jpg')
+spot12_story1_photo.photoable = spot12Story1
+spot12_story1_photo.save!
+spot12Story1.save!
+
+spot12Story2 = Story.new(question: restaurantQuestion2, user: rob, content: "Had the steak and egg and enjoyed it. But making me crawl into a back corner of the restaurant just to get a napkin? Come on! Serve it with a napkin and proper utensils", spot: spot12)
+spot12_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592478143/mizoo_dcpglc.jpg")
+spot12_story2_photo.file.attach(io: file, filename: "spot12_story2_photo.jpg", content_type: 'image/jpg')
+spot12_story2_photo.photoable = spot12Story2
+spot12_story2_photo.save!
+spot12Story2.save!
+
+spot12Story3 = Story.new(question: restaurantQuestion3, user: nesil, content: "Absolutely unbelievable how you make a booking for 14 people and then supply a table that BARELY seats 10.", spot: spot12)
+spot12_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592478659/table1_cqol2l.jpg")
+spot12_story3_photo.file.attach(io: file, filename: "spot12_story3_photo.jpg", content_type: 'image/jpg')
+spot12_story3_photo.photoable = spot12Story3
+spot12_story3_photo.save!
+spot12Story3.save!
+
+puts "Finished Spot 12!"
+
+##############################################################
+puts "Creating Spot 13..."
+spot13 = Spot.new(name: "The You Yangs", location: "Turntable Drive Little River", category: hikeCategory)
+spot_set << spot13
+
+puts "Adding Photos to Spot 13..."
+spot13_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592479158/you_yang_azznkj.jpg")
+spot13_photo1.file.attach(io: file, filename: "spot13_photo1.jpg", content_type: 'image/jpg')
+
+
+spot13_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592479317/youuu-yang_nlsfps.jpg")
+spot13_photo2.file.attach(io: file, filename: "spot13_photo2.jpg", content_type: 'image/jpg')
+
+spot13_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592479421/You-Yangs-VGB-82-resize_qcouti.jpg")
+spot13_photo3.file.attach(io: file, filename: "spot13_photo3.jpg", content_type: 'image/jpg')
+spot13.photos = [spot13_photo1, spot13_photo2, spot13_photo3]
+spot13.save!
+
+############################################
+puts "Adding Stories to Spot 13..."
+
+spot13Story1 = Story.new(question: hikeQuestion1, user: keiichi, content: "Great walk.Sometimes a little challenging with rocks, but lovely scenery", spot: spot13)
+spot13_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592480249/hike_m2yfnp.jpg")
+spot13_story1_photo.file.attach(io: file, filename: "spot11_story1_photo.jpg", content_type: 'image/jpg')
+spot13_story1_photo.photoable = spot13Story1
+spot13_story1_photo.save!
+spot13Story1.save!
+
+spot13Story2 = Story.new(question: hikeQuestion2, user: rob, content: "Did the east west loop track from Turntable carpark and took us 1.5hours", spot: spot13)
+spot13_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592480325/hiking-2_b2i37d.jpg")
+spot13_story2_photo.file.attach(io: file, filename: "spot13_story2_photo.jpg", content_type: 'image/jpg')
+spot13_story2_photo.photoable = spot13Story2
+spot13_story2_photo.save!
+spot13Story2.save!
+
+spot13Story3 = Story.new(question: hikeQuestion3, user: nesil, content: "We were very near one that had a Joey in her pocket. She watched us but didn't hop away. She allowed us to take pictures and admire her.", spot: spot13)
+spot13_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592480654/Joey_t4ikpq.jpg")
+spot13_story3_photo.file.attach(io: file, filename: "spot13_story3_photo.jpg", content_type: 'image/jpg')
+spot13_story3_photo.photoable = spot13Story3
+spot13_story3_photo.save!
+spot13Story3.save!
+
+puts "Finished Spot 13!"
+
+##########################################################################
+
+puts "Creating Spot 14..."
+spot14 = Spot.new(name: "Arena Shopping Centre", location: "Cardinia Rd, Officer VIC 3809", category: shoppingCategory)
+spot_set << spot14
+
+puts "Adding Photos to Spot 14..."
+spot14_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592483114/shopping_bbizsh.jpg")
+spot14_photo1.file.attach(io: file, filename: "spot14_photo1.jpg", content_type: 'image/jpg')
+
+
+spot14_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592479317/youuu-yang_nlsfps.jpg")
+spot14_photo2.file.attach(io: file, filename: "spot14_photo2.jpg", content_type: 'image/jpg')
+
+spot14_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592483655/images_vbhgyl.jpg")
+spot14_photo3.file.attach(io: file, filename: "spot14_photo3.jpg", content_type: 'image/jpg')
+spot14.photos = [spot14_photo1, spot14_photo2, spot14_photo3]
+spot14.save!
+
+############################################
+puts "Adding Stories to Spot 14..."
+
+spot14Story1 = Story.new(question: shoppingQuestion1, user: keiichi, content: "I got this for my cousins to give their Papa for Christmas because that's what they like to call him. It's a nice soft t-shirt and he's going to love it.", spot: spot14)
+spot14_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592485490/shopping-1_d2zo3z.jpg")
+spot14_story1_photo.file.attach(io: file, filename: "spot14_story1_photo.jpg", content_type: 'image/jpg')
+spot14_story1_photo.photoable = spot14Story1
+spot14_story1_photo.save!
+spot14Story1.save!
+
+puts "Finished Spot 14!"
+
+###################################################################################
+
+puts "Creating spot 15..."
+spot15 = Spot.new(name: "Hidden Alley", location: "184 York St, South Melbourne", category:  cafeCategory)
+spot_set << spot15
+puts "Adding Photos to Spot 15..."
+spot15_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592513085/hidden_alley_j82nqp.jpg")
+spot15_photo1.file.attach(io: file, filename: "spot15_photo1.jpg", content_type: 'image/jpg')
+
+spot15_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592513224/hidden_alley1_varyce.jpg")
+spot15_photo2.file.attach(io: file, filename: "spot15_photo2.jpg", content_type: 'image/jpg')
+
+spot15_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592513416/hdden_kofgnp.jpg")
+spot15_photo3.file.attach(io: file, filename: "spot15_photo3.jpg", content_type: 'image/jpg')
+spot15.photos = [spot15_photo1, spot15_photo2, spot15_photo3]
+spot15.save!
+
+#########################################################
+puts "Adding Stories to Spot 15..."
+
+spot15Story1 = Story.new(question: cafeQuestion1 , user: nesil, content: "Went here for breakfast with extended family. Patient staff and good food.", spot: spot15)
+spot15_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592514358/pic1_niw9qc.jpg")
+spot15_story1_photo.file.attach(io: file, filename: "spot15_story1_photo.jpg", content_type: 'image/jpg')
+spot15_story1_photo.photoable = spot15Story1
+spot15_story1_photo.save!
+spot15Story1.save!
+
+spot15Story2 = Story.new(question: cafeQuestion1,user: rob, content: "Passed by for coffee and barista was not really interested in doing a good job. She spilled out a third of my cappuccino but just filled the cup up with more milk before serving. The cup was even smudgy when I got it.", spot: spot15)
+spot15_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592514358/pic1_niw9qc.jpg")
+spot15_story2_photo.file.attach(io: file, filename: "spot15_story2_photo.jpg", content_type: 'image/jpg')
+spot15_story2_photo.photoable = spot15Story2
+spot15_story2_photo.save!
+spot15Story2.save!
+
+spot15Story3 = Story.new(question: cafeQuestion1,user: keiichi, content: "Its the first time I have been in this place. Highly recommended ", spot: spot15)
+spot15_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592514529/phhoo_q46atf.jpg")
+spot15_story3_photo.file.attach(io: file, filename: "spot15_story3_photo.jpg", content_type: 'image/jpg')
+spot15_story3_photo.photoable = spot15Story3
+spot15_story3_photo.save!
+spot15Story3.save!
+
+puts "Finished Spot 15!"
+
+############################################################################
+
+puts "Creating spot 16..."
+spot16 = Spot.new(name: "Werribee Open Range Zoo", location: "K Road, Werribee South, Victoria, 3030", category:  outdoorCategory)
+spot_set << spot16
+puts "Adding Photos to Spot 16..."
+spot16_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592515466/zoo_schbtb.jpg")
+spot16_photo1.file.attach(io: file, filename: "spot16_photo1.jpg", content_type: 'image/jpg')
+
+spot16_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592515542/zoo-2_shaxay.jpg")
+spot16_photo2.file.attach(io: file, filename: "spot16_photo2.jpg", content_type: 'image/jpg')
+
+spot16_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592515626/zooo_ndwm5m.jpg")
+spot16_photo3.file.attach(io: file, filename: "spot16_photo3.jpg", content_type: 'image/jpg')
+spot16.photos = [spot16_photo1, spot16_photo2, spot16_photo3]
+spot16.save!
+
+############################################
+puts "Adding Stories to Spot 16..."
+
+spot16Story1 = Story.new(question: outdoorQuestion1 , user: nesil, content: "Great place and train tour showing beautiful animals and habitat. There is also a path leading to enclosures with 🐨 kangaroos 🐒 meercats and other Safari animals. There is also a village area with beautiful huts.", spot: spot16)
+spot_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592515874/zoo-3_kx1bbi.jpg")
+spot16_story1_photo.file.attach(io: file, filename: "spot16_story1_photo.jpg", content_type: 'image/jpg')
+spot16_story1_photo.photoable = spot16Story1
+spot16_story1_photo.save!
+spot16Story1.save!
+
+spot16Story2 = Story.new(question: outdoorQuestion1,user: rob, content: "Amazing Zoo to visit, u can't compare this with any other zoo. The safari tour experience is amazing", spot: spot16)
+spot16_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592516128/zoo-5_npggsx.jpg")
+spot16_story2_photo.file.attach(io: file, filename: "spot16_story2_photo.jpg", content_type: 'image/jpg')
+spot16_story2_photo.photoable = spot16Story2
+spot16_story2_photo.save!
+spot16Story2.save!
+
+spot16Story3 = Story.new(question: outdoorQuestion1,user: keiichi, content: "Has everything you need for a Fantastic day out, safari cruise is ace", spot: spot16)
+spot16_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592516235/z00-5_om6576.jpg")
+spot16_story3_photo.file.attach(io: file, filename: "spot16_story3_photo.jpg", content_type: 'image/jpg')
+spot16_story3_photo.photoable = spot16Story3
+spot16_story3_photo.save!
+spot16Story3.save!
+
+puts "Finished Spot 16!"
+
+#####################################################################
+
+puts "Creating spot 17..."
+spot17 = Spot.new(name: "The Catfish", location: "30 Gertrude St, Fitzroy", category:  pubCategory )
+spot_set << spot17
+puts "Adding Photos to Spot 17..."
+spot17_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592518104/catfish_pih7mn.jpg")
+spot17_photo1.file.attach(io: file, filename: "spot17_photo1.jpg", content_type: 'image/jpg')
+
+spot17_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592518198/catfish_unmsx2.jpg")
+spot17_photo2.file.attach(io: file, filename: "spot17_photo2.jpg", content_type: 'image/jpg')
+
+spot17_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592518263/catfish-3_ieycsn.jpg")
+spot17_photo3.file.attach(io: file, filename: "spot15_photo3.jpg", content_type: 'image/jpg')
+spot17.photos = [spot17_photo1, spot17_photo2, spot17_photo3]
+spot17.save!
+
+#########################################################
+puts "Adding Stories to Spot 17..."
+
+spot17Story1 = Story.new(question: pubQuestion1 , user: nesil, content: "Really chill bar with sick beer selection, great staff and best of all a crazy good restaurant at the back with some exceptional vegan options.", spot: spot17)
+spot17_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592518527/catfishhhh_pn68nz.jpg")
+spot17_story1_photo.file.attach(io: file, filename: "spot17_story1_photo.jpg", content_type: 'image/jpg')
+spot17_story1_photo.photoable = spot17Story1
+spot17_story1_photo.save!
+spot17Story1.save!
+
+spot17Story2 = Story.new(question: pubQuestion1,user: rob, content: "Went there last weekend with some friends and had one of the best cocktails I've ever had, the bartender was super helpful and the rest of the staff was super nice as well. The space has such a nice vibe, lights and decoration will make you feel at home, music was great, you wont regret it.", spot: spot17)
+spot17_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592518646/catfish-5_m0bfhq.jpg")
+spot17_story2_photo.file.attach(io: file, filename: "spot17_story2_photo.jpg", content_type: 'image/jpg')
+spot17_story2_photo.photoable = spot17Story2
+spot17_story2_photo.save!
+spot17Story2.save!
+
+spot17Story3 = Story.new(question: pubQuestion1,user: keiichi, content: "Great atmosphere, friendly staff The steak and mushroom sandwich is to die for!", spot: spot17)
+spot17_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592518927/catfish-6_gtjli5.jpg")
+spot17_story3_photo.file.attach(io: file, filename: "spot17_story3_photo.jpg", content_type: 'image/jpg')
+spot17_story3_photo.photoable = spot17Story3
+spot17_story3_photo.save!
+spot17Story3.save!
+
+puts "Finished Spot 17!"
+
+############################################################################
+
 puts "Adding some favourites"
 
 
