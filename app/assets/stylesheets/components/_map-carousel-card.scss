@@ -25,3 +25,12 @@
     font-size: 2em !important;
   }
 }
+
+.carousel-card-wrapper {
+  .fav-btn {
+    z-index: 1001;
+    position: absolute;
+    right: 10px;
+    bottom: 12px;
+  }
+}
