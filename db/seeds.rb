@@ -254,14 +254,14 @@ spot1.save!
 ############################################
 puts "Adding Stories to Spot 1..."
 
-spot1Story1 = Story.new(user: user_set.sample, content: "Camped at the hut on the Howqua river. Slept in our swags and went swimming in the river.", spot: spot1)
+spot1Story1 = Story.new(user: user_set.sample, content: "We stayed in a hut on the Howqua river. We slept in our swags outside under the stars and went swimming in the river.", spot: spot1)
 spot1_story1_photo = Photo.new
 file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592265682/Howqua-River-Walk-RC.1600x900-1100x619_zzj3zg.jpg")
 spot1_story1_photo.file.attach(io: file, filename: "spot1_story1_photo.jpg", content_type: 'image/jpg')
 spot1_story1_photo.photoable = spot1Story1
 spot1_story1_photo.save!
 
-spot1Story2 = Story.new(user: user_set.sample, content: "We camped in our new tents, it rained the whole time! Saw lots of kangaroos!", spot: spot1)
+spot1Story2 = Story.new(user: user_set.sample, content: "This place is amazing. We camped in our new tents, and made a huge bondire. We saw so many kangaroos!", spot: spot1)
 spot1_story2_photo = Photo.new
 file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592265682/Howqua-River-Walk-RC.1600x900-1100x619_zzj3zg.jpg")
 spot1_story2_photo.file.attach(io: file, filename: "spot1_story2_photo.jpg", content_type: 'image/jpg')
@@ -582,6 +582,100 @@ spot8_story3_photo.photoable = spot8Story3
 spot8_story3_photo.save!
 
 puts "Finished Spot 8!"
+
+################################################################################
+################################################################################
+puts "Creating Spot 9..."
+spot9 = Spot.new(name: "Tidal River Campground", location: "Tidal River", category: campingCategory)
+spot_set << spot9
+
+puts "Adding Photos to Spot 9..."
+spot9_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443138/tidal_river_2_jyovaa.jpg")
+spot9_photo1.file.attach(io: file, filename: "spot9_photo1.jpg", content_type: 'image/jpg')
+
+
+spot9_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592265682/51890742_zumoky.jpg")
+spot9_photo2.file.attach(io: file, filename: "spot9_photo2.jpg", content_type: 'image/jpg')
+
+spot9_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443333/tidal3_qnkli3.jpg")
+spot9_photo3.file.attach(io: file, filename: "spot9_photo3.jpg", content_type: 'image/jpg')
+spot9.photos = [spot9_photo1, spot9_photo2, spot9_photo3]
+spot9.save!
+
+############################################
+puts "Adding Stories to Spot 9..."
+
+spot9Story1 = Story.new(user: user_set.sample, content: "Tidal River is great. On the one side you’ve got the clear waters of Tidal River, and on the other, there’s Norman Beach, one of the best in the national park. Tidal River gets busy, so you’ll want to book ahead.", spot: spot9)
+spot9_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443138/tidal_river_2_jyovaa.jpg")
+spot9_story1_photo.file.attach(io: file, filename: "spot9_story1_photo.jpg", content_type: 'image/jpg')
+spot9_story1_photo.photoable = spot9Story1
+spot9_story1_photo.save!
+
+spot9Story2 = Story.new(user: user_set.sample, content: "This place is amazing. We camped in our new tents. We saw so many kangaroos! There’s room for nearly 500 tents, but they go quick in the summertime.", spot: spot9)
+spot9_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443138/tidal_river_iz0qhj.jpg")
+spot9_story2_photo.file.attach(io: file, filename: "spot9_story2_photo.jpg", content_type: 'image/jpg')
+spot9_story2_photo.photoable = spot9Story2
+spot9_story2_photo.save!
+
+spot9Story3 = Story.new(user: user_set.sample, content: "Tidal River is one of the few campgrounds we know with its own pop-up cinema. There’s also gas barbies, hot showers and dishwashing stations. Luxe.", spot: spot9)
+spot9_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443333/tidal3_qnkli3.jpg")
+spot9_story3_photo.file.attach(io: file, filename: "spot9_story3_photo.jpg", content_type: 'image/jpg')
+spot9_story3_photo.photoable = spot9Story3
+spot9_story3_photo.save!
+
+
+################################################################################
+################################################################################
+puts "Creating Spot 10..."
+spot10 = Spot.new(name: "Sealers Cove", location: "Sealers Cove", category: campingCategory)
+spot_set << spot10
+
+puts "Adding Photos to Spot 10..."
+spot10_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443955/0082_001_icun5h.jpg")
+spot10_photo1.file.attach(io: file, filename: "spot10_photo1.jpg", content_type: 'image/jpg')
+
+
+spot10_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443955/0074_001_zip24f.jpg")
+spot10_photo2.file.attach(io: file, filename: "spot10_photo2.jpg", content_type: 'image/jpg')
+
+spot10_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443333/tidal3_qnkli3.jpg")
+spot10_photo3.file.attach(io: file, filename: "spot10_photo3.jpg", content_type: 'image/jpg')
+spot10.photos = [spot10_photo1, spot10_photo2, spot10_photo3]
+spot10.save!
+
+############################################
+puts "Adding Stories to Spot 10..."
+
+spot10Story1 = Story.new(user: user_set.sample, content: "Perfect if you’re looking for a Prom date without the crowds. You have to hike-in to the campsite, which means it’s out of reach for the average boombox-wielding campervan.", spot: spot10)
+spot10_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443955/0082_001_icun5h.jpg")
+spot10_story1_photo.file.attach(io: file, filename: "spot10_story1_photo.jpg", content_type: 'image/jpg')
+spot10_story1_photo.photoable = spot10Story1
+spot10_story1_photo.save!
+
+spot10Story2 = Story.new(user: user_set.sample, content: "We went here with a few friends.This place is a hideen gem. If you're after solitude and scenery you will get both in abundance.", spot: spot10)
+spot10_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443955/0074_001_zip24f.jpg")
+spot10_story2_photo.file.attach(io: file, filename: "spot10_story2_photo.jpg", content_type: 'image/jpg')
+spot10_story2_photo.photoable = spot10Story2
+spot10_story2_photo.save!
+
+spot10Story3 = Story.new(user: user_set.sample, content: "Two city girls go on a hike and forget to pack water! Thank goodness for the kind couple we ran into who gave us their extra bottles. FYI BYO water!!!", spot: spot10)
+spot10_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443955/0082_001_icun5h.jpg")
+spot10_story3_photo.file.attach(io: file, filename: "spot10_story3_photo.jpg", content_type: 'image/jpg')
+spot10_story3_photo.photoable = spot10Story3
+spot10_story3_photo.save!
+
 
 puts "Adding some favourites"
 
