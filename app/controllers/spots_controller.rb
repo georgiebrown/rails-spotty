@@ -40,7 +40,7 @@ class SpotsController < ApplicationController
     spot_photo.file.attach(io: file, filename: "#{@spot.name}", content_type: 'image/jpg')
     @spot.photos = [spot_photo]
     if @spot.save
-      redirect_to spots_path
+      redirect_to new_spot_story_path(@spot)
     else
       render 'new'
     end
