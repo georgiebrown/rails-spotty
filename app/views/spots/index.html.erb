@@ -16,10 +16,10 @@
   <div class="horizontal-scrollable" id="over_map">
     <div class="horizontal-row px-5 js-map-carousel">
       <% @spots.each do |spot| %>
-        <div class= "card map-card mt-3">
+        <div class= "card mt-3">
           <div class="spot-banner">
             <div class="button-bar">
-              <%= render 'shared/favourite_button', spot: spot %>
+
             </div>
           </div>
           <div class="index-image">
@@ -29,10 +29,11 @@
             <% end %>
           <% end %>
           </div>
-          <div class="card-description p-3 d-flex flex-wrap flex-column">
+          <div class="card-description p-3 d-flex flex-wrap flex-column map-card">
             <h5><%= spot.name%></h5>
             <p><%= spot.location %></p>
             <p><%= spot.category.name %></p>
+            <%= render 'shared/favourite_button', spot: spot %>
           </div>
         </div>
       <% end %>
