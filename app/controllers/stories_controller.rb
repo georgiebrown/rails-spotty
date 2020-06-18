@@ -18,7 +18,8 @@ class StoriesController < ApplicationController
     @story.spot = @spot
     @story.user = current_user
     @story.question = Question.find(story_params[:question])
-    if @story.save
+
+    if story_params[:question].empty? && @story.save
       multiple_photos(params[:story][:photos], @story)
       # @photo = Photo.new
       # @photo.file.attach(story_params[:photo][:file])
