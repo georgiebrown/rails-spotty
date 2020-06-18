@@ -32,7 +32,7 @@
       <div class="card-header" id="heading<%= index %>">
 
         <div class="d-flex">
-          <div class="justify-content-start">
+          <div class="justify-content-start d-flex">
           <%= link_to user_path(story.user) do %>
           <%= cl_image_tag story.user.photo.file.key, height: 100, width: 100, crop: :fill, class: "avatar-large", alt: "avatar-large" %>
           <% end %>
