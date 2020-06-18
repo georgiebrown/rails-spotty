@@ -1,4 +1,4 @@
-<div class="container col-sm mb-3 mt-4">
+<!-- <div class="container col-sm mb-3 mt-4">
   <div class="text-center mt-3 mb-3">
     <h3>Bucket List</h3>
   </div>
@@ -20,4 +20,28 @@
     </div>
   </div>
 </div>
+ -->
+
+<div class="container col-sm col-lg-4 mt-5 mb-4">
+  <h1 class="text-center">Bucket List</h1>
+  <div class="row">
+    <div class="cart mt-5">
+      <% if @favourites.empty? %>
+      <p>not sure whats next?</p>
+       <% else %>
+        <% @favourites.each do |favourite| %>
+        <%= link_to favourite.spot.name, spot_path(favourite.spot) %> --
+        <%= favourite.spot.location  %>   <%= render 'shared/favourite_button', spot: favourite.spot %>
+         <br>
+         <br>
+         <br>
+      <% end %>
+      <% end %>
+      <p>not sure whats next?</p>
+
+    </div>
+  </div>
+</div>
+
+
 
