@@ -27,7 +27,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   });
 
   window.selectMapMarker = (markerIndex) => {
-    map.setZoom(10 + Math.random() * 2);
+    map.setZoom(15 + Math.random() * 2);
     const { lat,lng } = markers[markerIndex];
     // console.log("selectMarker" + markerIndex);
     map.panTo({lat, lng});
@@ -50,7 +50,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         map.addMarker({
         lat: position.coords.latitude,
         lng: position.coords.longitude,
-        icon: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592481738/cl_iohshj.png"
+        icon: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592482166/cl_heauux.png"
       })
 
             map.setCenter(pos);
