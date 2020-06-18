@@ -16,10 +16,11 @@
   <div class="horizontal-scrollable" id="over_map">
     <div class="horizontal-row px-5 js-map-carousel">
       <% @spots.each do |spot| %>
-        <div class= "card mt-3">
+        <div class= "card mt-3 carousel-card-wrapper">
+          <%= link_to "", spot_path(spot), :remote => true, class: "full-card-link" %>
+          <%= render 'shared/favourite_button', spot: spot %>
           <div class="spot-banner">
             <div class="button-bar">
-
             </div>
           </div>
           <div class="index-image">
@@ -36,7 +37,6 @@
                 <p class="location"><%= spot.location %></p>
                 <p class="category"><%= spot.category.name %></p>
               </div>
-                <%= render 'shared/favourite_button', spot: spot %>
             </div>
           </div>
         </div>

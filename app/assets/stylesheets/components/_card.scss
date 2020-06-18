@@ -75,3 +75,12 @@
   border-style: solid;
   border-color: #658E15 #fff;
 }
+
+.full-card-link {
+  z-index: 1000;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
