@@ -18,6 +18,21 @@ $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }
 
 /* basically all styling from now on */
+.menu-top-bar {
+  height: 44px;
+  background-color: $blue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 55px;
+  line-height: 40px;
+}
+
 .menu_toggle {
   z-index: 900;
   position: fixed;
@@ -25,11 +40,9 @@ $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   left: 0;
   display: block;
   cursor: pointer;
-  width: 100px;
-  height: 80px;
-  background-color: $green;
-  border-bottom-right-radius: 100%;
-
+  width: 44px;
+  height: 44px;
+  background-color: $blue;
   &:active {
     i {
       opacity: 0.8
@@ -49,10 +62,12 @@ $bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   }
   .menu_open {
     transform-origin: -100px -100px;
+    margin-top: -8px;
   }
   .menu_close {
     transform: rotate(20deg);
     transform-origin: -100px -160px;
+    margin-top: -8px;
   }
 }
 .menu_items {
