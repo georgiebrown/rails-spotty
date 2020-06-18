@@ -11,7 +11,7 @@ class SpotsController < ApplicationController
     @spots = @spots.near(params[:query_location], 5) if params[:query_location].present? && !@spots.empty?
     # spots.near(location search)
     @markers = @spots.map do |spot| {
-      icon: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592399181/m_bmnl8s.png",
+      icon: "https://res.cloudinary.com/daqhmzr2j/image/upload/v1592440394/1946401_aezpko.png",
       lat: spot.latitude,
       lng: spot.longitude,
       }
@@ -32,7 +32,11 @@ class SpotsController < ApplicationController
     @user = current_user
     # @spot.photo = spot_params[:photos]
     spot_photo = Photo.new
-    file = URI.open(params[:no_model_fields][:photo_url])
+    if (params[:no_model_fields][:photo_url]).empty?
+      file = URI.open("https://www.travelmarvel.com.au/-/media/apt-responsive-website/miscellaneous/hero-panel-12-5/generic-12-5/hc-a-gen-map-travel-destinations-419995780-s-12-5.jpg?useCustomFunctions=1&rw=2280&w=1900&h=950&cropX=304&cropY=0")
+    else
+      file = URI.open(params[:no_model_fields][:photo_url])
+    end
     spot_photo.file.attach(io: file, filename: "#{@spot.name}", content_type: 'image/jpg')
     @spot.photos = [spot_photo]
     if @spot.save

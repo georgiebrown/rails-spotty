@@ -1,19 +1,29 @@
-<div class="container mt-5" style="height: 400px;">
-  <%= simple_form_for [@spot, @story] do |f| %>
-  <%= f.simple_fields_for :photos do |m| %>
-  <%= m.input :file, as: :file, :input_html => { multiple: true }, name: "file" %>
-  <% end %>
-  <%= f.input :question,
-              as: :select,
-              collection: @spot.questions,
-              label_method: :content,
-              value_method: :id,
-              input_html: { class: 'select2' }
-                %>
-  <%= f.input :content, label %>
-  <%= f.button :submit, class: "btn btn-dark waves-light waves-effect" %>
-  <% end %>
-  <%= link_to "Back", spots_path, class: "btn btn-dark mt-5 mb-5 waves-light waves-effect" %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm mt-5">
+      <div class="add">
+        <!-- <div class="back-button">
+          <%#= link_to spots_path do %>
+          <i class="fa fa-arrow-left" style="font-size:28px"></i>
+          <#% end %> -->
+        </div>
+          <%= simple_form_for [@spot, @story] do |f| %>
+            <%= f.simple_fields_for :photos do |m| %>
+              <%= m.input :file, as: :file, :input_html => { multiple: true }, name: "file" %>
+            <% end %>
+            <%= f.input :question,
+                      as: :select,
+                      collection: @spot.questions,
+                      label_method: :content,
+                      value_method: :id,
+                      input_html: { class: 'select2' }
+                        %>
+            <%= f.input :content, label: "Answer" %>
+            <%= f.button :submit, class: "btn btn-primary waves-light waves-effect" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- NOTE: Just Refferences bellow -->
