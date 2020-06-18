@@ -2,8 +2,8 @@
  <%= form_tag spots_path, class: "d-flex", method: :get do %>
     <%= text_field_tag :query,
       params[:query_attributes],
-      class: "form-control",
-      placeholder: "Find a spot, type a name, location or category"
+      class: "form-control spots-search",
+      placeholder: "Search by name, location or category"
     %>
     <%= submit_tag "Search", class: "hide-me btn btn-primary waves-light waves-effect" %>
   <% end %>
