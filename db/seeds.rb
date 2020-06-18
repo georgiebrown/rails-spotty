@@ -659,7 +659,7 @@ spot9Story3.save!
 ################################################################################
 ################################################################################
 puts "Creating Spot 10..."
-spot10 = Spot.new(name: "Sealers Cove", location: "Sealers Cove", category: campingCategory)
+spot10 = Spot.new(name: "Sealers Cove", location: "Sealers Cove, National Park, Wilsons Promontory VIC 3960", category: campingCategory)
 spot_set << spot10
 
 puts "Adding Photos to Spot 10..."
@@ -705,6 +705,55 @@ spot10_story3_photo.photoable = spot10Story3
 spot10_story3_photo.save!
 spot10Story3.save!
 
+
+################################################################################
+################################################################################
+puts "Creating Spot 11..."
+spot11 = Spot.new(name: "DOC Pizza", location: "295 Drummond St, Carlton", category: restaurantCategory)
+spot_set << spot11
+
+puts "Adding Photos to Spot 11..."
+spot11_photo1 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592453681/Aucklands-Best-Pizza-Dantes_fou5sq.jpg")
+spot11_photo1.file.attach(io: file, filename: "spot11_photo1.jpg", content_type: 'image/jpg')
+
+
+spot11_photo2 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592453681/recipe_melbourne_doc-1_fnlsa5.jpg")
+spot11_photo2.file.attach(io: file, filename: "spot11_photo2.jpg", content_type: 'image/jpg')
+
+spot11_photo3 = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592453681/Aucklands-Best-Pizza-Dantes_fou5sq.jpg")
+spot11_photo3.file.attach(io: file, filename: "spot10_photo3.jpg", content_type: 'image/jpg')
+spot11.photos = [spot11_photo1, spot11_photo2, spot11_photo3]
+spot11.save!
+
+############################################
+puts "Adding Stories to Spot 11..."
+
+spot11Story1 = Story.new(question: campingQuestion1, user: user_set.sample, content: "Perfect if you’re looking for a Prom date without the crowds. You have to hike-in to the campsite, which means it’s out of reach for the average boombox-wielding campervan.", spot: spot11)
+spot11_story1_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443955/0082_001_icun5h.jpg")
+spot11_story1_photo.file.attach(io: file, filename: "spot11_story1_photo.jpg", content_type: 'image/jpg')
+spot11_story1_photo.photoable = spot11Story1
+spot11_story1_photo.save!
+spot11Story1.save!
+
+spot11Story2 = Story.new(question: campingQuestion2, user: user_set.sample, content: "We went here with a few friends.This place is a hideen gem. If you're after solitude and scenery you will get both in abundance.", spot: spot11)
+spot11_story2_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443955/0074_001_zip24f.jpg")
+spot11_story2_photo.file.attach(io: file, filename: "spot11_story2_photo.jpg", content_type: 'image/jpg')
+spot11_story2_photo.photoable = spot11Story2
+spot11_story2_photo.save!
+spot11Story2.save!
+
+spot11Story3 = Story.new(question: campingQuestion1, user: user_set.sample, content: "Two city girls go on a hike and forget to pack water! Thank goodness for the kind couple we ran into who gave us their extra bottles. FYI BYO water!!!", spot: spot11)
+spot11_story3_photo = Photo.new
+file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592443955/0082_001_icun5h.jpg")
+spot11_story3_photo.file.attach(io: file, filename: "spot11_story3_photo.jpg", content_type: 'image/jpg')
+spot11_story3_photo.photoable = spot11Story3
+spot11_story3_photo.save!
+spot11Story3.save!
 
 puts "Adding some favourites"
 
