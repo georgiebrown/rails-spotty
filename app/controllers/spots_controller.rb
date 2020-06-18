@@ -32,7 +32,11 @@ class SpotsController < ApplicationController
     @user = current_user
     # @spot.photo = spot_params[:photos]
     spot_photo = Photo.new
+    if (params[:no_model_fields][:photo_url]).empty?
+      file = URI("assets/images/fav.png")
+    else
     file = URI.open(params[:no_model_fields][:photo_url])
+    end
     spot_photo.file.attach(io: file, filename: "#{@spot.name}", content_type: 'image/jpg')
     @spot.photos = [spot_photo]
     if @spot.save
