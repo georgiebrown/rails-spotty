@@ -17,14 +17,32 @@
 }
 
 .fa-arrow-left{
-  color:white;
+  color:$green;
+  margin-bottom:36px;
 }
 
 .add-story-button{
-  bottom: 88px;
-  right: 12px;
+  background: white;
+  height: 50px;
+  width: 50px;
+  border: 2px solid $green;
+  border-radius: 50%;
+  color: $green;
+  text-align: center;
+  font-size: 50px !important;
+  line-height: 45px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.add-story-button-container{
+  bottom: 130px;
+  right: 20px;
   z-index:10;
   position:fixed;
+}
+
+.story-button-container > a{
+  font-size: 10px;
 }
 
 .add-spot-button-container{
@@ -69,5 +87,4 @@
   padding: 12px;
   background: none;
   background: linear-gradient(180deg, rgba(4, 3, 14, 0.53) 0%, 83%);
-
 }

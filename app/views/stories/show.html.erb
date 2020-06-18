@@ -1,4 +1,5 @@
 <!-- NOTE: We Don't Use This View Any More -->
+<!-- Because We Use Collapse Function For Story Show -->
 
 <div class="container">
   <div class="row">
@@ -51,50 +52,4 @@
   <%= link_to "Back", spot_path(@spot), class: "btn btn-dark mt-5 mb-5 waves-light waves-effect" %>
 </div>
 </div>
-
-
-
-
-<!-- Just Keep Original Code of Spot Index Page -->
-
-<div class="mt-5 mb-3 container">
-    <%= render 'search_bar' %>
-</div>
-<div id="wrapper">
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>">
-  </div>
-  <div class="horizontal-scrollable" id="over_map">
-    <div class="horizontal-row px-5 js-map-carousel">
-
-        <% @spots.each do |spot| %>
-        <div class="card mt-3">
-          <div class="spot-banner">
-            <div class="button-bar">
-              <%= render 'shared/favourite_button', spot: spot %>
-            </div>
-          </div>
-          <div class="index-image">
-            <% if spot.photos.first %>
-               <%=  cl_image_tag spot.photos.first.file.key, height: 350, width: 350, crop: :fill, class: "card-img-top waves-light waves-effect"%>
-            <% end %>
-           </div>
-          <div class="card-description p-3 d-flex flex-wrap flex-column">
-            <h5><%= link_to spot.name, spot_path(spot) %></h5>
-            <p><%= spot.location %><p>
-            <p><%= spot.category.name %></p>
-          </div>
-
-        </div>
-        <% end %>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- Keiichi -->
 

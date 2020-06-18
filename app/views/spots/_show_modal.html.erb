@@ -1,6 +1,5 @@
 <div class="spot-page">
   <div class="spot-banner mb-3">
-
     <div class="button-bar">
       <!-- <div class="back-button">
         <%#= link_to spots_path do %>
@@ -10,9 +9,10 @@
       <%= render 'shared/favourite_button', spot: spot %>
     </div>
 
-    <div class="spot-info">
-      <h5 class="card-title spot-title"><%= @spot.name  %></h5>
-      <p class="card-text spot-address"><%= @spot.location  %> </p>
+    <div class="spot-info p-3 d-flex flex-wrap flex-column">
+      <h5 class=""><%= @spot.name  %></h5>
+      <p class=""><%= @spot.location  %> </p>
+      <p><%= @spot.category.name %></p>
     </div>
 
     <div class="owl-carousel">
@@ -50,18 +50,24 @@
     </div>
   </div>
   <% end %>
-
 </div>
 
-<div class="add-story-button">
+<!--  -->
+  <div class="add-story-button-container">
+    <div class="d-flex justify-content-end m-2 story-button-container">
+      <%= link_to "+", new_spot_story_path(@spot), class: "add-story-button" %>
+    </div>
+  </div>
+<!--  -->
+<!-- <div class="add-story-button">
   <div class="d-flex justify-content-end m-2">
-    <%= link_to new_spot_story_path(@spot) do %>
+    <%#= link_to new_spot_story_path(@spot) do %>
     <svg class="bi bi-plus-circle" width="4em" height="4em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
       <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
       <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
     </svg>
-    <% end %>
+    <#% end %>
   </div>
-</div>
+</div> -->
 
