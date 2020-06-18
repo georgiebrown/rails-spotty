@@ -31,10 +31,12 @@
 
       <div class="card-header" id="heading<%= index %>">
 
-        <div class="d-flex justify-content-start">
+        <div class="d-flex">
+          <div class="justify-content-start">
           <%= link_to user_path(story.user) do %>
           <%= cl_image_tag story.user.photo.file.key, height: 100, width: 100, crop: :fill, class: "avatar-large", alt: "avatar-large" %>
           <% end %>
+
           <div class="story-title mt-2 ml-3">
             <h4><%= story.user.first_name %></h4>
             <p class="modal-story-content"> "<%= story.content %>"</p>
