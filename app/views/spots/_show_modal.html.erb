@@ -40,7 +40,6 @@
           <div class="story-title mt-2 ml-3">
             <h4><%= story.user.first_name %></h4>
             <p class="modal-story-content"> "<%= story.content %>"</p>
-            <%= cl_image_tag story.photos.first.file.key, height: 300, width: 300, crop: :fill, class: "d-block w-100" %>
           </div>
         </div>
       </div>
@@ -49,6 +48,7 @@
     <div id="collapse<%= index %>" class="collapse" aria-labelledby="heading<%= index %>" data-parent="#accordionStories">
       <div class="card-body">
         <p style="color: transparent;"><%= story.content %></p>
+        <%= cl_image_tag story.photos.first.file.key, height: 300, width: 300, crop: :fill, class: "d-block w-100" %>
       </div>
     </div>
   </div>
