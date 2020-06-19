@@ -83,6 +83,10 @@ background: white;
     position: relative;
     left: -16px;
     top: 18px;
-    }
+}
+
+[data-toggle~="collapse"] {
+  cursor: pointer;
+}
 
 
