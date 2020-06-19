@@ -621,7 +621,7 @@ puts "Finished Spot 8!"
 ################################################################################
 ################################################################################
 puts "Creating Spot 9..."
-spot9 = Spot.new(name: "Sweet as camping spot", location: "Tidal River, Victoria 3960", category: campingCategory)
+spot9 = Spot.new(name: "Tidal River Camping", location: "Tidal River, Victoria 3960", category: campingCategory)
 spot_set << spot9
 
 puts "Adding Photos to Spot 9..."
