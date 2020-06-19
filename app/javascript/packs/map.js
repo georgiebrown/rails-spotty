@@ -27,7 +27,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   });
 
   window.selectMapMarker = (markerIndex) => {
-    map.setZoom(15 + Math.random() * 2);
+    map.setZoom(15);
     const { lat,lng } = markers[markerIndex];
     // console.log("selectMarker" + markerIndex);
     map.panTo({lat, lng});
