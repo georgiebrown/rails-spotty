@@ -791,7 +791,7 @@ spot12.save!
 # ###################################################
 puts "Adding Stories to Spot 12..."
 
-spot12Story1 = Story.new(question: restaurantQuestion1, user: keiichi, content: "So visited for the first time with a girlfriend who loves Miznon. OMG, this food makes my heart and tummy sing.", spot: spot12)
+spot12Story1 = Story.new(question: restaurantQuestion1, user: keiichi, content: "So visited for the first time with a girlfriend who loves Miznon. OMG, this food makes my heart and tummy sing.So visited for the first time with a girlfriend who loves Miznon. OMG, this food makes my heart and tummy sing.So visited for the first time with a girlfriend who loves Miznon. OMG, this food makes my heart and tummy sing.", spot: spot12)
 spot12_story1_photo = Photo.new
 file = URI.open("https://res.cloudinary.com/daqhmzr2j/image/upload/v1592477830/mizzy_efhwsd.jpg")
 spot12_story1_photo.file.attach(io: file, filename: "spot12_story1_photo.jpg", content_type: 'image/jpg')
