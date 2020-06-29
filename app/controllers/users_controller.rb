@@ -8,6 +8,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def new
+
+  end
+
+  def create
+
+  end
+
   def show
   end
 

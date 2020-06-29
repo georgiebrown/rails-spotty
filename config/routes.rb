@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :path => 'accounts'
-  resources :users, only: [:show, :index, :edit, :update] do
+  resources :users, only: [:show, :index, :edit, :update, :new, :create] do
     resources :follows, only: [:create]
   end
 
