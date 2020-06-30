@@ -1,0 +1,9 @@
+<div class="container">
+  <%= render 'user_search_bar' %>
+  <div class="d-flex justify-content-center align-items-center mb-3">
+    <%= link_to "Followers", "my_followers" , class: "btn btn-primary mx-1"%>
+    <%= link_to "My details", edit_user_registration_path(current_user) , class: "btn btn-primary mx-1"%>
+    <%= link_to "Follows", "my_follows" , class: "btn btn-primary mx-1"%>
+  </div>
+  <%= render 'user_list', users: @users %>
+</div>

@@ -1,7 +1,7 @@
 class FollowsController < ApplicationController
 
   def create
-    leader = User.find(params[:user_id])
+    leader = User.find(params[:id])
     follow = Follow.new(leader: leader, follower: current_user)
     follow.save
     respond_to do |format|
