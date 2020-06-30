@@ -1,8 +1,0 @@
-<div class="container">
-  <div class="card d-flex flex-column align-items-center justify-content-center p-3">
-    <%= cl_image_tag @user.photo.file.key, height: 200, width: 200, crop: :fill, class: "avatar-large-circle", alt: "avatar-large-square" %>
-    <div class="card-body">
-    <%= render 'edit_form', user: @user %>
-    </div>
-  </div>
-</div>

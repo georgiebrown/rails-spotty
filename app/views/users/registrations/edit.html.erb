@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="card d-flex flex-column align-items-center justify-content-center p-3">
+    <%= cl_image_tag @user.photo.file.key, height: 200, width: 200, crop: :fill, class: "avatar-large-circle", alt: "avatar-large-square" %>
+    <div class="card-body">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+      <div class="">
+
+        <div class="row">
+          <div class="col">
+            <%= f.simple_fields_for :photo do |m| %>
+              <%= m.input :file, as: :file, name: "file" , label: "Change my Avatar:",required: false %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col">
+            <%= f.input :first_name,  placeholder: "First Name"  %>
+          </div>
+          <div class="col">
+            <%= f.input :last_name, placeholder: "Last Name" %>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col">
+            <%= f.input :bio, as: :text, input_html: {rows: 6}, placeholder: "Tell us a bit about you..." %>
+          </div>
+        </div>
+
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+
+          <%= f.input :password,
+                      hint: "leave it blank if you don't want to change it",
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :current_password,
+                      hint: "we need your current password to confirm your changes",
+                      required: true,
+                      input_html: { autocomplete: "current-password" } %>
+        </div>
+
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <%= f.button :submit , "Save!" , class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+        <div class="row">
+          <div class="col">
+            <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

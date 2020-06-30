@@ -1,20 +1,21 @@
 Rails.application.routes.draw do
-  devise_for :users, :path => 'accounts'
-  resources :users, only: [:show, :index, :edit, :update, :new, :create] do
-    resources :follows, only: [:create]
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+
+  namespace :users do
+    get '', to: 'connections#index'
+
+    get 'my_followers', to: 'connections#followers', as: 'my_followers'
+    get 'my_follows', to: 'connections#follows', as: 'my_follows'
   end
+  get 'users/:id', to: 'users/connections#show', as: 'user'
+
+  post 'users/:id/follows', to: 'follows#create', as: 'user_follows'
 
   delete 'unfollow/:id', to: 'follows#destroy', as: 'unfollow'
-
-  get 'my_followers', to: 'users#followers', as: 'my_followers'
-
-  get 'my_follows', to: 'users#follows', as: 'my_follows'
 
   get 'what_spot', to: 'pages#what_spot'
 
   root to: 'pages#home'
-
-
 
   get 'map', to: 'maps#show'
 
