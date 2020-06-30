@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   get 'users/:id', to: 'users/connections#show', as: 'user'
 
-  post 'users/:id/follows', to: 'follows#create', as: 'user_follows'
+  post 'follow/:id', to: 'follows#create', as: 'follow'
 
   delete 'unfollow/:id', to: 'follows#destroy', as: 'unfollow'
 
